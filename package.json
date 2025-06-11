@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "^19.2.0",
     "@angular/router": "^19.2.0",
     "@types/prismjs": "^1.26.5",
+    "angular-cli-ghpages": "^2.0.3",
     "kage-ui": "file:dist/kage-ui",
     "prismjs": "^1.30.0",
     "rxjs": "~7.8.0",
