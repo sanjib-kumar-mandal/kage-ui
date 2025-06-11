@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
-import { environement } from 'src/environment/environment';
+// import { environement } from 'src/environment/environment';
 import { KageIcon } from 'kage-ui';
 
 @Component({
@@ -12,6 +12,6 @@ import { KageIcon } from 'kage-ui';
 })
 export class HomeComponent {
   donate() {
-    window.open(environement.paypal, '_blank');
+    // window.open(environement.paypal, '_blank');
   }
 }
