@@ -23,7 +23,7 @@ export class KageImageViewDirective implements AfterViewInit {
     container.setAttribute('class', 'kage-image-preview-container');
 
     const loaderContainer = this.document.createElement('div');
-    loaderContainer.setAttribute('class', 'k-image-preview-loader');
+    loaderContainer.setAttribute('class', 'kage-image-preview-loader');
     const spanOne = this.document.createElement('span');
     loaderContainer.append(spanOne);
     const spanTwo = this.document.createElement('span');
