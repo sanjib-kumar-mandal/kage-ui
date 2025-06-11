@@ -1,0 +1,85 @@
+.full-body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .header{
+        padding: 10px 0;
+        background: color-mix(in srgb, var(--color-background) 95%, var(--color-medium) 5%);
+    }
+    .content{
+        height: calc(100% - 60px);
+        padding: 10px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        h1{
+            color: var(--color-primary);
+        }
+        h2{
+            color: rgba(var(--color-primary-rgb), .7);
+            margin-top: 10px;
+            font-weight: 400;
+        }
+        .description{
+            font-size: 14px;
+            color: var(--color-dark);
+            margin-top: 10px;
+            a{
+                text-decoration: none;
+                color: var(--color-secondary);
+            }
+        }
+        .each-section{
+            .content-tag-title{
+                margin-bottom: 10px;
+                margin-top: 20px;
+                font-size: 25px;
+                color: var(--color-medium);
+            }
+            ul{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                li{
+                    list-style: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    padding-left: 20px;
+                    position: relative;
+                    &::before{
+                        content: '';
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                        border: var(--border-width, 1px) solid var(--color-dark);
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translate(0, -50%);
+                    }
+                }
+            }
+            .code-snap{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background: color-mix(in srgb, var(--color-background) 90%, var(--color-light) 10%);
+                padding: 5px 10px;
+                border-radius: 3px;
+                margin: 10px 0;
+                span{
+                    font-family: 'Courier New', Courier, monospace;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    cursor: pointer;
+                }
+            }
+            .note{
+                margin-top: 10px;
+            }
+        }
+    }
+}
