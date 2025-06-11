@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import { environement } from 'src/environment/environment';
 
 @Component({
   selector: 'k-home',
@@ -8,4 +9,8 @@ import { RouterLink } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {}
+export class HomeComponent {
+  donate() {
+    window.open(environement.paypal, '_blank');
+  }
+}
