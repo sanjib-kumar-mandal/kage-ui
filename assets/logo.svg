@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" stroke="var(--color-primary)" fill="none" stroke-width="2">
+    <!-- Shadow-like character -->
+    <path d="M10 6 H30 M20 6 V34 M10 34 H30" />
+    <circle cx="20" cy="20" r="3" fill="var(--color-danger)" />
+    <!-- "UI" bars -->
+    <rect x="6" y="6" width="2" height="28" rx="1" />
+    <rect x="32" y="6" width="2" height="28" rx="1" />
+</svg>

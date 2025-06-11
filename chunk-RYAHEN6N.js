@@ -1,0 +1,1 @@
+import{Gb as i,ab as n,sb as o,tb as a}from"./chunk-6ZSAKAH2.js";var p=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=n({type:t,selectors:[["app-privacy"]],decls:2,vars:0,template:function(e,r){e&1&&(o(0,"p"),i(1,"privacy works!"),a())},encapsulation:2})};export{p as PrivacyComponent};
