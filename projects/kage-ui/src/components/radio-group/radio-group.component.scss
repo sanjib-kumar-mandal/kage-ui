@@ -1,0 +1,10 @@
+.k-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: var(--k-radio-buttons-direction);
+  gap: var(--k-radio-buttons-gap);
+  &.disabled {
+    opacity: var(--k-radio-disable-opacity, .6);
+    pointer-events: none;
+  }
+}

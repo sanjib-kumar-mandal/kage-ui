@@ -1,0 +1,37 @@
+@if (options()?.dismissible) {
+    <div class="k-alert-backdrop" (click)="onBackdrop()"></div>
+    <div class="k-alert-box">
+        @if (options()?.title) {
+            <h3>{{ options()?.title }}</h3>
+        }
+        <p class="k-alert-message">{{ options()!.message }}</p>
+
+        @if (options()?.inputs?.length) {
+            <form #form="ngForm" class="inputs">
+                @for (input of options()?.inputs; track $index) {
+                    <kage-input 
+                        [label]="input.label ?? ''" 
+                        [type]="input.type || 'text'"
+                        [placeholder]="input.placeholder ?? ''"
+                        [name]="input.name">
+                    </kage-input>
+                }
+            </form>
+        }
+
+        @if (options()?.buttons?.length) {
+            <div class="actions">
+                @for (btn of options()?.buttons; track $index) {
+                    <kage-button
+                        [disabled]="btn.disabled ?? false"
+                        [class.primary]="btn.primary"
+                        [color]="btn.color ?? 'primary'"
+                        [fill]="options()?.inputs?.length ? 'outline' : 'clear'"
+                        (click)="handle(btn)">
+                    {{ btn.label }}
+                    </kage-button>
+                }
+            </div>
+        }
+    </div>
+}

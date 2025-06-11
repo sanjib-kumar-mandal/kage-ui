@@ -1,0 +1,34 @@
+@if (href() || routerLink()) {
+    <a
+        class="k-card-link-wrapper"
+        [href]="href()"
+        [routerLink]="routerLink()"
+        tabindex="0"
+    >
+        <div class="k-card">
+          <ng-container *ngTemplateOutlet="cardContent"></ng-container>
+        </div>
+    </a>
+} @else {
+    <div class="k-card">
+        <ng-container *ngTemplateOutlet="cardContent"></ng-container>
+    </div>
+}
+
+<ng-template #cardContent>
+  <div class="k-card-image">
+    <ng-content select="[slot='card-image']"></ng-content>
+  </div>
+  <div class="k-card-body">
+    <div class="card-header">
+      <ng-content select="[slot='card-title']"></ng-content>
+      <ng-content select="[slot='card-subtitle']"></ng-content>
+    </div>
+    <div class="k-card-content">
+      <ng-content select="[slot='card-content']"></ng-content>
+    </div>
+    <div class="k-card-footer">
+      <ng-content select="[slot='card-action']"></ng-content>
+    </div>
+  </div>
+</ng-template>

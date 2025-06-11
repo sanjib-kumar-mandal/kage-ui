@@ -1,0 +1,30 @@
+<h1>Drawer</h1>
+<kage-bread-crumbs>
+    <kage-bread-crumb [href]="'/librery'" label="Librery"></kage-bread-crumb>
+    <kage-bread-crumb [href]="'/librery/drawer'" label="Drawer"></kage-bread-crumb>
+</kage-bread-crumbs>
+<p class="description">Component Behavior and Input Breakdown</p>
+<h3>Implementation</h3>
+<k-code-preview>
+    <ng-template #drawerTplRight>
+      <div style="padding: 20px;">This is a drawer template!</div>
+    </ng-template>
+    <ng-template #drawerTplLeft>
+      <div style="padding: 20px;">This is a drawer template!</div>
+    </ng-template>
+    <kage-button (click)="openRight(drawerTplRight)">Open Drawer Right</kage-button>
+    <kage-button (click)="openLeft(drawerTplLeft)">Open Drawer Left</kage-button>
+</k-code-preview>
+<h3>Inputs</h3>
+<p class="description">List of Input Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>content</p><p>Type `TemplateRef`.</p></div>
+        <div class="each"><p>position</p><p>'left' | 'right', Default 'left'</p></div>
+        <div class="each"><p>width</p><p>Type '300px'</p></div>
+    </div>
+</div>

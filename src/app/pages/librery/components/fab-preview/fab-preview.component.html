@@ -1,0 +1,55 @@
+<h1>Fab</h1>
+<kage-bread-crumbs>
+    <kage-bread-crumb [href]="'/librery'" label="Librery"></kage-bread-crumb>
+    <kage-bread-crumb [href]="'/librery/fab'" label="Fab"></kage-bread-crumb>
+</kage-bread-crumbs>
+<p class="description">Component Behavior and Input Breakdown</p>
+<h3>Implementation</h3>
+<k-code-preview [htmlCode]="htmlCode">
+    <div class="fab-container">
+        <kage-fab-button color="success" position="top-right">
+            <mat-icon slot='icon' fontIcon="add"></mat-icon>
+            <kage-fab-item color="danger"><mat-icon fontIcon="home"></mat-icon></kage-fab-item>
+            <kage-fab-item><mat-icon fontIcon="refresh"></mat-icon></kage-fab-item>
+        </kage-fab-button>
+        <kage-fab-button color="danger" position="top-left">
+            <mat-icon slot='icon' fontIcon="add"></mat-icon>
+            <kage-fab-item [disabled]="true"><mat-icon fontIcon="sync"></mat-icon></kage-fab-item>
+            <kage-fab-item><mat-icon fontIcon="terminal"></mat-icon></kage-fab-item>
+        </kage-fab-button>
+        <kage-fab-button color="warning" position="bottom-left">
+            <mat-icon slot='icon' fontIcon="add"></mat-icon>
+            <kage-fab-item><mat-icon fontIcon="file_open"></mat-icon></kage-fab-item>
+            <kage-fab-item><mat-icon fontIcon="downloading"></mat-icon></kage-fab-item>
+        </kage-fab-button>
+        <kage-fab-button position="bottom-right">
+            <mat-icon slot='icon' fontIcon="add"></mat-icon>
+            <kage-fab-item><mat-icon fontIcon="token"></mat-icon></kage-fab-item>
+            <kage-fab-item [disabled]="true"><mat-icon fontIcon="assistant_navigation"></mat-icon></kage-fab-item>
+        </kage-fab-button>
+    </div>
+</k-code-preview>
+<h3>Inputs</h3>
+<p class="description">List of Input Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>color</p><p>'primary' | 'secondary' | 'tertiary' | 'danger' | 'success' | 'warning' | 'info'</p></div>
+        <div class="each"><p>position</p><p>'top-right' | 'top-left' | 'bottom-left' | 'bottom-right'</p></div>
+    </div>
+</div>
+<h3>Outputs</h3>
+<p class="description">List of Output Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>onClick</p><p>Type `Event`</p></div>
+        <div class="each"><p>onChange</p><p>Type `string`</p></div>
+    </div>
+</div>

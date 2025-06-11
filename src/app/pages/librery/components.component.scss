@@ -1,0 +1,15 @@
+.lib-full-body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .header{
+        padding: 10px 0;
+        background: color-mix(in srgb, var(--color-background) 95%, var(--color-medium) 5%);
+        
+    }
+    .body{
+        height: calc(100% - 60px);
+        padding: 10px 0;
+    }
+}

@@ -1,0 +1,25 @@
+.k-breadcrumbs-wrapper{
+    display: flex;
+    align-items: center;
+    gap: var(--k-bread-crumb-space);
+    flex-wrap: var(--k-bread-crumb-flex-wrap);
+    a, p{
+        text-decoration: var(--k-bread-crumb-link-text-decoration);
+        color: var(--k-bread-crumb-link-text-color);
+        font-family: var(--k-bread-crumb-font-family);
+        transition: color .3s;
+        &:hover{
+            color: var(--k-bread-crumb-link-hover-text-color);
+        }
+    }
+    p{
+        pointer-events: none;
+        color: var(--k-bread-crumb-last-text-color);
+    }
+    k-icon{
+        svg.k-icon{
+            color: var(--k-bread-crumb-between-icon-color);
+            --icon-size: var(--k-bread-crumb-icon-size) !important;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+<div class="k-breadcrumbs-wrapper">
+    @for (item of breadCrumps; track $index; let l = $last) {
+        @if (!l) {
+            <a [routerLink]="item.href()">{{item.label()}}</a>
+            <kage-icon name="chevron-forward"></kage-icon>
+        } @else {
+            <p>{{item.label()}}</p>
+        }
+    }
+</div>

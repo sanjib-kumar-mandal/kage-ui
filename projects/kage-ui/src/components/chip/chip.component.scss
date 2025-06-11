@@ -1,0 +1,65 @@
+.k-chip-wrapper{
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    border: var(--border-width, 1px) solid var(--k-chip-color);
+    transition: .4s;
+    background: transparent;
+    color: var(--k-chip-color);
+    &:has(.k-chip-remove) {
+        padding: 5px 5px 5px 15px;
+    }
+    &:not(:has(.k-chip-remove)) {
+        padding: 5px 15px;
+    }
+    &::ng-deep{
+        [slot='icon']{
+            margin-right: 5px;
+            margin-left: -5px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 19px;
+            width: 27px;
+            overflow: hidden;
+        }
+    }
+    p{
+        font-family: var(--k-chip-font-family);
+    }
+    .k-chip-remove{
+        margin-left: 10px;
+        cursor: pointer;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* COLOR */
+    &.primary{
+        --k-chip-color: var(--color-primary);
+    }
+    &.secondary{
+        --k-chip-color: var(--color-secondary);
+    }
+    &.tertiary{
+        --k-chip-color: var(--color-tertiary);
+    }
+    &.danger{
+        --k-chip-color: var(--color-danger);
+    }
+    &.success{
+        --k-chip-color: var(--color-success);
+    }
+    &.warning{
+        --k-chip-color: var(--color-warning);
+    }
+    &.info{
+        --k-chip-color: var(--color-info);
+    }
+    /* SHAPE */
+    &.radial{
+        border-radius: 9999px;
+    }
+}

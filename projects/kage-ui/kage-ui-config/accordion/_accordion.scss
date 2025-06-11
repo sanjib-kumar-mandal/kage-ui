@@ -1,0 +1,11 @@
+kage-accordion{
+    // Header
+    --k-accordion-header-min-height: 20px;
+    --k-accordion-header-padding: 10px;
+    --k-accordion-header-border-color: var(--border-color);
+    --k-accordion-header-hover-background: color-mix(in srgb, var(--border-color) 10%, transparent 90%);
+    --k-accordion-header-cursor-style: pointer;
+    // Content
+    --k-accordion-content-border-color: var(--border-color);
+    --k-accordion-content-padding: 10px;
+}

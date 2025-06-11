@@ -1,0 +1,30 @@
+.normal-font{
+    h1{
+        font-size: 22px;
+    }
+    h2{
+        font-size: 20px;
+    }
+    h3{
+        font-size: 18px;
+    }
+    h4{
+        font-size: 16px;
+    }
+    h5{
+        font-size: 14px;
+    }
+    h6{
+        font-size: 12px;
+    }
+    div, p, span, li, a, label, input, textarea, select, option, article, button, legend, param, table, tr, td, th, tbody {
+        font-size: 14px;
+    }
+    strong, sub{
+        font-size: inherit;
+    }
+
+    small{
+        font-size: 11px;
+    }
+}

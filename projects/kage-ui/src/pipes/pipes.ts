@@ -1,0 +1,9 @@
+export { KageBytesPipe } from "./bytes/bytes.pipe";
+export { KageCapitalizePipe } from "./capitalize/capitalize.pipe";
+export { KageHighlightPipe } from "./highlight/highlight.pipe";
+export { KageMaskPipe } from "./mask/mask.pipe";
+export { KageOrdinatePipe } from "./ordinate/ordinate.pipe";
+export { KageRepeatPipe } from "./repeat/repeat.pipe";
+export { KageSlugifyPipe } from "./slugify/slugify.pipe";
+export { KageTimeAgoPipe } from "./time-ago/time-ago.pipe";
+export { KageTruncatePipe } from "./truncate/truncate.pipe";

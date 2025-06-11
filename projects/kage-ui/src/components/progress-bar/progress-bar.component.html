@@ -1,0 +1,11 @@
+<div class="k-progress-bar-wrapper" [ngClass]="mode()">
+    <div class="progress-bar-track">
+        @if (mode() !== 'indeterminate') {
+            <div class="progress-bar-fill" [style.width.%]="value()"></div>
+        } @else if (mode() === 'buffer') {
+            <div class="progress-bar-buffer" [style.width.%]="value()"></div>
+        } @else {
+            <div class="progress-bar-indeterminate"><div class="indeterminate-bar"></div></div>
+        }
+    </div>
+</div>

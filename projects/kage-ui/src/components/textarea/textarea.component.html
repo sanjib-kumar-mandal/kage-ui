@@ -1,0 +1,39 @@
+<label class="k-textarea-wrapper">
+    @if (label()) {
+        <p class="label-title">{{label()}}</p>
+    }
+    <div class="input-area">
+        <div class="icon">
+            <ng-content select="[slot='icon-start']"></ng-content>
+        </div>
+        <div class="input">
+            <textarea 
+                [value]="value"
+                [placeholder]="placeholder()" 
+                [disabled]="disabled()" 
+                [readOnly]="readonly()" 
+                [maxLength]="maxLength() ?? 524288"
+                [autofocus]="autoFocus()"
+                [autocomplete]="autocomplete()"
+                (input)="handleInput($event)"
+                (blur)="onTouched()"
+                [rows]="rows()"
+                #textareaRef
+            ></textarea>
+        </div>
+        <div class="icon">
+            <ng-content select="[slot='icon-end']"></ng-content>
+        </div>
+    </div>
+    <div class="validators">
+        <div class="left">
+            <div class="hint"><ng-content select="[slot='hint']"></ng-content></div>
+            <div class="error"><ng-content select="[slot='error']"></ng-content></div>
+        </div>
+        <div class="right">
+            @if (maxLength()) {
+                <div class="counter"><span>{{value.length}}</span>/{{maxLength()}}</div>
+            }
+        </div>
+    </div>
+</label>

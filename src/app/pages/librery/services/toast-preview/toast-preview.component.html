@@ -1,0 +1,13 @@
+<h1>Toast</h1>
+<kage-bread-crumbs>
+    <kage-bread-crumb href="/librery" label="Librery"></kage-bread-crumb>
+    <kage-bread-crumb href="/librery/toast" label="Toast"></kage-bread-crumb>
+</kage-bread-crumbs>
+<p class="description">Service Behavior Breakdown</p>
+<h3>Implementation</h3>
+<k-code-preview [htmlCode]="htmlCode">
+    <kage-button (click)="infoToast()">Info Toast</kage-button>
+    <kage-button (click)="errorToast()">Error Toast</kage-button>
+    <kage-button (click)="successToast()">Success Toast</kage-button>
+    <kage-button (click)="warningToast()">Warning Toast</kage-button>
+</k-code-preview>

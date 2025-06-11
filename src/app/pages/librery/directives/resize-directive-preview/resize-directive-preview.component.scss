@@ -1,0 +1,51 @@
+h1{
+    margin-bottom: 10px;
+}
+.description{
+    margin-top: 10px;
+    color: var(--color-medium);
+}
+h3{
+    color: color-mix(in srgb, var(--color-dark) 80%, var(--color-light) 20%);
+    margin: 10px 0;
+}
+.table{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    .table-head, .table-body .each{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p{
+            width: 33.33%;
+            text-align: start;
+            padding: 10px;
+        }
+    }
+    .table-head{
+        p{
+            background: color-mix(in srgb, var(--color-dark) 5%, var(--color-background) 95%);
+            border-right: 1px solid color-mix(in srgb, var(--color-dark) 10%, var(--color-background) 90%);
+            &:last-child{
+                border-right: none;
+            }
+        }
+    }
+    .table-body{
+        .each{
+            p{
+                border-right: 1px solid color-mix(in srgb, var(--color-dark) 10%, var(--color-background) 90%);
+                &:last-child{
+                    border-right: none;
+                }
+            }
+            &:nth-child(odd) {
+                background: color-mix(in srgb, var(--color-dark) 1%, var(--color-background) 99%);
+            }
+            &:nth-child(even) {
+                background: color-mix(in srgb, var(--color-dark) 2%, var(--color-background) 98%);
+            }
+        }
+    }
+}

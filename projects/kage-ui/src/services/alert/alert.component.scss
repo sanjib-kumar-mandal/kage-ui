@@ -1,0 +1,48 @@
+:host { display: contents; }
+
+.k-alert-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(var(--color-light-rgb), 0.4);
+    z-index: 9998;
+}
+
+.k-alert-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: var(--color-background);
+    border: var(--border-width, 1px) solid var(--border-color);
+    z-index: 9999;
+    opacity: 0;
+    animation: fadeIn 0.2s forwards;
+    min-width: 280px;
+    h3{
+        margin-bottom: 5px;
+    }
+    .k-alert-message{
+        color: var(--color-medium);
+    }
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 10px 0 20px 0;
+    }
+    .actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+    }
+    &:not(:has(.inputs)) {
+        .actions{
+            margin-top: 20px;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}

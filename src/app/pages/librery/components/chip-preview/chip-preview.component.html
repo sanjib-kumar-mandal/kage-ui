@@ -1,0 +1,42 @@
+<h1>Chip</h1>
+<kage-bread-crumbs>
+    <kage-bread-crumb [href]="'/librery'" label="Librery"></kage-bread-crumb>
+    <kage-bread-crumb [href]="'/librery/chip'" label="Chip"></kage-bread-crumb>
+</kage-bread-crumbs>
+<p class="description">Component Behavior and Input Breakdown</p>
+<h3>Implementation</h3>
+<k-code-preview [htmlCode]="htmlCode" [scssCode]="scssCode">
+    <div class="chip-previewer">
+        <kage-chip>Chip</kage-chip>
+        <kage-chip color="danger" [removable]="true">Danger</kage-chip>
+        <kage-chip color="success">Success</kage-chip>
+        <kage-chip color="warning">Warning</kage-chip>
+        <kage-chip color="primary">Primary</kage-chip>
+        <kage-chip color="secondary">Secondary</kage-chip>
+        <kage-chip color="tertiary">Tertiary</kage-chip>
+        <kage-chip color="info">Info</kage-chip>
+    </div>
+    <div class="chip-previewer">
+        <kage-chip shape="radial">Chip</kage-chip>
+        <kage-chip color="danger" shape="radial">Chip</kage-chip>
+        <kage-chip color="success" shape="radial" [removable]="true">Chip</kage-chip>
+        <kage-chip color="warning" shape="radial">Chip</kage-chip>
+        <kage-chip color="primary" shape="radial">Primary</kage-chip>
+        <kage-chip color="secondary" shape="radial">Secondary</kage-chip>
+        <kage-chip color="tertiary" shape="radial">Tertiary</kage-chip>
+        <kage-chip color="info" shape="radial">Info</kage-chip>
+    </div>
+</k-code-preview>
+<h3>Inputs</h3>
+<p class="description">List of Input Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>removable</p><p>Type `boolean`. Default false</p></div>
+        <div class="each"><p>color</p><p>'primary' | 'secondary' | 'tertiary' | 'success' | 'danger' | 'warning' | 'info'</p></div>
+        <div class="each"><p>shape</p><p>'radial' | 'sharp'. Default 'sharp'</p></div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<h1>Textarea</h1>
+<kage-bread-crumbs>
+    <kage-bread-crumb [href]="'/librery'" label="Librery"></kage-bread-crumb>
+    <kage-bread-crumb [href]="'/librery/textarea'" label="Textarea"></kage-bread-crumb>
+</kage-bread-crumbs>
+<p class="description">Component Behavior and Input Breakdown</p>
+<h3>Implementation</h3>
+<k-code-preview [tsCode]="tsCode" [htmlCode]="htmlCode" [scssCode]="scssCode">
+    <kage-textarea></kage-textarea>
+</k-code-preview>
+<h3>Input</h3>
+<p class="description">List of Input Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>label</p><p>Type `string`</p></div>
+        <div class="each"><p>placeholder</p><p>Type `string`</p></div>
+        <div class="each"><p>disabled</p><p>Type `boolean`</p></div>
+        <div class="each"><p>readonly</p><p>Type `boolean`</p></div>
+        <div class="each"><p>maxLength</p><p>Type `number`</p></div>
+        <div class="each"><p>autoFocus</p><p>Type `boolean`. Default false</p></div>
+        <div class="each"><p>debounce</p><p>Type `number`</p></div>
+        <div class="each"><p>rows</p><p>Type `number`. Default 4</p></div>
+        <div class="each"><p>autoResize</p><p>Type `boolean`</p></div>
+        <div class="each"><p>autocomplete</p><p>Type `string`. Default 'off'</p></div>
+    </div>
+</div>
+<h3>Output</h3>
+<p class="description">List of Output Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>valueChanged</p><p>Type `string`</p></div>
+    </div>
+</div>

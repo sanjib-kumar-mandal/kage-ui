@@ -1,0 +1,5 @@
+<label class="k-toggle-wrapper" [ngClass]="color() ?? ''">
+    <input type="checkbox" [checked]="checked" [disabled]="disabled()" (change)="handleToggle($event)">
+    <span class="k-toggle"></span>
+    <p><ng-content></ng-content></p>
+</label>

@@ -1,0 +1,6 @@
+kage-progress-bar{
+    --k-progress-bar-size: 3px; // var(--border-width)
+    --k-progress-bar-track-color: color-mix(in srgb, var(--color-background) 90%, var(--color-light) 10%);
+    --k-progress-bar-thumb-color: var(--color-success);
+    --k-progress-bar-indeterminate-color: var(--color-warning);
+}

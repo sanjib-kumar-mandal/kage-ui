@@ -1,0 +1,22 @@
+<label>
+    @if (label()) {
+        <p class="label-title">{{label()}}</p>
+    }
+    <div class="k-date-input-area">
+        <div class="icon start">
+            <ng-content select="[slot='icon-start']"></ng-content>
+        </div>
+        <div class="input">
+            <input type="text" [placeholder]="placeholder() ?? ''">
+        </div>
+        <div class="icon end" kRipple [rippleColor]="'var(--border-color)'" (click)="openCalendar($event)">
+            <kage-icon name="calendar"></kage-icon>
+        </div>
+    </div>
+    <div class="validators">
+        <div class="left">
+            <div class="hint"><ng-content select="[slot='hint']"></ng-content></div>
+            <div class="error"><ng-content select="[slot='error']"></ng-content></div>
+        </div>
+    </div>
+</label>

@@ -1,0 +1,37 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .logo{
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        kage-icon{
+            svg{
+                height: 40px;
+            }
+        }
+    }
+    .options{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        ul{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            li{
+                list-style: none;
+                margin-left: 10px;
+                a{
+                    text-decoration: none;
+                    color: var(--color-secondary);
+                }
+                &:first-child{
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}

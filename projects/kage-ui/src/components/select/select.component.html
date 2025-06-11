@@ -1,0 +1,21 @@
+<div
+  class="k-select"
+  (click)="toggleDropdown()"
+  role="combobox"
+  [attr.aria-expanded]="isOpen"
+  [attr.aria-multiselectable]="multiple()"
+  tabindex="0"
+>
+  <div class="selected-value">
+    {{ displayLabel || placeholder() }}
+    <span class="chevron" [class.open]="isOpen">&#9662;</span>
+  </div>
+
+  <div
+    class="dropdown scroll-bar"
+    [class.open]="isOpen"
+    role="listbox"
+  >
+    <ng-content></ng-content>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+:host {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Default stacking: full width if no xs */
+:host(.auto-stack) {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+@media (max-width: 575.98px) {
+    :host(.xs) {
+        flex: 0 0 var(--xs-span, 100%);
+        max-width: var(--xs-span, 100%);
+        margin-left: var(--xs-offset, 0);
+    }
+}
+@media (min-width: 576px) {
+    :host(.sm) {
+        flex: 0 0 var(--sm-span);
+        max-width: var(--sm-span);
+        margin-left: var(--sm-offset, 0);
+    }
+}
+@media (min-width: 768px) {
+    :host(.md) {
+        flex: 0 0 var(--md-span);
+        max-width: var(--md-span);
+        margin-left: var(--md-offset, 0);
+    }
+}
+@media (min-width: 992px) {
+    :host(.lg) {
+        flex: 0 0 var(--lg-span);
+        max-width: var(--lg-span);
+        margin-left: var(--lg-offset, 0);
+    }
+}
+@media (min-width: 1200px) {
+    :host(.xl) {
+        flex: 0 0 var(--xl-span);
+        max-width: var(--xl-span);
+        margin-left: var(--xl-offset, 0);
+    }
+}

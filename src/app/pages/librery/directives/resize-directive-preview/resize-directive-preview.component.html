@@ -1,0 +1,83 @@
+<h1>Resize DIrective</h1>
+<kage-bread-crumbs>
+    <kage-bread-crumb href="/librery" label="Librery"></kage-bread-crumb>
+    <kage-bread-crumb href="/librery/copy" label="Resize Directive"></kage-bread-crumb>
+</kage-bread-crumbs>
+<p class="description">Directive Behavior and Input Breakdown</p>
+<h3>Features</h3>
+<k-code-preview [htmlCode]="htmlCode">
+    <div
+        [debounceTime]="150"
+        resizeMode="throttle"
+        [observeWidth]="true"
+        [observeHeight]="true"
+        [minWidthClass]="{ width: 400, className: 'wide' }"
+        [maxWidthClass]="{ width: 300, className: 'narrow' }"
+        [minHeightClass]="{ height: 300, className: 'tall' }"
+        [maxHeightClass]="{ height: 150, className: 'short' }"
+        [onResize]="handleResize"
+        (kageResized)="onResize($event)"
+        class="box"
+    >
+    Resize me!
+    </div>
+</k-code-preview>
+<div class="table">
+    <div class="table-head">
+        <p>Feature</p>
+        <p>Type</p>
+        <p>Description</p>
+    </div>
+    <div class="table-body">
+        <div class="each">
+            <p>observeWidth</p>
+            <p>boolean</p>
+            <p>Observe width (default: true)</p>
+        </div>
+        <div class="each">
+            <p>observeHeight</p>
+            <p>boolean</p>
+            <p>Observe height (default: true)</p>
+        </div>
+        <div class="each">
+            <p>debounceTime</p>
+            <p>number</p>
+            <p>Time in ms to debounce</p>
+        </div>
+        <div class="each">
+            <p>resizeMode</p>
+            <p>'debounce' | 'throttle'</p>
+            <p>Choose timing strategy</p>
+        </div>
+        <div class="each">
+            <p>minWidthClass</p>
+            <p>{{ '{' }} width, className {{ '}' }}</p>
+            <p>Auto-add class if width ≥</p>
+        </div>
+        <div class="each">
+            <p>maxWidthClass</p>
+            <p>{{ '{' }} width, className {{ '}' }}</p>
+            <p>Auto-add class if width ≤</p>
+        </div>
+        <div class="each">
+            <p>minHeightClass</p>
+            <p>{{ '{' }} height, className {{ '}' }}</p>
+            <p>Auto-add class if height ≥</p>
+        </div>
+        <div class="each">
+            <p>maxHeightClass</p>
+            <p>{{ '{' }} height, className {{ '}' }}</p>
+            <p>Auto-add class if height ≤</p>
+        </div>
+        <div class="each">
+            <p>(resized)</p>
+            <p>EventEmitter{{'<'}}DOMRectReadOnly{{'>'}}</p>
+            <p>Emits new rect</p>
+        </div>
+        <div class="each">
+            <p>&#64;Input() onResize</p>
+            <p>(rect: DOMRectReadOnly) => void</p>
+            <p>Custom callback</p>
+        </div>
+    </div>
+</div>

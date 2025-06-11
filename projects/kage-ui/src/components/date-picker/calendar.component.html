@@ -1,0 +1,64 @@
+<div class="k-calendar-wrapper">
+  <div class="k-calendar-header">
+    <button (click)="prevMonth()">
+      <kage-icon name="chevron-backward"></kage-icon>
+    </button>
+
+    <!-- (change)="setMonth(+($event.target as HTMLSelectElement).value)" -->
+    <select [value]="month" (change)="setMonth($event)">
+        @for (m of months; track $index; let i = $index) {
+            <option [selected]="month === i" [value]="i">{{ m }}</option>
+        }
+    </select>
+
+    <select [value]="year" (change)="setYear($event)">
+        @for (y of yearRange; track $index) {
+            <option [value]="y" [selected]="year === y">{{ y }}</option>
+        }
+    </select>
+
+    <button (click)="nextMonth()">
+      <kage-icon name="chevron-forward"></kage-icon>
+    </button>
+  </div>
+
+  <table class="k-calendar-table">
+    <thead>
+      <tr>
+        <th>Wk</th>
+        @for (d of ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']; track $index) {
+            <th>{{ d }}</th>
+        }
+      </tr>
+    </thead>
+    <tbody>
+        @for (week of daysMatrix; track $index; let i = $index) {
+            <tr>
+                <td class="week-number">{{ weekNumbers[i] }}</td>
+                @for (day of week; track $index) {
+                    <td [class.selected]="isSelected(day)" (click)="day && selectDate(day)" [class.today]="isToday(day)">{{ day?.getDate() }}</td>
+                }
+            </tr>
+        }
+    </tbody>
+  </table>
+
+  @if (showTimePicker() && selectionMode() === 'single') {
+    <div class="time-picker">
+        <input type="number" [value]="hour()" [(ngModel)]="hour" min="0" [max]="(timeFormat() === '12h') ? 12 : 23">
+        :
+        <input type="number" [value]="minute()" [(ngModel)]="minute" min="0" max="59">
+
+        @if (timeFormat() === '12h') {
+            <select [(ngModel)]="meridian">
+                <option value="AM" [selected]="meridian() === 'AM'">AM</option>
+                <option value="PM" [selected]="meridian() === 'PM'">PM</option>
+            </select>
+        }
+    </div>
+  }
+  <div class="btns">
+    <kage-button color="danger" fill="clear" (click)="selectionCancelled()">Cancel</kage-button>
+    <kage-button color="success" fill="clear" (click)="selectionDone()">Done</kage-button>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="k-chip-wrapper" [ngClass]="[color() ?? '', shape()]">
+    <ng-content select="[slot='icon']"></ng-content>
+    <p><ng-content></ng-content></p>
+    @if (removable()) {
+        <span class="k-chip-remove" (click)="removeChip()">
+            <kage-icon name="remove"></kage-icon>
+        </span>
+    }
+</div>

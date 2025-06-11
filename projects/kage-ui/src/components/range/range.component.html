@@ -1,0 +1,18 @@
+<label class="k-range-wrapper" [class]="[color()]">
+    <div class="k-field">
+        <input 
+            type="range" 
+            [attr.min]="min()"
+            [attr.max]="max()"
+            [attr.step]="step()"
+            (input)="onInput($event)"
+            (focus)="onFocus()"
+            (blur)="onBlur()"
+        />
+    </div>
+    @if (showTooltip()) {
+        <div class="k-range-tooltip">
+            <span>{{value}}</span>
+        </div>
+    }
+</label>

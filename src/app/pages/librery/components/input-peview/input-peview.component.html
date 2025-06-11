@@ -1,0 +1,56 @@
+<h1>Input</h1>
+<kage-bread-crumbs>
+    <kage-bread-crumb [href]="'/librery'" label="Librery"></kage-bread-crumb>
+    <kage-bread-crumb [href]="'/librery/input'" label="Input"></kage-bread-crumb>
+</kage-bread-crumbs>
+<p class="description">Component Behavior and Input Breakdown</p>
+<h3>Implementation</h3>
+<k-code-preview [htmlCode]="htmlCode" [scssCode]="scssCode">
+    <kage-input></kage-input>
+    <kage-input style="display: block; margin-top: 20px;">
+        <kage-icon name="mail" slot="icon-start"></kage-icon>
+    </kage-input>
+    <kage-input style="display: block; margin-top: 20px;" placeholder="Password" type="password">
+        <kage-icon name="eye" slot="icon-end"></kage-icon>
+    </kage-input>
+    <kage-input style="display: block; margin-top: 20px;">
+        <kage-icon name="eye" slot="icon-end"></kage-icon>
+        <p slot="hint">Place your hint here</p>
+    </kage-input>
+    <kage-input style="display: block; margin-top: 20px;" label="Lebel here">
+        <kage-icon name="eye" slot="icon-end"></kage-icon>
+        <p slot="hint">Place your hint here</p>
+        <p slot="error" style="color: red;">Place your error here</p>
+    </kage-input>
+</k-code-preview>
+<h3>Inputs</h3>
+<p class="description">List of Input Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>label</p><p>Type `string`</p></div>
+        <div class="each"><p>name</p><p>Type `string`</p></div>
+        <div class="each"><p>type</p><p>Type `string`</p></div>
+        <div class="each"><p>placeholder</p><p>Type `string`</p></div>
+        <div class="each"><p>disabled</p><p>Type `boolean`</p></div>
+        <div class="each"><p>readonly</p><p>Type `boolean`</p></div>
+        <div class="each"><p>autoFocus</p><p>Type `boolean`</p></div>
+        <div class="each"><p>debounce</p><p>Type `number`</p></div>
+        <div class="each"><p>autocomplete</p><p>Default 'off'</p></div>
+        <div class="each"><p>maxLength</p><p>Type `number`</p></div>
+    </div>
+</div>
+<h3>Outputs</h3>
+<p class="description">List of Output Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>valueChanged</p><p>Type `string`</p></div>
+    </div>
+</div>

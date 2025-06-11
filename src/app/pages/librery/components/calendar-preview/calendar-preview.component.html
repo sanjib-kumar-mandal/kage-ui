@@ -1,0 +1,24 @@
+<h1>Calendar</h1>
+<kage-bread-crumbs>
+    <kage-bread-crumb [href]="'/librery'" label="Librery"></kage-bread-crumb>
+    <kage-bread-crumb [href]="'/librery/calendar'" label="Calendar"></kage-bread-crumb>
+</kage-bread-crumbs>
+<p class="description">Component Behavior and Input Breakdown</p>
+<h3>Implementation</h3>
+<k-code-preview [htmlCode]="htmlCode" [scssCode]="scssCode">
+    <kage-calendar [(ngModel)]="dateSelected" (ngModelChange)="dateChanged($event)"></kage-calendar>
+</k-code-preview>
+<h3>Inputs (k-bread-crumb)</h3>
+<p class="description">List of Input Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>selectionMode</p><p>'single' | 'range' | 'multiple'. Default 'single'</p></div>
+        <div class="each"><p>showTimePicker</p><p>Type `boolean`. Default false</p></div>
+        <div class="each"><p>timeFormat</p><p>'12h' | '24h'. Default '24h'</p></div>
+        <div class="each"><p>locale</p><p>Local. Default `LOCALE_ID`</p></div>
+    </div>
+</div>

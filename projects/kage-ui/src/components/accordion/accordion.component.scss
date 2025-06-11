@@ -1,0 +1,53 @@
+.k-accordion-wrapper{
+    .k-accordion-header{
+        min-height: var(--k-accordion-header-min-height);
+        padding: var(--k-accordion-header-padding);
+        border: var(--border-width, 1px) solid var(--k-accordion-header-border-color);
+        cursor: var(--k-accordion-header-cursor-style);
+        transition: .3s;
+        &:hover{
+            background: var(--k-accordion-header-hover-background);
+        }
+    }
+    .k-accordion-content{
+        border: var(--border-width, 1px) solid var(--k-accordion-content-border-color);
+        border-top: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        margin-top: calc(var(--border-width, 1px) * -1);
+        &::ng-deep{
+            [slot='content']{
+                padding: var(--k-accordion-content-padding);
+            }
+        }
+    }
+    &.primary{
+        --k-accordion-header-border-color: var(--color-primary);
+        --k-accordion-content-border-color: var(--color-primary);
+    }
+    &.secondary{
+        --k-accordion-header-border-color: var(--color-secondary);
+        --k-accordion-content-border-color: var(--color-secondary);
+    }
+    &.tertiary{
+        --k-accordion-header-border-color: var(--color-tertiary);
+        --k-accordion-content-border-color: var(--color-tertiary);
+    }
+    &.success{
+        --k-accordion-header-border-color: var(--color-success);
+        --k-accordion-content-border-color: var(--color-success);
+    }
+    &.danger{
+        --k-accordion-header-border-color: var(--color-danger);
+        --k-accordion-content-border-color: var(--color-danger);
+    }
+    &.warning{
+        --k-accordion-header-border-color: var(--color-warning);
+        --k-accordion-content-border-color: var(--color-warning);
+    }
+    &.info{
+        --k-accordion-header-border-color: var(--color-info);
+        --k-accordion-content-border-color: var(--color-info);
+    }
+}

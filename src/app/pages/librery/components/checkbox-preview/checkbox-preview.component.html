@@ -1,0 +1,33 @@
+<h1>Checkbox</h1>
+<kage-bread-crumbs>
+    <kage-bread-crumb [href]="'/librery'" label="Librery"></kage-bread-crumb>
+    <kage-bread-crumb [href]="'/librery/checkbox'" label="Checkbox"></kage-bread-crumb>
+</kage-bread-crumbs>
+<p class="description">Component Behavior and Input Breakdown</p>
+<h3>Implementation</h3>
+<k-code-preview [htmlCode]="htmlCode" [scssCode]="scssCode" [tsCode]="tsCode">
+    <div class="checkboxes">
+        <kage-checkbox>Default Checkbox</kage-checkbox>
+        <kage-checkbox color="primary">Primary Checkbox</kage-checkbox>
+        <kage-checkbox color="secondary">Secondary Checkbox</kage-checkbox>
+        <kage-checkbox color="tertiary">Tertiary Checkbox</kage-checkbox>
+        <kage-checkbox color="warning">Warning Checkbox</kage-checkbox>
+        <kage-checkbox color="success">Success Checkbox</kage-checkbox>
+        <kage-checkbox color="danger">Danger Checkbox</kage-checkbox>
+        <kage-checkbox color="info">Info Checkbox</kage-checkbox>
+    </div>
+</k-code-preview>
+<h3>Inputs</h3>
+<p class="description">List of Input Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>label</p><p>Type `string`</p></div>
+        <div class="each"><p>color</p><p>'primary' | 'secondary' | 'tertiary' | 'success' | 'danger' | 'warning' | 'info'</p></div>
+        <div class="each"><p>name</p><p>Type `string`</p></div>
+        <div class="each"><p>id</p><p>Type `string`</p></div>
+    </div>
+</div>

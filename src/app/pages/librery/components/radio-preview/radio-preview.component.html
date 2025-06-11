@@ -1,0 +1,43 @@
+<h1>Radio</h1>
+<kage-bread-crumbs>
+    <kage-bread-crumb [href]="'/librery'" label="Librery"></kage-bread-crumb>
+    <kage-bread-crumb [href]="'/librery/radio'" label="Radio"></kage-bread-crumb>
+</kage-bread-crumbs>
+<p class="description">Component Behavior and Input Breakdown</p>
+<h3>Implementation</h3>
+<k-code-preview [htmlCode]="htmlCode" [scssCode]="scssCode" [tsCode]="tsCode">
+    <kage-radio-group name="colorChoice" [disabled]="false">
+        <kage-radio color="primary" value="primary">Primary</kage-radio>
+        <kage-radio color="secondary" value="secondary">Secondary</kage-radio>
+        <kage-radio color="tertiary" value="tertiary">Tertiary</kage-radio>
+        <kage-radio color="warning" value="warning">Warning</kage-radio>
+        <kage-radio color="info" value="blue">Info</kage-radio>
+        <kage-radio value="danger" color="danger" [disabled]="true">Danger</kage-radio>
+        <kage-radio value="success" color="success">Success</kage-radio>
+    </kage-radio-group>
+</k-code-preview>
+<h3>Input (k-radio-group)</h3>
+<p class="description">List of Input Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>name</p><p>Type `string`.</p></div>
+        <div class="each"><p>disabled</p><p>Type `boolean`. Default false</p></div>
+    </div>
+</div>
+<h3>Input (k-radio)</h3>
+<p class="description">List of Input Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>value</p><p>Type `any`.</p></div>
+        <div class="each"><p>disabled</p><p>Type `boolean`. Default false</p></div>
+        <div class="each"><p>color</p><p>'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'danger' | 'info'</p></div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<h1>Button</h1>
+<kage-bread-crumbs>
+    <kage-bread-crumb [href]="'/librery'" label="Librery"></kage-bread-crumb>
+    <kage-bread-crumb [href]="'/librery/button'" label="Button"></kage-bread-crumb>
+</kage-bread-crumbs>
+<p class="description">Component Behavior and Input Breakdown</p>
+<h3>Implementation</h3>
+<k-code-preview [htmlCode]="htmlCode" [scssCode]="scssCode">
+    <div class="btns">
+        <kage-button color="primary">Primary</kage-button>
+        <kage-button color="secondary">Secondary</kage-button>
+        <kage-button color="tertiary">Tertiary</kage-button>
+        <kage-button color="danger" [loading]="true">Danger</kage-button>
+        <kage-button color="success">Success</kage-button>
+        <kage-button color="warning">Warning</kage-button>
+        <kage-button color="info">Info</kage-button>
+        <kage-button color="primary" fill="clear">Clear</kage-button>
+    </div>
+</k-code-preview>
+<h3>Inputs (k-bread-crumb)</h3>
+<p class="description">List of Input Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>type</p><p>'button' | 'submit' | 'reset'</p></div>
+        <div class="each"><p>color</p><p>'primary' | 'secondary' | 'tertiary' | 'danger' | 'success' | 'warning' | 'info'</p></div>
+        <div class="each"><p>loading</p><p>Type `boolean`</p></div>
+        <div class="each"><p>iconRight</p><p>Type `boolean`</p></div>
+        <div class="each"><p>ariaLabel</p><p>Type `string`, Default 'Button'</p></div>
+        <div class="each"><p>fill</p><p>'clear' | 'outline', Default 'outline'</p></div>
+    </div>
+</div>

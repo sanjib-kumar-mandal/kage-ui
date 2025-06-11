@@ -1,0 +1,100 @@
+.k-image-preview-container{
+    background: rgba(var(--color-light-rgb), 0.3);
+    position: absolute;
+    inset: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999999;
+    img{
+        max-height: 60vh;
+        max-width: 85vw;
+    }
+    img.k-image-preview-image-loaded{
+        animation: animate .2s linear;
+    }
+    .k-image-preview-options{
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 7px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        background: var(--color-light);
+        .k-image-preview-option-close, .k-image-preview-option-download{
+            padding: 5px 10px;
+            text-transform: uppercase;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .k-image-preview-option-close{
+            color: var(--color-danger);
+            border: var(--border-width, 1px) solid var(--color-danger);
+        }
+        .k-image-preview-option-download{
+            color: var(--color-success);
+            border: var(--border-width, 1px) solid var(--color-success);
+        }
+    }
+    .k-image-preview-loader{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span{
+            width: 15px;
+            height: 15px;
+            background: var(--color-light);
+            border-radius: 50%;
+            margin-left: 5px;
+            animation: loader 1.2s infinite;
+            &:nth-child(1){
+                animation-delay: .2s;
+                background: var(--success-color);
+            }
+            &:nth-child(2){
+                animation-delay: .4s;
+                background: var(--warning-color);
+            }
+            &:nth-child(3){
+                animation-delay: .6s;
+                background: var(--color-dark);
+            }
+            &:nth-child(4){
+                animation-delay: .8s;
+                background: var(--color-secondary);
+            }
+            
+            &:nth-child(5){
+                animation-delay: 1s;
+                background: var(--color-primary);
+            }
+            &:first-child{
+                margin-left: 0;
+            }
+        }
+    }
+    @keyframes animate {
+        0%{
+            transform: scale(.2);
+        }
+        90%{
+            transform: scale(1.05);
+        }
+        100%{
+            transform: scale(1);
+        }
+    }
+    @keyframes loader {
+        0%{
+            transform: scale(1);
+        }
+        50%{
+            transform: scale(.5);
+        }
+        100%{
+            transform: scale(1.1);
+        }
+    }
+}

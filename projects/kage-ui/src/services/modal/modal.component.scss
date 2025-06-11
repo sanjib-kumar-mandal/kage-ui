@@ -1,0 +1,33 @@
+.k-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(var(--color-light-rgb), 0.5);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+  .k-modal-content {
+    background: var(--color-background);
+    position: relative;
+    width: 600px;
+    height: 520px;
+    border: var(--border-width, 1px) solid var(--border-color);
+    .k-modal-close-btn {
+      position: absolute;
+      top: -7px;
+      right: -10px;
+      background: var(--color-background);
+      border: var(--border-width, 1px) solid var(--border-color);
+      width: 30px;
+      height: 30px;
+      color: var(--color-dark);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+}
+@media only screen and (max-width: 622px) {
+  .k-modal-content{
+    height: 96vh !important;
+    width: 96vw !important;
+  }
+}

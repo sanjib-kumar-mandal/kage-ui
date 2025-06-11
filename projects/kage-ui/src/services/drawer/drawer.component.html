@@ -1,0 +1,15 @@
+<div class="k-drawer-backdrop" (click)="close()" tabindex="-1" (keydown)="onEsc($event)"></div>
+
+<aside
+  class="k-drawer"
+  [class.left]="position === 'left'"
+  [class.right]="position === 'right'"
+  [class.open]="isOpen"
+  [style.width]="width"
+>
+    @if (mode === 'template') {
+        <ng-container *ngTemplateOutlet="content"></ng-container>
+    } @else if (mode === 'component') {
+        <ng-container #vc></ng-container>
+    }
+</aside>

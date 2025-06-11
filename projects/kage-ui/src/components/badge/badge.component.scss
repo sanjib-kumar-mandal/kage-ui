@@ -1,0 +1,33 @@
+:host{
+    display: inline-block;
+}
+.k-badge-wrapper{
+    padding: var(--k-badge-padding-top) var(--k-badge-padding-right) var(--k-badge-padding-bottom) var(--k-badge-padding-left);
+    background: transparent;
+    font-family: var(--k-badge-font-family);
+    display: inline-block;
+    font-size: var(--k-badge-font-size);
+    color: var(--k-badge-default-color);
+    border: var(--border-width, 1px) solid var(--k-badge-default-color);
+    &.primary{
+        --k-badge-default-color: var(--color-primary);
+    }
+    &.secondary{
+        --k-badge-default-color: var(--color-secondary);
+    }
+    &.tertiary{
+        --k-badge-default-color: var(--color-tertiary);
+    }
+    &.danger{
+        --k-badge-default-color: var(--color-danger);
+    }
+    &.warning{
+        --k-badge-default-color: var(--color-warning);
+    }
+    &.success{
+        --k-badge-default-color: var(--color-success);
+    }
+    &.info{
+        --k-badge-default-color: var(--color-info);
+    }
+}

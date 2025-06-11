@@ -1,0 +1,25 @@
+<h1>Progress Bar</h1>
+<kage-bread-crumbs>
+    <kage-bread-crumb [href]="'/librery'" label="Librery"></kage-bread-crumb>
+    <kage-bread-crumb [href]="'/librery/progress-bar'" label="Progress Bar"></kage-bread-crumb>
+</kage-bread-crumbs>
+<p class="description">Component Behavior and Input Breakdown</p>
+<h3>Implementation</h3>
+<k-code-preview [htmlCode]="htmlCode">
+    <kage-progress-bar></kage-progress-bar>
+    <kage-progress-bar [value]="30" mode="determinate"></kage-progress-bar>
+    <kage-progress-bar mode="buffer" [value]="20"></kage-progress-bar>
+</k-code-preview>
+<h3>Input</h3>
+<p class="description">List of Input Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>mode</p><p>'determinate' | 'buffer' | 'indeterminate'. Default 'indeterminate'</p></div>
+        <div class="each"><p>value</p><p>Type `number`. Default 0</p></div>
+        <div class="each"><p>color</p><p>Type `string`. Default 'var(--color-primary)'</p></div>
+    </div>
+</div>

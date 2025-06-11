@@ -1,0 +1,14 @@
+kage-input, kage-select, kage-textarea, kage-option, kage-searchbar{
+    --k-input-padding-top: 9px;
+    --k-input-padding-right: 10px;
+    --k-input-padding-bottom: 9px;
+    --k-input-padding-left: 10px;
+    --k-input-text-color: var(--color-text);
+    --k-input-font-family: var(--default-font);
+    --k-input-border-color: var(--border-color);
+    --k-input-border-color-active: var(--border-color-active);
+    --k-input-left-icon-color: var(--border-color);
+    --k-input-right-icon-color: var(--border-color);
+    --k-input-left-icon-color-active: var(--border-color-active);
+    --k-input-right-icon-color-active: var(--border-color-active);
+}

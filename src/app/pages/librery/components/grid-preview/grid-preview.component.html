@@ -1,0 +1,63 @@
+<h1>Grid</h1>
+<kage-bread-crumbs>
+    <kage-bread-crumb [href]="'/librery'" label="Librery"></kage-bread-crumb>
+    <kage-bread-crumb [href]="'/librery/grid'" label="Grid"></kage-bread-crumb>
+</kage-bread-crumbs>
+<p class="description">Component Behavior and Input Breakdown</p>
+<h3>Implementation</h3>
+<k-code-preview>
+    <kage-grid>
+        <kage-row>
+            <kage-col [span]="6"><p>Col 1</p></kage-col>
+            <kage-col [span]="6"> Col 2</kage-col>
+        </kage-row>
+        <kage-row>
+            <kage-col [span]="12">Col 3</kage-col>
+        </kage-row>
+    </kage-grid>
+</k-code-preview>
+<h3>Inputs (k-grid)</h3>
+<p class="description">List of Input Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>gap</p><p>0 | 1 | 2 | 3 | 4</p></div>
+    </div>
+</div>
+<h3>Inputs (k-row)</h3>
+<p class="description">List of Input Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>align</p><p>'start' | 'center' | 'end'. Default 'start'</p></div>
+        <div class="each"><p>justify</p><p>'start' | 'center' | 'end' | 'between' | 'around' | 'evenly'. Default 'start'</p></div>
+    </div>
+</div>
+<h3>Inputs (k-col)</h3>
+<p class="description">List of Input Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>xs</p><p>Type `number`</p></div>
+        <div class="each"><p>sm</p><p>Type `number`</p></div>
+        <div class="each"><p>md</p><p>Type `number`</p></div>
+        <div class="each"><p>lg</p><p>Type `number`</p></div>
+        <div class="each"><p>xl</p><p>Type `number`</p></div>
+        <div class="each"><p>offsetXs</p><p>Type `number`</p></div>
+        <div class="each"><p>offsetSm</p><p>Type `number`</p></div>
+        <div class="each"><p>offsetMd</p><p>Type `number`</p></div>
+        <div class="each"><p>offsetLg</p><p>Type `number`</p></div>
+        <div class="each"><p>offsetXl</p><p>Type `number`</p></div>
+        <div class="each"><p>span</p><p>Type `number`</p></div>
+        <div class="each"><p>offset</p><p>Type `number`</p></div>
+    </div>
+</div>

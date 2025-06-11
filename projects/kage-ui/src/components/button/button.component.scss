@@ -1,0 +1,60 @@
+.k-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--k-button-padding-top) var(--k-button-padding-right) var(--k-button-padding-bottom) var(--k-button-padding-left);
+    cursor: pointer;
+    background: transparent;
+    transition: background 0.2s ease, transform 0.1s ease;
+    position: relative;
+    font-family: var(--k-button-font-family);
+    border: var(--border-width, 1px) solid var(--k-button-color);
+    text-transform: var(--k-button-text-transform);
+    color: var(--k-button-color);
+    font-size: var(--k-button-font-size);
+    width: 100%;
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+    /* Spinner */
+    .spinner {
+        width: var(--k-button-spinner-size);
+        height: var(--k-button-spinner-size);
+        border: var(--border-width, 1px) solid var(--k-button-color);
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    } 
+    &.primary{
+        --k-button-color: var(--color-primary);
+    }    
+    &.secondary {
+        --k-button-color: var(--color-secondary);
+    }    
+    &.tertiary {
+        --k-button-color: var(--color-tertiary);
+    }
+    &.warning{
+        --k-button-color: var(--color-warning);
+    }
+    &.danger {
+        --k-button-color: var(--color-danger);
+    }
+    &.success {
+        --k-button-color: var(--color-success);
+    } 
+    &.info {
+        --k-button-color: var(--color-info);
+    } 
+    &.clear{
+        border-color: transparent;
+    }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

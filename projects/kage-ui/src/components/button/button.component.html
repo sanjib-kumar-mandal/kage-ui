@@ -1,0 +1,27 @@
+<button
+  [attr.type]="type()"
+  [disabled]="disabled() || loading()"
+  [ngClass]="[color() ?? '', fill()]"
+  class="k-button"
+  (click)="handleClick()"
+  [attr.aria-disabled]="disabled() || loading()"
+  [attr.aria-busy]="loading()"
+  [attr.aria-label]="ariaLabel()"
+  role="button"
+  tabindex="0"
+  kageRipple
+  [rippleColor]="getRippleColor"
+>
+    @if (loading()) {
+        <span class="spinner" aria-hidden="true"></span>
+    }
+    @if (!iconRight() && !loading()) {
+        <ng-content select="[icon]"></ng-content>
+    }
+    @if (!loading()) {
+        <ng-content></ng-content>
+    }
+    @if (iconRight() && !loading()) {
+        <ng-content select="[icon]"></ng-content>
+    }
+</button>

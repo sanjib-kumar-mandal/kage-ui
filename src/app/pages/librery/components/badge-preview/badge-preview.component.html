@@ -1,0 +1,30 @@
+<h1>Badge</h1>
+<kage-bread-crumbs>
+    <kage-bread-crumb href="/librery" label="Librery"></kage-bread-crumb>
+    <kage-bread-crumb href="/librery/badge" label="Badge"></kage-bread-crumb>
+</kage-bread-crumbs>
+<p class="description">Component Behavior and Input Breakdown</p>
+<h3>Implementation</h3>
+<k-code-preview [htmlCode]="htmlCode">
+    <div class="badges">
+        <kage-badge>1K</kage-badge>
+        <kage-badge color="primary">10K</kage-badge>
+        <kage-badge color="secondary">100K</kage-badge>
+        <kage-badge color="tertiary">1000K</kage-badge>
+        <kage-badge color="danger">10000K</kage-badge>
+        <kage-badge color="success">50000K</kage-badge>
+        <kage-badge color="warning">100000K</kage-badge>
+        <kage-badge color="info">500000K</kage-badge>
+    </div>
+</k-code-preview>
+<h3>Inputs</h3>
+<p class="description">List of Input Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>color</p><p>'primary' | 'secondary' | 'tertiary' | 'danger' | 'success' | 'warning' | 'info'</p></div>
+    </div>
+</div>

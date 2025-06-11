@@ -1,0 +1,46 @@
+:host {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  pointer-events: none;
+
+  .k-drawer-backdrop {
+    position: absolute;
+    inset: var(--k-drawer-backdrop-inset);
+    background: var(--k-drawer-backdrop-background);
+    pointer-events: auto;
+    opacity: var(--k-drawer-backdrop-opacity);
+    animation: fadeIn 0.3s forwards;
+  }
+
+  .k-drawer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: var(--k-drawer-background);
+    box-shadow: var(--k-drawer-box-shadow);
+    transition: transform 0.3s ease;
+    overflow: auto;
+    pointer-events: auto;
+
+    &.left {
+      left: 0;
+      transform: translateX(-100%);
+    }
+
+    &.right {
+      right: 0;
+      transform: translateX(100%);
+    }
+
+    &.open {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+label{
+  .k-option {
+    padding: var(--k-input-padding-top) var(--k-input-padding-right) var(--k-input-padding-bottom) var(--k-input-padding-left);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: var(--border-width, 1px) solid var(--k-input-border-color);
+    transition: .3s;
+    &.selected {
+      background: var(--color-primary);
+    }
+    input {
+      display: none;
+    }
+    &:hover{
+      background: color-mix(in srgb, var(--color-background) 90%, var(--color-medium) 10%);
+    }
+  }
+}

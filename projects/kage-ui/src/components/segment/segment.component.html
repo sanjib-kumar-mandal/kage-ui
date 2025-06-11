@@ -1,0 +1,19 @@
+<div class="k-segment-container" [class.disabled]="disabled()">
+    <div class="k-segments">
+        @for (opt of normalizedOptions; track $index) {
+            <button
+                [class.active]="opt.value === selectedValue"
+                [disabled]="opt.disabled || disabled()"
+                (click)="select(opt.value, opt.disabled)"
+                role="radio"
+                [attr.aria-checked]="opt.value === selectedValue"
+                [attr.aria-disabled]="opt.disabled || disabled()"
+            >
+                {{ opt.label }}
+            </button>
+        }
+    </div>
+    <div class="k-segment-content">
+        <ng-content></ng-content>
+    </div>
+</div>

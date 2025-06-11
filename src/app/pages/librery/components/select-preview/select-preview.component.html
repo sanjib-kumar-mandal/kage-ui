@@ -1,0 +1,39 @@
+<h1>Select</h1>
+<kage-bread-crumbs>
+    <kage-bread-crumb [href]="'/librery'" label="Librery"></kage-bread-crumb>
+    <kage-bread-crumb [href]="'/librery/select'" label="Select"></kage-bread-crumb>
+</kage-bread-crumbs>
+<p class="description">Component Behavior and Input Breakdown</p>
+<h3>Implementation</h3>
+<k-code-preview [htmlCode]="htmlCode" [scssCode]="scssCode">
+    <div class="previewer">
+        <kage-select placeholder="Choose fruits" [name]="'test'" [multiple]="false">
+            @for (fruit of ['Apple', 'Banana', 'Orange']; track $index) {
+                <kage-option [value]="fruit" [label]="fruit"></kage-option>
+            }
+        </kage-select>
+    </div>
+</k-code-preview>
+<h3>Input</h3>
+<p class="description">List of Input Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>placeholder</p><p>Type `string`. Default 'Select...'</p></div>
+        <div class="each"><p>multiple</p><p>Type `boolean`. Default false</p></div>
+    </div>
+</div>
+<h3>Output</h3>
+<p class="description">List of Output Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>valueChange</p><p>Type `any`</p></div>
+    </div>
+</div>

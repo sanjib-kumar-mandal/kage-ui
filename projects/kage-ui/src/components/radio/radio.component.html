@@ -1,0 +1,12 @@
+<label [ngClass]="[color()]">
+    <input
+        type="radio"
+        [name]="name"
+        [value]="value()"
+        [checked]="checked"
+        [disabled]="disabled()"
+        (change)="onSelect()"
+    />
+    <span class="k-radio"></span>
+    <ng-content></ng-content>
+</label>

@@ -1,0 +1,42 @@
+:host {
+  display: block;
+}
+.preview-item {
+  background: color-mix(in srgb, var(--color-background) 95%, var(--color-medium) 5%);
+  .tabs {
+    display: flex;
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      color: var(--color-dark);
+      transition: .4s;
+      &.active {
+        background: var(--border-color, var(--color-medium));
+        color: var(--color-background);
+      }
+      &:last-child{
+        border-right: none;
+      }
+    }
+  }
+  .tab-content {
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    background: color-mix(in srgb, var(--color-background) 98%, var(--color-medium) 2%);
+    padding: 30px;
+    pre {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      border: none;
+      background: transparent;
+      color: var(--color-dark);
+      resize: none;
+      code{
+        text-wrap: wrap;
+      }
+    }
+  }
+}

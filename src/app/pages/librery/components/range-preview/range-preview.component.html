@@ -1,0 +1,43 @@
+<h1>Range</h1>
+<kage-bread-crumbs>
+    <kage-bread-crumb [href]="'/librery'" label="Librery"></kage-bread-crumb>
+    <kage-bread-crumb [href]="'/librery/range'" label="Range"></kage-bread-crumb>
+</kage-bread-crumbs>
+<p class="description">Component Behavior and Input Breakdown</p>
+<h3>Implementation</h3>
+<k-code-preview [htmlCode]="htmlCode" [scssCode]="scssCode">
+    <kage-range></kage-range>
+    <kage-range color="danger" [showTooltip]="true"></kage-range>
+    <kage-range color="success" [showTooltip]="true"></kage-range>
+    <kage-range color="warning" [showTooltip]="true"></kage-range>
+</k-code-preview>
+<h3>Input</h3>
+<p class="description">List of Input Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>min</p><p>Type `number`. Default 0</p></div>
+        <div class="each"><p>max</p><p>Type `number`. Default 100</p></div>
+        <div class="each"><p>step</p><p>Type `number`. Default 1</p></div>
+        <div class="each"><p>disabled</p><p>Type `boolean`. Default false</p></div>
+        <div class="each"><p>ticks</p><p>Type `boolean | Array&lt;string>`. Default false</p></div>
+        <div class="each"><p>showTooltip</p><p>Type `boolean`. Default false</p></div>
+        <div class="each"><p>color</p><p>'primary' | 'secondary' | 'tertiary' | 'success' | 'danger' | 'warning' | 'info'</p></div>
+    </div>
+</div>
+<h3>Output</h3>
+<p class="description">List of Output Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>valueChange</p><p>Type `number`</p></div>
+        <div class="each"><p>focus</p><p>Type `void`</p></div>
+        <div class="each"><p>blur</p><p>Type `void`</p></div>
+    </div>
+</div>

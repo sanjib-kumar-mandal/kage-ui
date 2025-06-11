@@ -1,0 +1,28 @@
+<div class="full-body">
+    <div class="header">
+        <k-header></k-header>
+    </div>
+    <div class="body scroll-bar">
+        <div class="container">
+            <div class="heading">
+                <h1>Icons</h1>
+                <p class="description">All Icons are listed here.</p>
+            </div>
+            <div class="all-icons">
+                @for (item of listofIcons; track $index) {
+                    <div class="icon-holder" [kageCopy]="'<k-icon name='+item+'></k-copy>'">
+                        <kage-icon [name]="item"></kage-icon>
+                        <p>{{item}}</p>
+                    </div>
+                }
+            </div>
+            <div class="usage">
+                <h3>Usage</h3>
+                <k-code-preview [htmlCode]="htmlCode" [scssCode]="scssCode" [tsCode]="tsCode">
+                    <kage-icon name="home"></kage-icon>
+                    <kage-icon [svgSrc]="'https://www.svgrepo.com/show/535439/home-1.svg'"></kage-icon>
+                </k-code-preview>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+kage-radio-group{
+    --k-radio-buttons-direction: row; // column
+    --k-radio-buttons-gap: 1rem;
+    kage-radio{
+        --k-radio-size: 16px;
+        --k-radio-indicator-size: 9px;
+        --k-radio-area-width: fit-content; // 100%, auto, max-content, inherit, unset
+        --k-radio-color: var(--border-color);
+        --k-radio-color-checked: var(--color-tertiary);
+        --k-radio-disable-opacity: 0.6;
+    }
+}

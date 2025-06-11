@@ -1,0 +1,22 @@
+<div class="k-searchbar-wrapper" [class.disabled]="disabled()">
+  <span class="search-icon" aria-hidden="true">
+    <kage-icon name="search"></kage-icon>
+  </span>
+
+  <input
+    type="text"
+    [attr.placeholder]="placeholder()"
+    [value]="value"
+    [disabled]="disabled()"
+    (input)="onInput($event)"
+    (blur)="onTouched()"
+    [attr.aria-label]="placeholder()"
+    [autofocus]="autofocus()"
+  />
+
+  @if (value && showClear()) {
+    <button class="clear-btn" type="button" aria-label="Clear search" (click)="clear()">
+      <kage-icon name="remove"></kage-icon>
+    </button>
+  }
+</div>

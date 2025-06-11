@@ -1,0 +1,88 @@
+.k-toggle-wrapper{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    cursor: pointer;
+    input{
+        display: none;
+    }
+    span.k-toggle{
+        width: var(--k-toggle-width);
+        height: var(--k-toggle-height);
+        background: var(--color-background);
+        display: inline-block;
+        border: var(--border-width, 1px) solid var(--k-toggle-color);
+        border-radius: 15px;
+        position: relative;
+        overflow: hidden;
+        &::after{
+            content: '';
+            width: var(--k-toggle-indicator-width);
+            height: var(--k-toggle-indicator-height);
+            background: var(--k-toggle-color);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: var(--k-toggle-indication-initial-position);
+            transform: translate(0, -50%);
+            transition: .4s;
+        }
+    }
+    input:checked + span.k-toggle{
+        border-color: var(--k-toggle-color-active);
+        &::after{
+            transform: translate(0, -50%) translateX(var(--k-toggle-indication-active-position));
+            background: var(--k-toggle-color-active);
+        }
+        // &.success{
+        //     border-color: var(--color-success);
+        //     &::after{
+        //         background: var(--color-success);
+        //     }
+        // }
+        // &.danger{
+        //     border-color: var(--color-danger);
+        //     &::after{
+        //         background: var(--color-danger);
+        //     }
+        // }
+        // &.warning{
+        //     border-color: var(--color-warning);
+        //     &::after{
+        //         background: var(--color-warning);
+        //     }
+        // }
+    }
+    input:disabled + span.k-toggle{
+        pointer-events: none;
+        opacity: var(--k-toggle-disable-opacity);
+    }
+    p{
+        display: none;
+        &:not(:empty){
+            margin-left: 10px;
+            display: block;
+        }
+    }
+    &.primary{
+        --k-toggle-color-active: var(--color-primary);
+    }
+    &.secondary{
+        --k-toggle-color-active: var(--color-secondary);
+    }
+    &.tertiary{
+        --k-toggle-color-active: var(--color-tertiary);
+    }
+    &.success{
+        --k-toggle-color-active: var(--color-success);
+    }
+    &.danger{
+        --k-toggle-color-active: var(--color-danger);
+    }
+    &.warning{
+        --k-toggle-color-active: var(--color-warning);
+    }
+    &.info{
+        --k-toggle-color-active: var(--color-info);
+    }
+}

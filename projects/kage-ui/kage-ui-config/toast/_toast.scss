@@ -1,0 +1,12 @@
+.k-toast-wrapper{
+    position: fixed;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+
+    &.top-left     { top: 1rem; left: 1rem; align-items: flex-start; }
+    &.top-right    { top: 1rem; right: 1rem; align-items: flex-end; }
+    &.bottom-left  { bottom: 1rem; left: 1rem; align-items: flex-start; }
+    &.bottom-right { bottom: 1rem; right: 1rem; align-items: flex-end; }
+}
