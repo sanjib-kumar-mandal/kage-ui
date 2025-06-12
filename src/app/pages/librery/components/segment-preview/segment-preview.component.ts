@@ -23,6 +23,19 @@ import {
 export class SegmentPreviewComponent {
   htmlCode = `<k-segment \n[options]="options" \n(onSegmentChange)="segmentChanged($event)" \n[(ngModel)]="tabId">\n\t<p>Content</p>\n</k-segment>`;
   scssCode = ``;
+  tsCode = `
+  import { Component } from '@angular/core';
+  import { KageSegment } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageSegment, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {}
+  `;
 
   tabId = '2';
 

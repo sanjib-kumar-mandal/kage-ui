@@ -21,6 +21,9 @@
       overflow-x: auto;
       pre{
         width: max-content;
+        code{
+          font-family: monospace, math, 'system-ui';
+        }
       }
     }
   }

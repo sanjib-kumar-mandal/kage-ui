@@ -11,5 +11,17 @@ import { KageBreadCrumb, KageBreadCrumbs, KageToggle } from 'kage-ui';
 export class TogglePreviewComponent {
   htmlCode = ``;
   scssCode = ``;
-  tsCode = ``;
+  tsCode = `
+  import { Component } from '@angular/core';
+  import { KageToggle } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageToggle, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {}
+  `;
 }

@@ -7,5 +7,15 @@
 <p class="description">Pipe Behavior and Input Breakdown</p>
 <h3>Implementation</h3>
 <app-code-preview [htmlCode]="htmlCode" [tsCode]="tsCode" [scssCode]="scssCode">
-    No preview
+    <!-- Truncate to 10 characters -->
+    <p>{{ 'This is a long sentence that needs truncation.' | truncate:10 }}</p><br/>
+    <!-- Output: "This is a ..." -->
+
+    <!-- Custom suffix -->
+    <p>{{ 'Stick UI is awesome' | truncate:8:' >>' }}</p><br/>
+    <!-- Output: "Stick UI >>" -->
+
+    <!-- No truncation needed -->
+    <p>{{ 'Short' | truncate:10 }}</p>
+    <!-- Output: "Short" -->
 </app-code-preview>

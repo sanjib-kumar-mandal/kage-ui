@@ -17,5 +17,17 @@ export class BreadCrumbsPreviewComponent {
         <k-bread-crumb label="Test" href="#test"></k-bread-crumb>
     </k-bread-crumbs>`;
   scssCode = ``;
-  tsCode = ``;
+  tsCode = `
+      import { Component } from '@angular/core';
+      import { KageBreadCrumb, KageBreadCrumbs } from 'kage-ui';
+      ...
+
+      @Component({
+        selector: 'app-example',
+        imports: [ KageBreadCrumb, KageBreadCrumbs, ... ],
+        templateUrl: '...',
+        styleUrl: '...',
+      })
+      export class AppExampleComponent {}
+  `;
 }

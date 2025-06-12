@@ -22,4 +22,17 @@ import {
 export class SelectPreviewComponent {
   htmlCode = ``;
   scssCode = ``;
+  tsCode = `
+  import { Component } from '@angular/core';
+  import { KageSelect, KageOption } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageSelect, KageOption, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {}
+  `;
 }

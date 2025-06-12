@@ -10,4 +10,17 @@ import { KageBreadCrumb, KageBreadCrumbs, KageBadge } from 'kage-ui';
 })
 export class BadgePreviewComponent {
   htmlCode = `<k-badge>100K</k-badge>\n<k-badge color="danger">10K</k-badge>\n<k-badge color="success">50K</k-badge>\n<k-badge color="warning">100K</k-badge>`;
+  tsCode = `
+      import { Component } from '@angular/core';
+      import { KageBadge } from 'kage-ui';
+      ...
+
+      @Component({
+        selector: 'app-example',
+        imports: [ KageBadge, ... ],
+        templateUrl: '...',
+        styleUrl: '...',
+      })
+      export class AppExampleComponent {}
+    `;
 }

@@ -9,7 +9,19 @@ import { KageBreadCrumb, KageBreadCrumbs } from 'kage-ui';
   styleUrl: './bytes-preview.component.scss',
 })
 export class BytesPreviewComponent {
-  tsCode = `No code`;
+  tsCode = `
+  import { Component } from '@angular/core';
+  import { KageBytesPipe } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageBytesPipe, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {}
+  `;
   htmlCode = `
     <p>{{ 1048576 | bytes }}</p>
     <!-- Output: "1 MB" -->
@@ -17,5 +29,5 @@ export class BytesPreviewComponent {
     <p>{{ 2048 | bytes:0 }}</p>
     <!-- Output: "2 KB" -->
   `;
-  scssCode = `No SCSS`;
+  scssCode = ``;
 }

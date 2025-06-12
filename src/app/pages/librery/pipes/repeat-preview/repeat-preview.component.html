@@ -7,5 +7,9 @@
 <p class="description">Pipe Behavior and Input Breakdown</p>
 <h3>Implementation</h3>
 <app-code-preview [htmlCode]="htmlCode" [tsCode]="tsCode" [scssCode]="scssCode">
-    No preview
+    <!-- Repeat a character -->
+    <p>{{ '*' | repeat:5 }}</p> 
+
+    <!-- Repeat a string -->
+    <p>{{ 'Hi ' | repeat:3 }}</p> 
 </app-code-preview>

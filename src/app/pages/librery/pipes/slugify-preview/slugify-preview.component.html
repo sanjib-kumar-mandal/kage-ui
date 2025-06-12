@@ -7,5 +7,9 @@
 <p class="description">Pipe Behavior and Input Breakdown</p>
 <h3>Implementation</h3>
 <app-code-preview [htmlCode]="htmlCode" [tsCode]="tsCode" [scssCode]="scssCode">
-    No preview
+    <h2>Slugify Example</h2><br/><br/>
+    <p>Original: {{ title }}</p><br/><br/>
+    <!-- Original: My Awesome Blog Post! -->
+    <p>Slug: {{ title | slugify }}</p>
+    <!-- Slug: my-awesome-blog-post -->
 </app-code-preview>

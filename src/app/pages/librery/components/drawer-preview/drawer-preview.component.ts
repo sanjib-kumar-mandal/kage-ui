@@ -14,6 +14,36 @@ import {
   styleUrl: './drawer-preview.component.scss',
 })
 export class DrawerPreviewComponent {
+  tsCode = `
+  import { Component } from '@angular/core';
+  import { KageDrawerCtrl } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {
+  
+    constructor(private drawer: KageDrawerCtrl) {}
+
+    openRight(template: TemplateRef<any>) {
+      this.drawer.openFromTemplate(template, {
+        position: 'right',
+        width: '320px',
+      });
+    }
+
+    openLeft(template: TemplateRef<any>) {
+      this.drawer.openFromTemplate(template, {
+        position: 'left',
+        width: '320px',
+      });
+    }
+  }
+  `;
   constructor(private drawer: KageDrawerCtrl) {}
 
   openRight(template: TemplateRef<any>) {

@@ -17,7 +17,7 @@ export class AlertPreviewComponent {
   private alert = inject(KageAlertCtrl);
 
   async prompt() {
-    const result = await this.alert.show({
+    await this.alert.show({
       title: 'Login Required',
       message: 'Please enter your credentials.',
       dismissible: true,
@@ -36,4 +36,43 @@ export class AlertPreviewComponent {
       ],
     });
   }
+
+  htmlCode = `<kage-button (click)="prompt()">Click me</kage-button>`;
+  scssCode = ``;
+  tsCode = `
+  import { Component } from '@angular/core';
+  import { KageButton, KageAlertCtrl } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageButton, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {
+    private alert = inject(KageAlertCtrl);
+
+    async prompt() {
+      await this.alert.show({
+        title: 'Login Required',
+        message: 'Please enter your credentials.',
+        dismissible: true,
+        inputs: [
+          { name: 'username', label: 'Username', placeholder: 'Enter username' },
+          {
+            name: 'password',
+            label: 'Password',
+            type: 'password',
+            placeholder: 'Enter password',
+          },
+        ],
+        buttons: [
+          { label: 'Cancel', role: 'cancel', color: 'danger' },
+          { label: 'Login', role: 'confirm', color: 'success', primary: true },
+        ],
+      });
+    }
+  }
+  `;
 }

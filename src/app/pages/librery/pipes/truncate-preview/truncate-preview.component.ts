@@ -1,15 +1,32 @@
 import { Component } from '@angular/core';
 import { CodePreviewComponent } from '@component/code-preview/code-preview.component';
-import { KageBreadCrumb, KageBreadCrumbs } from 'kage-ui';
+import { KageBreadCrumb, KageBreadCrumbs, KageTruncatePipe } from 'kage-ui';
 
 @Component({
   selector: 'app-truncate-preview',
-  imports: [CodePreviewComponent, KageBreadCrumb, KageBreadCrumbs],
+  imports: [
+    CodePreviewComponent,
+    KageBreadCrumb,
+    KageBreadCrumbs,
+    KageTruncatePipe,
+  ],
   templateUrl: './truncate-preview.component.html',
   styleUrl: './truncate-preview.component.scss',
 })
 export class TruncatePreviewComponent {
-  tsCode = ``;
+  tsCode = `
+  import { Component } from '@angular/core';
+  import { KageTruncatePipe } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageTruncatePipe, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {}
+  `;
   htmlCode = `
     <!-- Truncate to 10 characters -->
     <p>{{ 'This is a long sentence that needs truncation.' | truncate:10 }}</p>
@@ -23,5 +40,5 @@ export class TruncatePreviewComponent {
     <p>{{ 'Short' | truncate:10 }}</p>
     <!-- Output: "Short" -->
   `;
-  scssCode = `No SCSS`;
+  scssCode = ``;
 }

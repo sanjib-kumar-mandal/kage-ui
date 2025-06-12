@@ -16,5 +16,17 @@ import { KageRippleDirective, KageBreadCrumb, KageBreadCrumbs } from 'kage-ui';
 export class RippleDirectivePreviewComponent {
   htmlCode = `<div style="width: 100px; height: 20px; border: 2px solid red;" kRipple [rippleColor]="'red'">Click me</div>`;
   scssCode = ``;
-  tsCode = ``;
+  tsCode = `
+  import { Component } from '@angular/core';
+  import { KageRippleDirective } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageRippleDirective, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {}
+  `;
 }

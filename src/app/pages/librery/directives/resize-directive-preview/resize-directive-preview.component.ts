@@ -30,6 +30,19 @@ export class ResizeDirectivePreviewComponent {
   >
     Resize me!
   </div>`;
+  tsCode = `
+  import { Component } from '@angular/core';
+  import { KageResizeDirective } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageResizeDirective, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {}
+  `;
 
   handleResize() {
     console.log('Handle own');

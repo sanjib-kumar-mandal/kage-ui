@@ -31,5 +31,17 @@ export class AccordionPreviewComponent {
         <p slot="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate dignissimos quo vitae sed sequi? Dolore, vero error explicabo est quos quibusdam nesciunt quo corrupti sint, adipisci accusamus? Tenetur, amet cum!</p>
     </k-accordion>`;
   scssCode = ``;
-  tsCode = ``;
+  tsCode = `
+      import { Component } from '@angular/core';
+      import { KageAccordion } from 'kage-ui';
+      ...
+
+      @Component({
+        selector: 'app-example',
+        imports: [ KageAccordion, ... ],
+        templateUrl: '...',
+        styleUrl: '...',
+      })
+      export class AppExampleComponent {}
+    `;
 }

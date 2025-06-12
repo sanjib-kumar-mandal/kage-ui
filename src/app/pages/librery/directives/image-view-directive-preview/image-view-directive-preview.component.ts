@@ -20,5 +20,17 @@ import {
 export class ImageViewDirectivePreviewComponent {
   htmlCode = `<img style="width: 200px; height: 160px;" kImageView src="https://images.pexels.com/photos/8563018/pexels-photo-8563018.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">`;
   scssCode = ``;
-  tsCode = ``;
+  tsCode = `
+  import { Component } from '@angular/core';
+  import { KageImageViewDirective } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageImageViewDirective, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {}
+  `;
 }

@@ -26,5 +26,17 @@ export class CardPreviewComponent {
         </div>
     </k-card>`;
   scssCode = `scss code`;
-  tsCode = ``;
+  tsCode = `
+  import { Component } from '@angular/core';
+  import { KageCard } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageCard, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {}
+  `;
 }

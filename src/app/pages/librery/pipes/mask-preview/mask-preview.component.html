@@ -7,5 +7,7 @@
 <p class="description">Pipe Behavior and Input Breakdown</p>
 <h3>Implementation</h3>
 <app-code-preview [htmlCode]="htmlCode" [tsCode]="tsCode" [scssCode]="scssCode">
-    No preview
+    <p>{{ '1234567812345678' | mask:'*':0:4 }}</p><br/><br/>
+    <p>{{ 'john.doe@example.com' | mask:'*':2:12 }}</p><br/><br/>
+    <p>{{ 'SecretValue' | mask }}</p>
 </app-code-preview>

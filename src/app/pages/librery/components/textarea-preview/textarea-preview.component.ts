@@ -16,5 +16,17 @@ import { KageBreadCrumb, KageBreadCrumbs, KageTextarea } from 'kage-ui';
 export class TextareaPreviewComponent {
   htmlCode = ``;
   scssCode = ``;
-  tsCode = ``;
+  tsCode = `
+  import { Component } from '@angular/core';
+  import { KageTextarea } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageTextarea, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {}
+  `;
 }

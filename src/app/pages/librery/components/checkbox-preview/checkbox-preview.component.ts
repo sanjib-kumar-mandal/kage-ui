@@ -17,5 +17,17 @@ import { KageBreadCrumb, KageBreadCrumbs, KageCheckbox } from 'kage-ui';
 export class CheckboxPreviewComponent {
   htmlCode = `<k-checkbox>Default Checkbox</k-checkbox>\n<k-checkbox color="warning">Warning Checkbox</k-checkbox>\n<k-checkbox color="success">Success Checkbox</k-checkbox>\n<k-checkbox color="danger">Danger Checkbox</k-checkbox>`;
   scssCode = ``;
-  tsCode = ``;
+  tsCode = `
+  import { Component } from '@angular/core';
+  import { KageCheckbox } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageCheckbox, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {}
+  `;
 }

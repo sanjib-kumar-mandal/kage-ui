@@ -11,4 +11,17 @@ import { KageBreadCrumb, KageBreadCrumbs, KageButton } from 'kage-ui';
 export class ButtonPreviewComponent {
   htmlCode = `<k-button color="danger" [loading]="true">Button</k-button>\n<k-button color="success">Button</k-button>\n<k-button color="warning">Button</k-button>`;
   scssCode = ``;
+  tsCode = `
+  import { Component } from '@angular/core';
+  import { KageButton } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageButton, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {}
+  `;
 }

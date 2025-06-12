@@ -22,5 +22,17 @@ import {
 export class RadioPreviewComponent {
   htmlCode = ``;
   scssCode = ``;
-  tsCode = ``;
+  tsCode = `
+  import { Component } from '@angular/core';
+  import { KageRadio, KageRadioGroup } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageRadio, KageRadioGroup, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {}
+  `;
 }

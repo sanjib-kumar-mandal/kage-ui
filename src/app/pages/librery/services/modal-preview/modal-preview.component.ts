@@ -19,4 +19,26 @@ export class ModalPreviewComponent {
   showModal() {
     this.modalService.open(ModalCompComponent);
   }
+
+  tsCode = `
+  import { Component } from '@angular/core';
+  import { KageButton, KageModalCtrl } from 'kage-ui';
+  import { ModalCompComponent } from 'path-to-my-modal-component';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageButton, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {
+    private modalService = inject(KageModalCtrl);
+    showModal() {
+      this.modalService.open(MyModalComponent);
+    }
+  }
+  `;
+  htmlCode = `<kage-button (click)="showModal()">Click me</kage-button>`;
+  scssCode = ``;
 }

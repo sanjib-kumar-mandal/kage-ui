@@ -11,4 +11,17 @@ import { KageBreadCrumb, KageBreadCrumbs, KageChip } from 'kage-ui';
 export class ChipPreviewComponent {
   htmlCode = `<k-chip>Chip</k-chip>\n<k-chip color="danger" [removable]="true">Chip</k-chip>\n<k-chip color="success">Chip</k-chip>\n<k-chip color="warning">Chip</k-chip>\n<k-chip shape="radial">Chip</k-chip>\n<k-chip color="danger" shape="radial">Chip</k-chip>\n<k-chip color="success" shape="radial" [removable]="true">Chip</k-chip>\n<k-chip color="warning" shape="radial">Chip</k-chip>`;
   scssCode = ``;
+  tsCode = `
+  import { Component } from '@angular/core';
+  import { KageChip } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageChip, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {}
+  `;
 }

@@ -1,16 +1,34 @@
 import { Component } from '@angular/core';
 import { CodePreviewComponent } from '@component/code-preview/code-preview.component';
-import { KageBreadCrumb, KageBreadCrumbs } from 'kage-ui';
+import { KageBreadCrumb, KageBreadCrumbs, KageSlugifyPipe } from 'kage-ui';
 
 @Component({
   selector: 'app-slugify-preview',
-  imports: [CodePreviewComponent, KageBreadCrumb, KageBreadCrumbs],
+  imports: [
+    CodePreviewComponent,
+    KageBreadCrumb,
+    KageBreadCrumbs,
+    KageSlugifyPipe,
+  ],
   templateUrl: './slugify-preview.component.html',
   styleUrl: './slugify-preview.component.scss',
 })
 export class SlugifyPreviewComponent {
+  title = 'My Awesome Blog Post!';
   tsCode = `
+  import { Component } from '@angular/core';
+  import { KageSlugifyPipe } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageSlugifyPipe, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {
     title = 'My Awesome Blog Post!';
+  }
   `;
   htmlCode = `
     <h2>Slugify Example</h2>
@@ -19,5 +37,5 @@ export class SlugifyPreviewComponent {
     <p>Slug: {{ title | slugify }}</p>
     <!-- Slug: my-awesome-blog-post -->
   `;
-  scssCode = `No SCSS`;
+  scssCode = ``;
 }

@@ -38,4 +38,17 @@ export class FabPreviewComponent {
             <k-fab-button-expand-item><mat-icon fontIcon="token"></mat-icon></k-fab-button-expand-item>
             <k-fab-button-expand-item [disabled]="true"><mat-icon fontIcon="assistant_navigation"></mat-icon></k-fab-button-expand-item>
         </k-fab-button>`;
+  tsCode = `
+    import { Component } from '@angular/core';
+    import { KageCheckbox } from 'kage-ui';
+    ...
+
+    @Component({
+      selector: 'app-example',
+      imports: [ KageFab, KageFabItem, ... ],
+      templateUrl: '...',
+      styleUrl: '...',
+    })
+    export class AppExampleComponent {}
+  `;
 }

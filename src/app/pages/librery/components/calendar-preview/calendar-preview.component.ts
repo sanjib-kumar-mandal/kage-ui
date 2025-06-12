@@ -18,7 +18,19 @@ import { KageBreadCrumb, KageBreadCrumbs, KageCalendar } from 'kage-ui';
 export class CalendarPreviewComponent {
   htmlCode = ``;
   scssCode = ``;
-  tsCode = ``;
+  tsCode = `
+  import { Component } from '@angular/core';
+  import { KageCalendar } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageCalendar, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {}
+  `;
 
   dateSelected: any;
 

@@ -21,4 +21,18 @@ import {
   templateUrl: './grid-preview.component.html',
   styleUrl: './grid-preview.component.scss',
 })
-export class GridPreviewComponent {}
+export class GridPreviewComponent {
+  tsCode = `
+  import { Component } from '@angular/core';
+  import { KageGrid, KageRow, KageCol } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageGrid, KageRow, KageCol, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {}
+  `;
+}

@@ -15,4 +15,17 @@ import { KageBreadCrumb, KageBreadCrumbs, KageProgressBar } from 'kage-ui';
 })
 export class ProgressBarPreviewComponent {
   htmlCode = `<k-progress-bar></k-progress-bar>\n<k-progress-bar [value]="30" mode="determinate"></k-progress-bar>\n<k-progress-bar mode="buffer" [value]="20"></k-progress-bar>`;
+  tsCode = `
+  import { Component } from '@angular/core';
+  import { KageProgressBar } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageProgressBar, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {}
+  `;
 }

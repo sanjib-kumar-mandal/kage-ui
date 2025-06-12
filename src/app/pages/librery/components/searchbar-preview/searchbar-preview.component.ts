@@ -16,4 +16,17 @@ import { KageBreadCrumb, KageBreadCrumbs, KageSearchbar } from 'kage-ui';
 export class SearchbarPreviewComponent {
   htmlCode = `<k-searchbar></k-searchbar>\n<k-searchbar [disabled]="true"></k-searchbar>`;
   scssCode = ``;
+  tsCode = `
+  import { Component } from '@angular/core';
+  import { KageSearchbar } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageSearchbar, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {}
+  `;
 }
