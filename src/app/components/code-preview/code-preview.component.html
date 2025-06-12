@@ -1,17 +1,18 @@
-<div class="preview-item">
-    <div class="tabs">
-        @for (tab of ['preview', 'ts', 'html', 'scss']; track $index; let i = $index) {
-            <button [class.active]="activeTab === i" (click)="changeSlide(i)">
-                {{ tab.toUpperCase() }}
-            </button>
-        }
+<div class="code-preview-area">
+    <div class="each">
+        <div class="type-title"><p>Preview</p></div>
+        <div class="code-content"><ng-content></ng-content></div>
     </div>
-    <div class="tab-content">
-        <swiper-container #swiperContainer (swiperslidechange)="slideChanged()">
-            <swiper-slide><div class="preview-frame" #content><ng-content></ng-content></div></swiper-slide>
-            <swiper-slide><pre class="preview-frame"><code #tsBlock></code></pre></swiper-slide>
-            <swiper-slide><pre class="preview-frame"><code #htmlBlock></code></pre></swiper-slide>
-            <swiper-slide><pre class="preview-frame"><code #scssBlock></code></pre></swiper-slide>
-        </swiper-container>
+    <div class="each">
+        <div class="type-title"><p>Typescript</p></div>
+        <div class="code-content"><pre class="preview-frame"><code #tsBlock></code></pre></div>
+    </div>
+    <div class="each">
+        <div class="type-title"><p>HTML</p></div>
+        <div class="code-content"><pre class="preview-frame"><code #htmlBlock></code></pre></div>
+    </div>
+    <div class="each">
+        <div class="type-title"><p>SCSS</p></div>
+        <div class="code-content"><pre class="preview-frame"><code #scssBlock></code></pre></div>
     </div>
 </div>
