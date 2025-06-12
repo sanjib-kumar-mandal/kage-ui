@@ -27,6 +27,12 @@
                 a{
                     text-decoration: none;
                     color: var(--color-secondary);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    img{
+                        max-height: 20px;
+                    }
                 }
                 &:first-child{
                     margin-left: 0;

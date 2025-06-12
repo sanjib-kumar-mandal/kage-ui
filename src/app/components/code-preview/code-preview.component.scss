@@ -23,6 +23,9 @@
         width: max-content;
         code{
           font-family: monospace, math, 'system-ui';
+          &:empty ~ .each{
+            display: none;
+          }
         }
       }
     }

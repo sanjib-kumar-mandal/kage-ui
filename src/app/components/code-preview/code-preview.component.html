@@ -3,16 +3,22 @@
         <div class="type-title"><p>Preview</p></div>
         <div class="code-content"><ng-content></ng-content></div>
     </div>
-    <div class="each">
-        <div class="type-title"><p>Typescript</p></div>
-        <div class="code-content scroll-bar"><pre class="preview-frame"><code #tsBlock></code></pre></div>
-    </div>
-    <div class="each">
-        <div class="type-title"><p>HTML</p></div>
-        <div class="code-content scroll-bar"><pre class="preview-frame"><code #htmlBlock></code></pre></div>
-    </div>
-    <div class="each">
-        <div class="type-title"><p>SCSS</p></div>
-        <div class="code-content scroll-bar"><pre class="preview-frame"><code #scssBlock></code></pre></div>
-    </div>
+    @if (tsCode()) {
+        <div class="each">
+            <div class="type-title"><p>Typescript</p></div>
+            <div class="code-content scroll-bar"><pre class="preview-frame"><code [innerHTML]="highLight('ts')"></code></pre></div>
+        </div>
+    }
+    @if (htmlCode()) {
+        <div class="each">
+            <div class="type-title"><p>HTML</p></div>
+            <div class="code-content scroll-bar"><pre class="preview-frame"><code [innerHTML]="highLight('html')"></code></pre></div>
+        </div>
+    }
+    @if (scssCode()) {
+        <div class="each">
+            <div class="type-title"><p>SCSS</p></div>
+            <div class="code-content scroll-bar"><pre class="preview-frame"><code [innerHTML]="highLight('scss')"></code></pre></div>
+        </div>
+    }
 </div>
