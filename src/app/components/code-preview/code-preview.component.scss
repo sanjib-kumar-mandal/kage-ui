@@ -17,6 +17,11 @@
     .code-content{
       background: color-mix(in srgb, var(--color-background) 95%, var(--color-medium) 5%);
       padding: 10px;
+      overflow-y: hidden;
+      overflow-x: auto;
+      pre{
+        width: max-content;
+      }
     }
   }
 }

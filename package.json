@@ -25,7 +25,6 @@
     "kage-ui": "file:dist/kage-ui",
     "prismjs": "^1.30.0",
     "rxjs": "~7.8.0",
-    "swiper": "^11.2.8",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },

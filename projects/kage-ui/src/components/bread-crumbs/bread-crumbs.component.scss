@@ -16,10 +16,4 @@
         pointer-events: none;
         color: var(--k-bread-crumb-last-text-color);
     }
-    k-icon{
-        svg.k-icon{
-            color: var(--k-bread-crumb-between-icon-color);
-            --icon-size: var(--k-bread-crumb-icon-size) !important;
-        }
-    }
 }
