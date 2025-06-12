@@ -25,12 +25,11 @@ npm install kage-ui
 
 ## 📚 Documentation
 
-Full documentation is available at:
+Full documentation is available at: [Here](https://sanjib-kumar-mandal.github.io/kage-ui-documentation)
 There you'll find:
 
 - Component examples
 - Theming and customization guide
-- Accessibility notes
 - Design tokens and border-based system documentation
 
 ## 🛠️ Development
@@ -43,10 +42,6 @@ cd kage-ui
 npm install
 npm run start
 ```
-
-## 🤝 Contributing
-
-We welcome contributions to **Kage UI!** Please read our CONTRIBUTING.md for setup instructions and guidelines.
 
 ## 📄 License
 
