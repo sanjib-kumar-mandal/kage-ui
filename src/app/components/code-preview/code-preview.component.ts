@@ -19,7 +19,7 @@ import { isPlatformBrowser } from '@angular/common';
 register();
 
 @Component({
-  selector: 'k-code-preview',
+  selector: 'app-code-preview',
   imports: [FormsModule],
   templateUrl: './code-preview.component.html',
   styleUrl: './code-preview.component.scss',
