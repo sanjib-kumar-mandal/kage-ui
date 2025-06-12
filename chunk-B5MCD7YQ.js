@@ -1,0 +1,13 @@
+import{a as x}from"./chunk-XRDJCPEB.js";import{F as S,f as g,h as C,x as f}from"./chunk-AQZ4Q2VB.js";import"./chunk-3GFDRZ37.js";import{Ib as n,Qb as v,Sa as a,bb as d,mb as l,rb as c,sb as s,tb as u,ub as e,vb as t,wb as m}from"./chunk-KDFRMSR3.js";var h=()=>["Apple","Banana","Orange"];function y(r,o){if(r&1&&m(0,"kage-option",8),r&2){let i=o.$implicit;l("value",i)("label",i)}}var b=class r{htmlCode="";scssCode="";tsCode=`
+  import { Component } from '@angular/core';
+  import { KageSelect, KageOption } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageSelect, KageOption, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {}
+  `;static \u0275fac=function(i){return new(i||r)};static \u0275cmp=d({type:r,selectors:[["app-select-preview"]],decls:54,vars:8,consts:[[1,"page-tag"],[1,"component"],["label","Library",3,"href"],["label","Select",3,"href"],[1,"description"],[3,"htmlCode","scssCode","tsCode"],[1,"previewer"],["placeholder","Choose fruits",3,"name","multiple"],[3,"value","label"],[1,"two-col-table"],[1,"two-col-table-head"],[1,"two-col-table-body"],[1,"each"]],template:function(i,p){i&1&&(e(0,"p",0)(1,"span",1),n(2,"Component"),t()(),e(3,"h1"),n(4,"Select"),t(),e(5,"kage-bread-crumbs"),m(6,"kage-bread-crumb",2)(7,"kage-bread-crumb",3),t(),e(8,"p",4),n(9,"Component Behavior and Input Breakdown"),t(),e(10,"h3"),n(11,"Implementation"),t(),e(12,"app-code-preview",5)(13,"div",6)(14,"kage-select",7),s(15,y,1,2,"kage-option",8,c),t()()(),e(17,"h3"),n(18,"Input"),t(),e(19,"p",4),n(20,"List of Input Parameters."),t(),e(21,"div",9)(22,"div",10)(23,"p"),n(24,"Name"),t(),e(25,"p"),n(26,"Default Value | Type"),t()(),e(27,"div",11)(28,"div",12)(29,"p"),n(30,"placeholder"),t(),e(31,"p"),n(32,"Type `string`. Default 'Select...'"),t()(),e(33,"div",12)(34,"p"),n(35,"multiple"),t(),e(36,"p"),n(37,"Type `boolean`. Default false"),t()()()(),e(38,"h3"),n(39,"Output"),t(),e(40,"p",4),n(41,"List of Output Parameters."),t(),e(42,"div",9)(43,"div",10)(44,"p"),n(45,"Name"),t(),e(46,"p"),n(47,"Default Value | Type"),t()(),e(48,"div",11)(49,"div",12)(50,"p"),n(51,"valueChange"),t(),e(52,"p"),n(53,"Type `any`"),t()()()()),i&2&&(a(6),l("href","/library"),a(),l("href","/library/select"),a(5),l("htmlCode",p.htmlCode)("scssCode",p.scssCode)("tsCode",p.tsCode),a(2),l("name","test")("multiple",!1),a(),u(v(7,h)))},dependencies:[x,g,C,S,f],styles:["h1[_ngcontent-%COMP%]{margin-bottom:10px}.description[_ngcontent-%COMP%]{color:var(--color-medium);margin-top:10px}h3[_ngcontent-%COMP%]{color:color-mix(in srgb,var(--color-dark) 80%,var(--color-light) 20%);margin:10px 0}.previewer[_ngcontent-%COMP%]{min-height:300px}"]})};export{b as SelectPreviewComponent};

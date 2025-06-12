@@ -1,1 +1,0 @@
-import{Gb as n,ab as p,sb as t,tb as r}from"./chunk-6ZSAKAH2.js";var i=class o{static \u0275fac=function(e){return new(e||o)};static \u0275cmp=p({type:o,selectors:[["app-popover-preview"]],decls:2,vars:0,template:function(e,a){e&1&&(t(0,"p"),n(1,"popover-preview works!"),r())},encapsulation:2})};export{i as PopoverPreviewComponent};
