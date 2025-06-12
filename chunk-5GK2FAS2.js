@@ -1,0 +1,13 @@
+import{a as c}from"./chunk-YX7X4TWZ.js";import{H as s,f as p,h as d}from"./chunk-AQZ4Q2VB.js";import"./chunk-3GFDRZ37.js";import{Ib as n,Sa as o,bb as m,mb as i,ub as e,vb as t,wb as g}from"./chunk-KDFRMSR3.js";var C=class l{htmlCode="";scssCode="";tsCode=`
+  import { Component } from '@angular/core';
+  import { KageToggle } from 'kage-ui';
+  ...
+
+  @Component({
+    selector: 'app-example',
+    imports: [ KageToggle, ... ],
+    templateUrl: '...',
+    styleUrl: '...',
+  })
+  export class AppExampleComponent {}
+  `;static \u0275fac=function(r){return new(r||l)};static \u0275cmp=m({type:l,selectors:[["app-toggle-preview"]],decls:51,vars:6,consts:[[1,"page-tag"],[1,"component"],["label","Library",3,"href"],["label","Toggle",3,"href"],[1,"description"],[3,"htmlCode","scssCode","tsCode"],[1,"toggles"],[3,"disabled"],["color","primary"],["color","secondary"],["color","tertiary"],["color","success"],["color","danger"],["color","warning"],["color","info"],[1,"two-col-table"],[1,"two-col-table-head"],[1,"two-col-table-body"],[1,"each"]],template:function(r,a){r&1&&(e(0,"p",0)(1,"span",1),n(2,"Component"),t()(),e(3,"h1"),n(4,"Toggle"),t(),e(5,"kage-bread-crumbs"),g(6,"kage-bread-crumb",2)(7,"kage-bread-crumb",3),t(),e(8,"p",4),n(9,"Component Behavior and Input Breakdown"),t(),e(10,"h3"),n(11,"Implementation"),t(),e(12,"app-code-preview",5)(13,"div",6)(14,"kage-toggle",7),n(15,"Disabled here"),t(),e(16,"kage-toggle",8),n(17,"Primary"),t(),e(18,"kage-toggle",9),n(19,"Secondary"),t(),e(20,"kage-toggle",10),n(21,"Tertiary"),t(),e(22,"kage-toggle",11),n(23,"Success"),t(),e(24,"kage-toggle",12),n(25,"Danger"),t(),e(26,"kage-toggle",13),n(27,"Warning"),t(),e(28,"kage-toggle",14),n(29,"Info"),t()()(),e(30,"h3"),n(31,"Input"),t(),e(32,"p",4),n(33,"List of Input Parameters."),t(),e(34,"div",15)(35,"div",16)(36,"p"),n(37,"Name"),t(),e(38,"p"),n(39,"Default Value | Type"),t()(),e(40,"div",17)(41,"div",18)(42,"p"),n(43,"color"),t(),e(44,"p"),n(45,"'primary' | 'secondary' | 'tertiary' | 'danger' | 'success' | 'warning' | 'info'"),t()(),e(46,"div",18)(47,"p"),n(48,"disabled"),t(),e(49,"p"),n(50,"Type `boolean`. Default false"),t()()()()),r&2&&(o(6),i("href","/library"),o(),i("href","/library/toggle"),o(5),i("htmlCode",a.htmlCode)("scssCode",a.scssCode)("tsCode",a.tsCode),o(2),i("disabled",!0))},dependencies:[c,p,d,s],styles:["h1[_ngcontent-%COMP%]{margin-bottom:10px}.description[_ngcontent-%COMP%]{color:var(--color-medium);margin-top:10px}h3[_ngcontent-%COMP%]{color:color-mix(in srgb,var(--color-dark) 80%,var(--color-light) 20%);margin:10px 0}.toggles[_ngcontent-%COMP%]{display:flex;align-items:center;flex-wrap:wrap;gap:10px}"]})};export{C as TogglePreviewComponent};
