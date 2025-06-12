@@ -1,7 +1,0 @@
-import{a as c}from"./chunk-XIOVG2OW.js";import{f as s,h as d}from"./chunk-5Q4OKSLA.js";import"./chunk-7WU6A5OC.js";import{Gb as i,Ra as o,ab as l,kb as n,sb as e,tb as t,ub as m}from"./chunk-6ZSAKAH2.js";var h=class p{tsCode=`
-    description = 'Angular is a powerful framework for building web apps.';
-    searchTerm = 'angular';
-  `;htmlCode=`
-    <p [innerHTML]="description | highlight:searchTerm"></p>
-  `;scssCode="No SCSS";static \u0275fac=function(r){return new(r||p)};static \u0275cmp=l({type:p,selectors:[["app-highlight-preview"]],decls:11,vars:5,consts:[["label","Library",3,"href"],["label","Highlight Pipe",3,"href"],[1,"description"],[3,"htmlCode","tsCode","scssCode"]],template:function(r,a){r&1&&(e(0,"h1"),i(1,"Highlight Pipe"),t(),e(2,"kage-bread-crumbs"),m(3,"kage-bread-crumb",0)(4,"kage-bread-crumb",1),t(),e(5,"p",2),i(6,"Pipe Behavior and Input Breakdown"),t(),e(7,"h3"),i(8,"Implementation"),t(),e(9,"k-code-preview",3),i(10,` No preview
-`),t()),r&2&&(o(3),n("href","/library"),o(),n("href","/library/bytes"),o(5),n("htmlCode",a.htmlCode)("tsCode",a.tsCode)("scssCode",a.scssCode))},dependencies:[c,s,d],styles:["h1[_ngcontent-%COMP%]{margin-bottom:10px}.description[_ngcontent-%COMP%]{color:var(--color-medium);margin-top:10px}h3[_ngcontent-%COMP%]{color:color-mix(in srgb,var(--color-dark) 80%,var(--color-light) 20%);margin:10px 0}"]})};export{h as HighlightPreviewComponent};
