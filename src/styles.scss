@@ -33,3 +33,29 @@
         }
     }
 }
+.page-tag{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    span{
+        padding: 5px 10px;
+    }
+    .component{
+        background: rgba(var(--color-success-rgb), .1);
+        color: var(--color-success);
+    }
+    .directive{
+        background: rgba(var(--color-danger-rgb), .1);
+        color: var(--color-danger);
+    }
+    .pipe{
+        background: rgba(var(--color-warning-rgb), .1);
+        color: var(--color-warning);
+    }
+    .service{
+        background: rgba(var(--color-info-rgb), .1);
+        color: var(--color-info);
+    }
+}
