@@ -1,0 +1,22 @@
+import{a as s}from"./chunk-EBNXTHRV.js";import{e as m,f as p,h as c}from"./chunk-HX5R5U6X.js";import"./chunk-3GFDRZ37.js";import{Ib as a,Sa as r,bb as l,mb as d,ub as e,vb as t,wb as g}from"./chunk-KDFRMSR3.js";var b=class o{htmlCode=`
+    <kage-badge>1K</kage-badge>
+    <kage-badge color="primary">10K</kage-badge>
+    <kage-badge color="secondary">100K</kage-badge>
+    <kage-badge color="tertiary">1000K</kage-badge>
+    <kage-badge color="danger">10000K</kage-badge>
+    <kage-badge color="success">50000K</kage-badge>
+    <kage-badge color="warning">100000K</kage-badge>
+    <kage-badge color="info">500000K</kage-badge>
+  `;tsCode=`
+      import { Component } from '@angular/core';
+      import { KageBadge } from 'kage-ui';
+      ...
+
+      @Component({
+        selector: 'app-example',
+        imports: [ KageBadge, ... ],
+        templateUrl: '...',
+        styleUrl: '...',
+      })
+      export class AppExampleComponent {}
+    `;static \u0275fac=function(n){return new(n||o)};static \u0275cmp=l({type:o,selectors:[["app-badge-preview"]],decls:44,vars:2,consts:[[1,"page-tag"],[1,"component"],["href","/library","label","Library"],["href","/library/badge","label","Badge"],[1,"description"],[3,"htmlCode","tsCode"],[1,"badges"],["color","primary"],["color","secondary"],["color","tertiary"],["color","danger"],["color","success"],["color","warning"],["color","info"],[1,"two-col-table"],[1,"two-col-table-head"],[1,"two-col-table-body"],[1,"each"]],template:function(n,i){n&1&&(e(0,"p",0)(1,"span",1),a(2,"Component"),t()(),e(3,"h1"),a(4,"Badge"),t(),e(5,"kage-bread-crumbs"),g(6,"kage-bread-crumb",2)(7,"kage-bread-crumb",3),t(),e(8,"p",4),a(9,"The Badge component displays small status indicators or counts, typically used to highlight notifications, messages, or item quantities. Useful for emphasizing dynamic updates or statuses in a clean, compact way."),t(),e(10,"app-code-preview",5)(11,"div",6)(12,"kage-badge"),a(13,"1K"),t(),e(14,"kage-badge",7),a(15,"10K"),t(),e(16,"kage-badge",8),a(17,"100K"),t(),e(18,"kage-badge",9),a(19,"1000K"),t(),e(20,"kage-badge",10),a(21,"10000K"),t(),e(22,"kage-badge",11),a(23,"50000K"),t(),e(24,"kage-badge",12),a(25,"100000K"),t(),e(26,"kage-badge",13),a(27,"500000K"),t()()(),e(28,"h3"),a(29,"Inputs"),t(),e(30,"p",4),a(31,"List of Input Parameters."),t(),e(32,"div",14)(33,"div",15)(34,"p"),a(35,"Name"),t(),e(36,"p"),a(37,"Default Value"),t()(),e(38,"div",16)(39,"div",17)(40,"p"),a(41,"color"),t(),e(42,"p"),a(43,"'primary' | 'secondary' | 'tertiary' | 'danger' | 'success' | 'warning' | 'info'"),t()()()()),n&2&&(r(10),d("htmlCode",i.htmlCode)("tsCode",i.tsCode))},dependencies:[s,p,c,m],styles:["h1[_ngcontent-%COMP%]{margin-bottom:10px}.description[_ngcontent-%COMP%]{color:var(--color-medium);margin:10px 0}h3[_ngcontent-%COMP%]{color:color-mix(in srgb,var(--color-dark) 80%,var(--color-light) 20%);margin:10px 0}app-code-preview[_ngcontent-%COMP%]{display:block;margin-bottom:20px}app-code-preview[_ngcontent-%COMP%]   .badges[_ngcontent-%COMP%]{display:flex;flex-wrap:wrap;gap:10px}"]})};export{b as BadgePreviewComponent};
