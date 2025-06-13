@@ -1,0 +1,27 @@
+@mixin maxLine($maxLine: 1) {
+    display: -webkit-box !important;
+    line-clamp: $maxLine;
+    -webkit-line-clamp: $maxLine;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+}
+
+.line-limit-1{
+    @include maxLine(1);
+}
+
+.line-limit-2{
+    @include maxLine(2);
+}
+
+.line-limit-3{
+    @include maxLine(3);
+}
+
+.line-limit-4{
+    @include maxLine(4);
+}
+
+.line-limit-5{
+    @include maxLine(5);
+}

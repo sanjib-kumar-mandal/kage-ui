@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { KageCard, KageImageFallbackDirective } from "kage-ui";
 
 @Component({
   selector: 'k-all',
-  imports: [RouterLink],
+  imports: [KageCard, KageImageFallbackDirective],
   templateUrl: './all.component.html',
   styleUrl: './all.component.scss',
 })

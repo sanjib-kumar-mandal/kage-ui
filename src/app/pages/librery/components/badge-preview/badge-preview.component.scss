@@ -15,8 +15,6 @@ app-code-preview{
     .badges{
         display: flex;
         flex-wrap: wrap;
-        kage-badge{
-            margin-right: 10px;
-        }
+        gap: 10px;
     }
 }

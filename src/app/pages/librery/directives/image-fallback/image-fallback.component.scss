@@ -9,10 +9,8 @@ h3{
     color: color-mix(in srgb, var(--color-dark) 80%, var(--color-light) 20%);
     margin: 10px 0;
 }
-.checkboxes{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 10px;
-    flex-wrap: wrap;
 }

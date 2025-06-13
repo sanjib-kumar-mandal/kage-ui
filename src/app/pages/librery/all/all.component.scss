@@ -39,6 +39,22 @@
                     }
                 }
             }
+            kage-card{
+                .img{
+                    height: 200px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: color-mix(in srgb, var(--color-background) 90%, var(--color-medium) 10%);
+                    img{
+                        max-height: 100%;
+                        max-width: 100%;
+                    }
+                }
+                p[slot="card-content"]{
+                    color: var(--color-medium);
+                }
+            }
         }
     }
 }

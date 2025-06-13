@@ -212,6 +212,10 @@ export const routes: Routes = [
           ).then((m) => m.CopyPreviewComponent),
       },
       {
+        path: 'image-fallback',
+        loadComponent: () => import("@page/librery/directives/image-fallback/image-fallback.component").then((m) => m.ImageFallbackComponent)
+      },
+      {
         path: 'resize',
         loadComponent: () =>
           import(

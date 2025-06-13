@@ -1,0 +1,19 @@
+<p class="page-tag"><span class="directive">Directive</span></p>
+<h1>Copy Directive</h1>
+<kage-bread-crumbs>
+    <kage-bread-crumb href="/library" label="Library"></kage-bread-crumb>
+    <kage-bread-crumb href="/library/copy" label="Copy Directive"></kage-bread-crumb>
+</kage-bread-crumbs>
+<p class="description">Directive Behavior and Input Breakdown</p>
+<h3>Implementation</h3>
+<app-code-preview [htmlCode]="htmlCode" [scssCode]="scssCode" [tsCode]="tsCode">
+    <div class="cards">
+        <kage-card>
+            <div slot="card-image" style="height: 220px;display: flex;align-items: center;justify-content: center;background: color-mix(in srgb, var(--color-background) 90%, var(--color-medium) 10%);">
+                <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/image-fallback.png" alt="">
+            </div>
+            <h2 slot="card-title">Image Fallback</h2>
+            <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+        </kage-card>
+    </div>
+</app-code-preview>

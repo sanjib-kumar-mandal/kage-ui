@@ -3,81 +3,173 @@
     <div class="each-group">
         <h1 class="comp-title">Components</h1>
         <div class="group-items">
-            <div class="item">
-                <a routerLink="/library/accordion">Accordion</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/badge">Badge</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/bread-crumb">Bread Crumb</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/button">Button</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/calendar">Calendar</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/card">Card</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/checkbox">Checkbox</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/chip">Chip</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/drawer">Drawer</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/fab">Fab</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/grid">Grid</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/input">Input</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/progress-bar">Progress Bar</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/radio">Radio</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/range">Range</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/searchbar">Searchbar</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/segment">Segment</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/select">Select</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/textarea">Teatarea</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/toggle">Toggle</a>
-            </div>
+            <kage-card [href]="'/library/accordion'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/accordion.png" alt="">
+                </div>
+                <h2 slot="card-title">Accordion</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/badge'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/badge.png" alt="">
+                </div>
+                <h2 slot="card-title">Badge</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/bread-crumb'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/bread-crumbs.png" alt="">
+                </div>
+                <h2 slot="card-title">Bread Crumbs</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/button'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/button.png" alt="">
+                </div>
+                <h2 slot="card-title">Button</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/calendar'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/calendar.png" alt="">
+                </div>
+                <h2 slot="card-title">Calendar</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/card'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/card.png" alt="">
+                </div>
+                <h2 slot="card-title">Card</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/checkbox'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/checkbox.png" alt="">
+                </div>
+                <h2 slot="card-title">Checkbox</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/chip'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/chip.png" alt="">
+                </div>
+                <h2 slot="card-title">Chip</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/drawer'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" slot="card-image" src="assets/features/drawer.png" alt="">
+                </div>
+                <h2 slot="card-title">Drawer</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/fab'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/fab.png" alt="">
+                </div>
+                <h2 slot="card-title">Fab</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/grid'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/grid.png" alt="">
+                </div>
+                <h2 slot="card-title">Grid</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/input'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/input.png" alt="">
+                </div>
+                <h2 slot="card-title">Input</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/progress-bar'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/progress-bar.png" alt="">
+                </div>
+                <h2 slot="card-title">Progress Bar</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/radio'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/radio.png" alt="">
+                </div>
+                <h2 slot="card-title">Radio</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/range'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/range.png" alt="">
+                </div>
+                <h2 slot="card-title">Range</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/searchbar'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/searchbar.png" alt="">
+                </div>
+                <h2 slot="card-title">Searchbar</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/segment'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/segment.png" alt="">
+                </div>
+                <h2 slot="card-title">Segment</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/select'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/select.png" alt="">
+                </div>
+                <h2 slot="card-title">Select</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/textarea'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/textarea.png" alt="">
+                </div>
+                <h2 slot="card-title">Teatarea</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/toggle'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/toggle.png" alt="">
+                </div>
+                <h2 slot="card-title">Toggle</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
         </div>
     </div>
     <!-- Services -->
     <div class="each-group">
         <h1 class="service-title">Services</h1>
         <div class="group-items">
-            <div class="item">
-                <a routerLink="/library/alert">Alert</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/modal">Modal</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/toast">Toast</a>
-            </div>
+            <kage-card [href]="'/library/alert'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/alert.png" alt="">
+                </div>
+                <h2 slot="card-title">Alert</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/modal'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/modal.png" alt="">
+                </div>
+                <h2 slot="card-title">Modal</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/toast'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/toast.png" alt="">
+                </div>
+                <h2 slot="card-title">Toast</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
             <!-- <div class="item">
                 <a routerLink="/library/popover">Popover</a>
             </div> -->
@@ -87,51 +179,110 @@
     <div class="each-group">
         <h1 class="directive-title">Directives</h1>
         <div class="group-items">
-            <div class="item">
-                <a routerLink="/library/copy">Copy</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/ripple">Ripple</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/resize">Resize</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/image-view">Image View</a>
-            </div>
+            <kage-card [href]="'/library/copy'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/copy.png" alt="">
+                </div>
+                <h2 slot="card-title">Copy</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/image-fallback'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/image-fallback.png" alt="">
+                </div>
+                <h2 slot="card-title">Image Fallback</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/ripple'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/ripple.png" alt="">
+                </div>
+                <h2 slot="card-title">Ripple</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/resize'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/resize.png" alt="">
+                </div>
+                <h2 slot="card-title">Resize</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/image-view'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/image-view.png" alt="">
+                </div>
+                <h2 slot="card-title">Image View</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
         </div>
     </div>
     <!-- Pipes -->
     <div class="each-group">
         <h1 class="pipe-title">Pipes</h1>
         <div class="group-items">
-            <div class="item">
-                <a routerLink="/library/bytes">Bytes</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/capitalize">Capitalize</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/highlight">Highlight</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/mask">Mask</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/ordinate">Ordinate</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/repeat">Repeat</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/slugify">Slugify</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/time-ago">Time Ago</a>
-            </div>
-            <div class="item">
-                <a routerLink="/library/truncate">Truncate</a>
-            </div>
+            <kage-card [href]="'/library/bytes'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/bytes.png" alt="">
+                </div>
+                <h2 slot="card-title">Bytes</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/capitalize'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/capitalize.png" alt="">
+                </div>
+                <h2 slot="card-title">Capitalize</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/highlight'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/highlight.png" alt="">
+                </div>
+                <h2 slot="card-title">Highlight</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/mask'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/mask.png" alt="">
+                </div>
+                <h2 slot="card-title">Mask</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/ordinate'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/ordinate.png" alt="">
+                </div>
+                <h2 slot="card-title">Ordinate</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/repeat'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/repeat.png" alt="">
+                </div>
+                <h2 slot="card-title">Repeat</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/slugify'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/slugify.png" alt="">
+                </div>
+                <h2 slot="card-title">Slugify</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/time-ago'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/time-ago.png" alt="">
+                </div>
+                <h2 slot="card-title">Time Ago</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
+            <kage-card [href]="'/library/truncate'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/truncate.png" alt="">
+                </div>
+                <h2 slot="card-title">Truncate</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
         </div>
     </div>
 </div>
