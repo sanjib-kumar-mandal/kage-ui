@@ -10,7 +10,10 @@ import { CodePreviewComponent } from '@component/code-preview/code-preview.compo
   styleUrl: './icons.component.scss',
 })
 export class IconsComponent {
-  htmlCode = `<k-icon name="home"></k-icon>`;
+  htmlCode = `
+    <k-icon name="home"></k-icon>
+    <kage-icon [svgSrc]="'path_to_your_svg'"></kage-icon>
+  `;
   tsCode = ``;
   scssCode = ``;
   listofIcons = [
