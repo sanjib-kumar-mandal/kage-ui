@@ -2,8 +2,6 @@
 
 **Kage UI** is a lightweight, flexible Angular component library inspired by border-first design systems. It offers a clean set of reusable UI components to help developers build scalable and consistent user interfaces effortlessly.
 
----
-
 ## 🚀 Features
 
 - ⚡ Fast and tree-shakable
@@ -25,7 +23,7 @@ npm install kage-ui
 
 ## 📚 Documentation
 
-Full documentation is available at: [Here](https://sanjib-kumar-mandal.github.io/kage-ui)
+Full documentation is available at [here](https://sanjib-kumar-mandal.github.io/kage-ui)
 There you'll find:
 
 - Component examples
