@@ -16,7 +16,24 @@ import { KageBreadCrumb, KageBreadCrumbs, KageInput, KageIcon } from 'kage-ui';
   styleUrl: './input-peview.component.scss',
 })
 export class InputPeviewComponent {
-  htmlCode = `<k-input></k-input>\n<k-input>\n\t<mat-icon svgIcon="k-icon-mail" slot="icon-start"></mat-icon>\n</k-input>\n<k-input placeholder="Password" type="password">\n\t<mat-icon svgIcon="k-icon-eye" slot="icon-end"></mat-icon>\n</k-input>\n<k-input>\n\t<mat-icon svgIcon="k-icon-eye" slot="icon-end"></mat-icon>\n\t<p slot="hint">Place your hint here</p>\n</k-input>\n<k-input label="Lebel here">\n\t<mat-icon svgIcon="k-icon-eye" slot="icon-end"></mat-icon>\n\t<p slot="hint">Place your hint here</p>\n\t<p slot="error" style="color: red;">Place your error here</p>\n</k-input>`;
+  htmlCode = `
+    <kage-input></kage-input>
+    <kage-input>
+        <kage-icon name="mail" slot="icon-start"></kage-icon>
+    </kage-input>
+    <kage-input placeholder="Password" type="password">
+        <kage-icon name="eye" slot="icon-end"></kage-icon>
+    </kage-input>
+    <kage-input>
+        <kage-icon name="eye" slot="icon-end"></kage-icon>
+        <p slot="hint">Place your hint here</p>
+    </kage-input>
+    <kage-input label="Lebel here">
+        <kage-icon name="eye" slot="icon-end"></kage-icon>
+        <p slot="hint">Place your hint here</p>
+        <p slot="error" style="color: red;">Place your error here</p>
+    </kage-input>
+  `;
   scssCode = ``;
   tsCode = `
   import { Component } from '@angular/core';

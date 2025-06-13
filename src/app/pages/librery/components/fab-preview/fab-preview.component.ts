@@ -18,26 +18,30 @@ import { KageBreadCrumb, KageBreadCrumbs, KageFab, KageFabItem } from 'kage-ui';
   styleUrl: './fab-preview.component.scss',
 })
 export class FabPreviewComponent {
-  htmlCode = `<k-fab-button color="success" position="top-right">
-            <mat-icon slot='icon' fontIcon="add"></mat-icon>
-            <k-fab-button-expand-item color="danger"><mat-icon fontIcon="home"></mat-icon></k-fab-button-expand-item>
-            <k-fab-button-expand-item><mat-icon fontIcon="refresh"></mat-icon></k-fab-button-expand-item>
-        </k-fab-button>
-        <k-fab-button color="danger" position="top-left">
-            <mat-icon slot='icon' fontIcon="add"></mat-icon>
-            <k-fab-button-expand-item [disabled]="true"><mat-icon fontIcon="sync"></mat-icon></k-fab-button-expand-item>
-            <k-fab-button-expand-item><mat-icon fontIcon="terminal"></mat-icon></k-fab-button-expand-item>
-        </k-fab-button>
-        <k-fab-button color="warning" position="bottom-left">
-            <mat-icon slot='icon' fontIcon="add"></mat-icon>
-            <k-fab-button-expand-item><mat-icon fontIcon="file_open"></mat-icon></k-fab-button-expand-item>
-            <k-fab-button-expand-item><mat-icon fontIcon="downloading"></mat-icon></k-fab-button-expand-item>
-        </k-fab-button>
-        <k-fab-button position="bottom-right">
-            <mat-icon slot='icon' fontIcon="add"></mat-icon>
-            <k-fab-button-expand-item><mat-icon fontIcon="token"></mat-icon></k-fab-button-expand-item>
-            <k-fab-button-expand-item [disabled]="true"><mat-icon fontIcon="assistant_navigation"></mat-icon></k-fab-button-expand-item>
-        </k-fab-button>`;
+  htmlCode = `
+  <div class="fab-container">
+      <kage-fab-button color="success" position="top-right">
+          <mat-icon slot='icon' fontIcon="add"></mat-icon>
+          <kage-fab-item color="danger"><mat-icon fontIcon="home"></mat-icon></kage-fab-item>
+          <kage-fab-item><mat-icon fontIcon="refresh"></mat-icon></kage-fab-item>
+      </kage-fab-button>
+      <kage-fab-button color="danger" position="top-left">
+          <mat-icon slot='icon' fontIcon="add"></mat-icon>
+          <kage-fab-item [disabled]="true"><mat-icon fontIcon="sync"></mat-icon></kage-fab-item>
+          <kage-fab-item><mat-icon fontIcon="terminal"></mat-icon></kage-fab-item>
+      </kage-fab-button>
+      <kage-fab-button color="warning" position="bottom-left">
+          <mat-icon slot='icon' fontIcon="add"></mat-icon>
+          <kage-fab-item><mat-icon fontIcon="file_open"></mat-icon></kage-fab-item>
+          <kage-fab-item><mat-icon fontIcon="downloading"></mat-icon></kage-fab-item>
+      </kage-fab-button>
+      <kage-fab-button position="bottom-right">
+          <mat-icon slot='icon' fontIcon="add"></mat-icon>
+          <kage-fab-item><mat-icon fontIcon="token"></mat-icon></kage-fab-item>
+          <kage-fab-item [disabled]="true"><mat-icon fontIcon="assistant_navigation"></mat-icon></kage-fab-item>
+      </kage-fab-button>
+  </div>
+  `;
   tsCode = `
     import { Component } from '@angular/core';
     import { KageCheckbox } from 'kage-ui';

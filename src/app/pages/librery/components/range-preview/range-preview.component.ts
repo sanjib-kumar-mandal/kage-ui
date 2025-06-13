@@ -10,7 +10,12 @@ import { KageBreadCrumb, KageBreadCrumbs, KageRange } from 'kage-ui';
   styleUrl: './range-preview.component.scss',
 })
 export class RangePreviewComponent {
-  htmlCode = `<k-range></k-range>\n<k-range color="danger" [showTooltip]="true"></k-range>\n<k-range color="success" [showTooltip]="true"></k-range>\n<k-range color="warning" [showTooltip]="true"></k-range>`;
+  htmlCode = `
+    <kage-range></kage-range>
+    <kage-range color="danger" [showTooltip]="true"></kage-range>
+    <kage-range color="success" [showTooltip]="true"></kage-range>
+    <kage-range color="warning" [showTooltip]="true"></kage-range>
+  `;
   scssCode = ``;
   tsCode = `
   import { Component } from '@angular/core';

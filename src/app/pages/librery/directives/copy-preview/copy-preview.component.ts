@@ -14,7 +14,7 @@ import { KageBreadCrumb, KageBreadCrumbs, KageCopyDirective } from 'kage-ui';
   styleUrl: './copy-preview.component.scss',
 })
 export class CopyPreviewComponent {
-  htmlCode = `<p [kCopy]="'text here'">Click to copy</p>`;
+  htmlCode = `<p [kageCopy]="'text here'">Click to copy</p>`;
   scssCode = ``;
   tsCode = `
   import { Component } from '@angular/core';

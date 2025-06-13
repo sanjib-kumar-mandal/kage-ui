@@ -9,7 +9,16 @@ import { KageBreadCrumb, KageBreadCrumbs, KageBadge } from 'kage-ui';
   styleUrl: './badge-preview.component.scss',
 })
 export class BadgePreviewComponent {
-  htmlCode = `<k-badge>100K</k-badge>\n<k-badge color="danger">10K</k-badge>\n<k-badge color="success">50K</k-badge>\n<k-badge color="warning">100K</k-badge>`;
+  htmlCode = `
+    <kage-badge>1K</kage-badge>
+    <kage-badge color="primary">10K</kage-badge>
+    <kage-badge color="secondary">100K</kage-badge>
+    <kage-badge color="tertiary">1000K</kage-badge>
+    <kage-badge color="danger">10000K</kage-badge>
+    <kage-badge color="success">50000K</kage-badge>
+    <kage-badge color="warning">100000K</kage-badge>
+    <kage-badge color="info">500000K</kage-badge>
+  `;
   tsCode = `
       import { Component } from '@angular/core';
       import { KageBadge } from 'kage-ui';

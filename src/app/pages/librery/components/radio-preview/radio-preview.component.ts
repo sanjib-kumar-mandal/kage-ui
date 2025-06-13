@@ -20,7 +20,17 @@ import {
   styleUrl: './radio-preview.component.scss',
 })
 export class RadioPreviewComponent {
-  htmlCode = ``;
+  htmlCode = `
+    <kage-radio-group name="colorChoice" [disabled]="false">
+        <kage-radio color="primary" value="primary">Primary</kage-radio>
+        <kage-radio color="secondary" value="secondary">Secondary</kage-radio>
+        <kage-radio color="tertiary" value="tertiary">Tertiary</kage-radio>
+        <kage-radio color="warning" value="warning">Warning</kage-radio>
+        <kage-radio color="info" value="blue">Info</kage-radio>
+        <kage-radio value="danger" color="danger" [disabled]="true">Danger</kage-radio>
+        <kage-radio value="success" color="success">Success</kage-radio>
+    </kage-radio-group>
+  `;
   scssCode = ``;
   tsCode = `
   import { Component } from '@angular/core';

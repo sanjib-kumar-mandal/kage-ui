@@ -21,7 +21,11 @@ import {
   styleUrl: './segment-preview.component.scss',
 })
 export class SegmentPreviewComponent {
-  htmlCode = `<k-segment \n[options]="options" \n(onSegmentChange)="segmentChanged($event)" \n[(ngModel)]="tabId">\n\t<p>Content</p>\n</k-segment>`;
+  htmlCode = `
+    <kage-segment [options]="options" (onSegmentChange)="segmentChanged($event)" [(ngModel)]="tabId">
+        <p>Tab {{tabId}}</p>
+    </kage-segment>
+  `;
   scssCode = ``;
   tsCode = `
   import { Component } from '@angular/core';
@@ -34,7 +38,19 @@ export class SegmentPreviewComponent {
     templateUrl: '...',
     styleUrl: '...',
   })
-  export class AppExampleComponent {}
+  export class AppExampleComponent {
+    tabId = '2';
+
+    options: Array<KageSegmentOption> = [
+      { label: 'Active', value: '1' },
+      { label: 'Normal', value: '2' },
+      { label: 'Disabled', value: '3', disabled: true },
+    ];
+
+    segmentChanged(event: any) {
+      console.log('Segment changed', event);
+    }
+  }
   `;
 
   tabId = '2';

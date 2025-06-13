@@ -16,7 +16,7 @@ import { KageBreadCrumb, KageBreadCrumbs, KageCalendar } from 'kage-ui';
   styleUrl: './calendar-preview.component.scss',
 })
 export class CalendarPreviewComponent {
-  htmlCode = ``;
+  htmlCode = `<kage-calendar [(ngModel)]="dateSelected" (ngModelChange)="dateChanged($event)"></kage-calendar>`;
   scssCode = ``;
   tsCode = `
   import { Component } from '@angular/core';
@@ -29,7 +29,13 @@ export class CalendarPreviewComponent {
     templateUrl: '...',
     styleUrl: '...',
   })
-  export class AppExampleComponent {}
+  export class AppExampleComponent {
+    dateSelected: any;
+
+    dateChanged(event: any) {
+      console.log(this.dateSelected);
+    }
+  }
   `;
 
   dateSelected: any;

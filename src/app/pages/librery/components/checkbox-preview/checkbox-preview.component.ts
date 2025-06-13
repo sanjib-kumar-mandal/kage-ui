@@ -15,7 +15,16 @@ import { KageBreadCrumb, KageBreadCrumbs, KageCheckbox } from 'kage-ui';
   styleUrl: './checkbox-preview.component.scss',
 })
 export class CheckboxPreviewComponent {
-  htmlCode = `<k-checkbox>Default Checkbox</k-checkbox>\n<k-checkbox color="warning">Warning Checkbox</k-checkbox>\n<k-checkbox color="success">Success Checkbox</k-checkbox>\n<k-checkbox color="danger">Danger Checkbox</k-checkbox>`;
+  htmlCode = `
+    <kage-checkbox>Default Checkbox</kage-checkbox>
+    <kage-checkbox color="primary">Primary Checkbox</kage-checkbox>
+    <kage-checkbox color="secondary">Secondary Checkbox</kage-checkbox>
+    <kage-checkbox color="tertiary">Tertiary Checkbox</kage-checkbox>
+    <kage-checkbox color="warning">Warning Checkbox</kage-checkbox>
+    <kage-checkbox color="success">Success Checkbox</kage-checkbox>
+    <kage-checkbox color="danger">Danger Checkbox</kage-checkbox>
+    <kage-checkbox color="info">Info Checkbox</kage-checkbox>
+  `;
   scssCode = ``;
   tsCode = `
   import { Component } from '@angular/core';

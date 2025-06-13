@@ -20,7 +20,13 @@ import {
   styleUrl: './select-preview.component.scss',
 })
 export class SelectPreviewComponent {
-  htmlCode = ``;
+  htmlCode = `
+    <kage-select placeholder="Choose fruits" [name]="'test'" [multiple]="false">
+        @for (fruit of ['Apple', 'Banana', 'Orange']; track $index) {
+            <kage-option [value]="fruit" [label]="fruit"></kage-option>
+        }
+    </kage-select>
+  `;
   scssCode = ``;
   tsCode = `
   import { Component } from '@angular/core';

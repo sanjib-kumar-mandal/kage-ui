@@ -9,7 +9,16 @@ import { KageBreadCrumb, KageBreadCrumbs, KageToggle } from 'kage-ui';
   styleUrl: './toggle-preview.component.scss',
 })
 export class TogglePreviewComponent {
-  htmlCode = ``;
+  htmlCode = `
+    <kage-toggle [disabled]="true">Disabled here</kage-toggle>
+    <kage-toggle color="primary">Primary</kage-toggle>
+    <kage-toggle color="secondary">Secondary</kage-toggle>
+    <kage-toggle color="tertiary">Tertiary</kage-toggle>
+    <kage-toggle color="success">Success</kage-toggle>
+    <kage-toggle color="danger">Danger</kage-toggle>
+    <kage-toggle color="warning">Warning</kage-toggle>
+    <kage-toggle color="info">Info</kage-toggle>
+  `;
   scssCode = ``;
   tsCode = `
   import { Component } from '@angular/core';

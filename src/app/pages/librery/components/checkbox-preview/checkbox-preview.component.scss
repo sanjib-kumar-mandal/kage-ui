@@ -11,8 +11,7 @@ h3{
 }
 .checkboxes{
     display: flex;
-    flex-direction: column;
-    kage-checkbox{
-        margin-bottom: 20px;
-    }
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
 }

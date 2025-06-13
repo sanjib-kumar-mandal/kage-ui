@@ -14,6 +14,16 @@ import {
   styleUrl: './drawer-preview.component.scss',
 })
 export class DrawerPreviewComponent {
+  htmlCode = `
+    <ng-template #drawerTplRight>
+      <div style="padding: 20px;">This is a drawer template!</div>
+    </ng-template>
+    <ng-template #drawerTplLeft>
+      <div style="padding: 20px;">This is a drawer template!</div>
+    </ng-template>
+    <kage-button (click)="openRight(drawerTplRight)">Open Drawer Right</kage-button>
+    <kage-button (click)="openLeft(drawerTplLeft)">Open Drawer Left</kage-button>
+  `;
   tsCode = `
   import { Component } from '@angular/core';
   import { KageDrawerCtrl } from 'kage-ui';

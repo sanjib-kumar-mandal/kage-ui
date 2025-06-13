@@ -9,7 +9,16 @@ import { KageBreadCrumb, KageBreadCrumbs, KageButton } from 'kage-ui';
   styleUrl: './button-preview.component.scss',
 })
 export class ButtonPreviewComponent {
-  htmlCode = `<k-button color="danger" [loading]="true">Button</k-button>\n<k-button color="success">Button</k-button>\n<k-button color="warning">Button</k-button>`;
+  htmlCode = `
+  <kage-button color="primary">Primary</kage-button>
+  <kage-button color="secondary">Secondary</kage-button>
+  <kage-button color="tertiary">Tertiary</kage-button>
+  <kage-button color="danger" [loading]="true">Danger</kage-button>
+  <kage-button color="success">Success</kage-button>
+  <kage-button color="warning">Warning</kage-button>
+  <kage-button color="info">Info</kage-button>
+  <kage-button color="primary" fill="clear">Clear</kage-button>
+  `;
   scssCode = ``;
   tsCode = `
   import { Component } from '@angular/core';

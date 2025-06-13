@@ -10,12 +10,14 @@ import { KageBreadCrumb, KageBreadCrumbs } from 'kage-ui';
   styleUrl: './bread-crumbs-preview.component.scss',
 })
 export class BreadCrumbsPreviewComponent {
-  htmlCode = `<k-bread-crumbs>
-        <k-bread-crumb label="Test" [routerLink]="'/ui-components'" [queryParams]="{opr: 'bread-crumb'}"></k-bread-crumb>
-        <k-bread-crumb label="Test" href="#test"></k-bread-crumb>
-        <k-bread-crumb label="Test" href="#test"></k-bread-crumb>
-        <k-bread-crumb label="Test" href="#test"></k-bread-crumb>
-    </k-bread-crumbs>`;
+  htmlCode = `
+  <kage-bread-crumbs>
+      <kage-bread-crumb label="Test" [routerLink]="'/ui-components'" [queryParams]="{opr: 'bread-crumb'}"></kage-bread-crumb>
+      <kage-bread-crumb label="Test" href="#test"></kage-bread-crumb>
+      <kage-bread-crumb label="Test" href="#test"></kage-bread-crumb>
+      <kage-bread-crumb label="Test" href="#test"></kage-bread-crumb>
+  </kage-bread-crumbs>
+  `;
   scssCode = ``;
   tsCode = `
       import { Component } from '@angular/core';

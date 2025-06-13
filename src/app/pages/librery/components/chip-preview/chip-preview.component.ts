@@ -9,7 +9,25 @@ import { KageBreadCrumb, KageBreadCrumbs, KageChip } from 'kage-ui';
   styleUrl: './chip-preview.component.scss',
 })
 export class ChipPreviewComponent {
-  htmlCode = `<k-chip>Chip</k-chip>\n<k-chip color="danger" [removable]="true">Chip</k-chip>\n<k-chip color="success">Chip</k-chip>\n<k-chip color="warning">Chip</k-chip>\n<k-chip shape="radial">Chip</k-chip>\n<k-chip color="danger" shape="radial">Chip</k-chip>\n<k-chip color="success" shape="radial" [removable]="true">Chip</k-chip>\n<k-chip color="warning" shape="radial">Chip</k-chip>`;
+  htmlCode = `
+    <kage-chip>Chip</kage-chip>
+    <kage-chip color="danger" [removable]="true">Danger</kage-chip>
+    <kage-chip color="success">Success</kage-chip>
+    <kage-chip color="warning">Warning</kage-chip>
+    <kage-chip color="primary">Primary</kage-chip>
+    <kage-chip color="secondary">Secondary</kage-chip>
+    <kage-chip color="tertiary">Tertiary</kage-chip>
+    <kage-chip color="info">Info</kage-chip>
+
+    <kage-chip shape="radial">Chip</kage-chip>
+    <kage-chip color="danger" shape="radial">Chip</kage-chip>
+    <kage-chip color="success" shape="radial" [removable]="true">Chip</kage-chip>
+    <kage-chip color="warning" shape="radial">Chip</kage-chip>
+    <kage-chip color="primary" shape="radial">Primary</kage-chip>
+    <kage-chip color="secondary" shape="radial">Secondary</kage-chip>
+    <kage-chip color="tertiary" shape="radial">Tertiary</kage-chip>
+    <kage-chip color="info" shape="radial">Info</kage-chip>
+  `;
   scssCode = ``;
   tsCode = `
   import { Component } from '@angular/core';

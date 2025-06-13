@@ -15,21 +15,23 @@ import { KageBreadCrumb, KageBreadCrumbs, KageResizeDirective } from 'kage-ui';
   styleUrl: './resize-directive-preview.component.scss',
 })
 export class ResizeDirectivePreviewComponent {
-  htmlCode = `<div
-    [debounceTime]="150"
-    resizeMode="throttle"
-    [observeWidth]="true"
-    [observeHeight]="true"
-    [minWidthClass]="{ width: 400, className: 'wide' }"
-    [maxWidthClass]="{ width: 300, className: 'narrow' }"
-    [minHeightClass]="{ height: 300, className: 'tall' }"
-    [maxHeightClass]="{ height: 150, className: 'short' }"
-    [onResize]="handleResize"
-    (kResized)="onResize($event)"
-    class="box"
+  htmlCode = `
+  <div
+      [debounceTime]="150"
+      resizeMode="throttle"
+      [observeWidth]="true"
+      [observeHeight]="true"
+      [minWidthClass]="{ width: 400, className: 'wide' }"
+      [maxWidthClass]="{ width: 300, className: 'narrow' }"
+      [minHeightClass]="{ height: 300, className: 'tall' }"
+      [maxHeightClass]="{ height: 150, className: 'short' }"
+      [onResize]="handleResize"
+      (kageResized)="onResize($event)"
+      class="box"
   >
     Resize me!
-  </div>`;
+  </div>
+  `;
   tsCode = `
   import { Component } from '@angular/core';
   import { KageResizeDirective } from 'kage-ui';

@@ -39,8 +39,8 @@
         border-radius: 3px;
     }
     .cards{
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        display: flex;
+        justify-content: center;
         gap: 7px;
         margin-top: 180px;
         width: 100%;
@@ -49,6 +49,7 @@
             flex-direction: column;
             background: var(--color-background);
             padding: 15px;
+            flex: 1;
             mat-icon{
                 font-size: 30px;
                 display: flex;
