@@ -4,6 +4,7 @@
 .code-preview-area{
   display: flex;
   flex-direction: column;
+  border-top: 5px solid color-mix(in srgb, var(--color-background) 80%, var(--color-medium) 20%);
   .each{
     display: flex;
     flex-direction: column;
@@ -13,6 +14,12 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
+      p{
+        color: var(--color-secondary);
+        font-family: 'my-font-bold';
+        font-size: 14px;
+        text-transform: uppercase;
+      }
     }
     .code-content{
       background: color-mix(in srgb, var(--color-background) 95%, var(--color-medium) 5%);
