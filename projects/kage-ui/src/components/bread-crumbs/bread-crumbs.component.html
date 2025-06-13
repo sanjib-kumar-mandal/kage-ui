@@ -2,7 +2,7 @@
     @for (item of breadCrumps; track $index; let l = $last) {
         @if (!l) {
             <a [routerLink]="item.href()">{{item.label()}}</a>
-            <kage-icon name="chevron-forward"></kage-icon>
+            <kage-icon name="chevron-forward" [depth]="iconDepth()"></kage-icon>
         } @else {
             <p>{{item.label()}}</p>
         }

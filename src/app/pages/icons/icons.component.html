@@ -11,7 +11,7 @@
             <div class="all-icons">
                 @for (item of listofIcons; track $index) {
                     <div class="icon-holder" [kageCopy]="'<k-icon name='+item+'></k-copy>'">
-                        <kage-icon [name]="item"></kage-icon>
+                        <kage-icon [depth]="2" [name]="item"></kage-icon>
                         <p>{{item}}</p>
                     </div>
                 }

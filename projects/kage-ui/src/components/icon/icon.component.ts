@@ -1,9 +1,10 @@
 import {
+  AfterViewInit,
   Component,
+  effect,
   ElementRef,
   inject,
   input,
-  OnChanges,
   Renderer2,
 } from '@angular/core';
 import { ICONS } from './icon.registry';
@@ -14,20 +15,36 @@ import { firstValueFrom } from 'rxjs';
   selector: 'kage-icon',
   imports: [],
   template: '',
+  styles: `
+    :host{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: max-content;
+    }
+  `,
 })
-export class KageIcon implements OnChanges {
+export class KageIcon implements AfterViewInit {
   name = input<string>();
   svgSrc = input<string>();
   size = input<number>();
+  depth = input<number>();
 
   private renderer = inject(Renderer2);
   private elementRef = inject(ElementRef);
   private http = inject(HttpClient);
 
-  ngOnChanges() {
+  constructor() {
+    effect(() => this.decide());
+  }
+
+  ngAfterViewInit() {
+    this.decide();
+  }
+
+  private decide() {
     const svgSrc = this.svgSrc();
     const iconName = this.name();
-
     if (svgSrc) {
       firstValueFrom(this.http.get(svgSrc, { responseType: 'text' }))
         .then((rawSvg: string) => this.insertSvg(rawSvg))
@@ -44,27 +61,26 @@ export class KageIcon implements OnChanges {
   }
 
   private insertSvg(svgContent: string) {
-    this.renderer.setStyle(
+    const calculateIconDepth = (depth?: number) => {
+      if (depth) {
+        // If depth is already defined then nothing to do
+        return depth;
+      } else {
+        if (this.size()) {
+          return Math.ceil(this.size()! % 20);
+        } else {
+          return 1;
+        }
+      }
+    };
+    this.renderer.setAttribute(
       this.elementRef.nativeElement,
-      'height',
-      `${this.size() ?? 20}px`
+      'style',
+      `height: ${this.size() ?? 20}px; --kage-icon-depth: ${calculateIconDepth(
+        this.depth()
+      )}`
     );
-    this.renderer.setStyle(
-      this.elementRef.nativeElement,
-      'min-width',
-      `${this.size() ?? 20}px`
-    );
-    this.renderer.setStyle(this.elementRef.nativeElement, 'display', `flex`);
-    this.renderer.setStyle(
-      this.elementRef.nativeElement,
-      'align-items',
-      `center`
-    );
-    this.renderer.setStyle(
-      this.elementRef.nativeElement,
-      'justify-content',
-      `center`
-    );
+
     this.elementRef.nativeElement.innerHTML = svgContent;
     // this.renderer.appendChild(this.elementRef.nativeElement, div);
   }

@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   ContentChildren,
+  input,
   QueryList,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
@@ -16,6 +17,7 @@ import { KageIcon } from '../icon/icon.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class KageBreadCrumbs {
+  iconDepth = input<number>();
   @ContentChildren(KageBreadCrumb)
   breadCrumps!: QueryList<KageBreadCrumb>;
 }

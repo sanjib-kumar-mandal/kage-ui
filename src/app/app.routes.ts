@@ -8,7 +8,10 @@ export const routes: Routes = [
   },
   {
     path: 'introduction',
-    loadComponent: () => import("@page/introduction/introduction.component").then((m) => m.IntroductionComponent)
+    loadComponent: () =>
+      import('@page/introduction/introduction.component').then(
+        (m) => m.IntroductionComponent
+      ),
   },
   {
     path: 'library',
@@ -82,7 +85,7 @@ export const routes: Routes = [
         path: 'drawer',
         loadComponent: () =>
           import(
-            '@page/librery/components/drawer-preview/drawer-preview.component'
+            '@page/librery/services/drawer-preview/drawer-preview.component'
           ).then((m) => m.DrawerPreviewComponent),
       },
       {
@@ -213,7 +216,10 @@ export const routes: Routes = [
       },
       {
         path: 'image-fallback',
-        loadComponent: () => import("@page/librery/directives/image-fallback/image-fallback.component").then((m) => m.ImageFallbackComponent)
+        loadComponent: () =>
+          import(
+            '@page/librery/directives/image-fallback/image-fallback.component'
+          ).then((m) => m.ImageFallbackComponent),
       },
       {
         path: 'resize',
