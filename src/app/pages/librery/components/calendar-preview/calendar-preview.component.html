@@ -4,11 +4,11 @@
     <kage-bread-crumb [href]="'/library'" label="Library"></kage-bread-crumb>
     <kage-bread-crumb [href]="'/library/calendar'" label="Calendar"></kage-bread-crumb>
 </kage-bread-crumbs>
-<p class="description">Component Behavior and Input Breakdown</p>
+<p class="description">The Calendar component lets users view and select dates or ranges in a monthly grid layout. It supports features like week numbers, inline display, custom date formats, time selection, and locale customization for internationalization.</p>
 <app-code-preview [htmlCode]="htmlCode" [scssCode]="scssCode" [tsCode]="tsCode">
     <kage-calendar [(ngModel)]="dateSelected" (ngModelChange)="dateChanged($event)"></kage-calendar>
 </app-code-preview>
-<h3>Inputs (k-bread-crumb)</h3>
+<h3>Inputs</h3>
 <p class="description">List of Input Parameters.</p>
 <div class="two-col-table">
     <div class="two-col-table-head">
