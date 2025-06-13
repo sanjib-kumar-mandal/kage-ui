@@ -1,18 +1,20 @@
-import{a as C}from"./chunk-YX7X4TWZ.js";import{f as h,h as b,l as v}from"./chunk-AQZ4Q2VB.js";import"./chunk-3GFDRZ37.js";import{Ib as n,Lb as a,Qb as r,Sa as i,bb as c,mb as m,ub as e,vb as t,wb as p,zb as g}from"./chunk-KDFRMSR3.js";var _=()=>({width:400,className:"wide"}),E=()=>({width:300,className:"narrow"}),M=()=>({height:300,className:"tall"}),O=()=>({height:150,className:"short"}),x=class s{htmlCode=`<div
-    [debounceTime]="150"
-    resizeMode="throttle"
-    [observeWidth]="true"
-    [observeHeight]="true"
-    [minWidthClass]="{ width: 400, className: 'wide' }"
-    [maxWidthClass]="{ width: 300, className: 'narrow' }"
-    [minHeightClass]="{ height: 300, className: 'tall' }"
-    [maxHeightClass]="{ height: 150, className: 'short' }"
-    [onResize]="handleResize"
-    (kResized)="onResize($event)"
-    class="box"
+import{a as C}from"./chunk-YX7X4TWZ.js";import{f as h,h as b,l as v}from"./chunk-AQZ4Q2VB.js";import"./chunk-3GFDRZ37.js";import{Ib as n,Lb as a,Qb as r,Sa as i,bb as c,mb as m,ub as e,vb as t,wb as p,zb as g}from"./chunk-KDFRMSR3.js";var _=()=>({width:400,className:"wide"}),E=()=>({width:300,className:"narrow"}),M=()=>({height:300,className:"tall"}),O=()=>({height:150,className:"short"}),x=class s{htmlCode=`
+  <div
+      [debounceTime]="150"
+      resizeMode="throttle"
+      [observeWidth]="true"
+      [observeHeight]="true"
+      [minWidthClass]="{ width: 400, className: 'wide' }"
+      [maxWidthClass]="{ width: 300, className: 'narrow' }"
+      [minHeightClass]="{ height: 300, className: 'tall' }"
+      [maxHeightClass]="{ height: 150, className: 'short' }"
+      [onResize]="handleResize"
+      (kageResized)="onResize($event)"
+      class="box"
   >
     Resize me!
-  </div>`;tsCode=`
+  </div>
+  `;tsCode=`
   import { Component } from '@angular/core';
   import { KageResizeDirective } from 'kage-ui';
   ...

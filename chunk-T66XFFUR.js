@@ -1,4 +1,4 @@
-import{a as C}from"./chunk-YX7X4TWZ.js";import{f as l,h as s,j as d}from"./chunk-AQZ4Q2VB.js";import"./chunk-3GFDRZ37.js";import{Ib as o,Sa as n,bb as m,mb as p,ub as e,vb as t,wb as c}from"./chunk-KDFRMSR3.js";var y=class a{htmlCode=`<p [kCopy]="'text here'">Click to copy</p>`;scssCode="";tsCode=`
+import{a as C}from"./chunk-YX7X4TWZ.js";import{f as l,h as s,j as d}from"./chunk-AQZ4Q2VB.js";import"./chunk-3GFDRZ37.js";import{Ib as o,Sa as n,bb as m,mb as p,ub as e,vb as t,wb as c}from"./chunk-KDFRMSR3.js";var y=class a{htmlCode=`<p [kageCopy]="'text here'">Click to copy</p>`;scssCode="";tsCode=`
   import { Component } from '@angular/core';
   import { KageCopyDirective } from 'kage-ui';
   ...

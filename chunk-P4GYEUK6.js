@@ -1,5 +1,7 @@
-import{a as b}from"./chunk-YX7X4TWZ.js";import{D as c,f as d,h as s}from"./chunk-AQZ4Q2VB.js";import"./chunk-3GFDRZ37.js";import{Ib as a,Sa as n,bb as p,mb as r,ub as e,vb as t,wb as o}from"./chunk-KDFRMSR3.js";var h=class m{htmlCode=`<k-searchbar></k-searchbar>
-<k-searchbar [disabled]="true"></k-searchbar>`;scssCode="";tsCode=`
+import{a as b}from"./chunk-YX7X4TWZ.js";import{D as c,f as d,h as s}from"./chunk-AQZ4Q2VB.js";import"./chunk-3GFDRZ37.js";import{Ib as a,Sa as n,bb as p,mb as r,ub as e,vb as t,wb as o}from"./chunk-KDFRMSR3.js";var h=class m{htmlCode=`
+    <kage-searchbar></kage-searchbar>
+    <kage-searchbar [disabled]="true"></kage-searchbar>
+  `;scssCode="";tsCode=`
   import { Component } from '@angular/core';
   import { KageSearchbar } from 'kage-ui';
   ...

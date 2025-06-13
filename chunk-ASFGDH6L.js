@@ -1,19 +1,21 @@
-import{a as l}from"./chunk-YX7X4TWZ.js";import{d,f as p,h as u}from"./chunk-AQZ4Q2VB.js";import"./chunk-3GFDRZ37.js";import{Ib as i,Sa as r,bb as c,mb as a,ub as e,vb as t,wb as m}from"./chunk-KDFRMSR3.js";var g=class s{htmlCode=`<k-accordion [expanded]="true">
-        <p slot="header">Section 1</p>
-        <p slot="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate dignissimos quo vitae sed sequi? Dolore, vero error explicabo est quos quibusdam nesciunt quo corrupti sint, adipisci accusamus? Tenetur, amet cum!</p>
-    </k-accordion>
-    <k-accordion color="success">
-        <p slot="header">Section 1</p>
-        <p slot="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate dignissimos quo vitae sed sequi? Dolore, vero error explicabo est quos quibusdam nesciunt quo corrupti sint, adipisci accusamus? Tenetur, amet cum!</p>
-    </k-accordion>
-    <k-accordion color="danger">
-        <p slot="header">Section 1</p>
-        <p slot="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate dignissimos quo vitae sed sequi? Dolore, vero error explicabo est quos quibusdam nesciunt quo corrupti sint, adipisci accusamus? Tenetur, amet cum!</p>
-    </k-accordion>
-    <k-accordion color="warning">
-        <p slot="header">Section 1</p>
-        <p slot="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate dignissimos quo vitae sed sequi? Dolore, vero error explicabo est quos quibusdam nesciunt quo corrupti sint, adipisci accusamus? Tenetur, amet cum!</p>
-    </k-accordion>`;scssCode="";tsCode=`
+import{a as l}from"./chunk-YX7X4TWZ.js";import{d,f as p,h as u}from"./chunk-AQZ4Q2VB.js";import"./chunk-3GFDRZ37.js";import{Ib as i,Sa as r,bb as c,mb as a,ub as e,vb as t,wb as m}from"./chunk-KDFRMSR3.js";var g=class s{htmlCode=`
+  <kage-accordion [expanded]="true">
+      <p slot="header">Section 1</p>
+      <p slot="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate dignissimos quo vitae sed sequi? Dolore, vero error explicabo est quos quibusdam nesciunt quo corrupti sint, adipisci accusamus? Tenetur, amet cum!</p>
+  </kage-accordion>
+  <kage-accordion color="success">
+      <p slot="header">Section 2</p>
+      <p slot="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate dignissimos quo vitae sed sequi? Dolore, vero error explicabo est quos quibusdam nesciunt quo corrupti sint, adipisci accusamus? Tenetur, amet cum!</p>
+  </kage-accordion>
+  <kage-accordion color="danger">
+      <p slot="header">Section 3</p>
+      <p slot="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate dignissimos quo vitae sed sequi? Dolore, vero error explicabo est quos quibusdam nesciunt quo corrupti sint, adipisci accusamus? Tenetur, amet cum!</p>
+  </kage-accordion>
+  <kage-accordion color="warning">
+      <p slot="header">Section 4</p>
+      <p slot="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate dignissimos quo vitae sed sequi? Dolore, vero error explicabo est quos quibusdam nesciunt quo corrupti sint, adipisci accusamus? Tenetur, amet cum!</p>
+  </kage-accordion>
+  `;scssCode="";tsCode=`
       import { Component } from '@angular/core';
       import { KageAccordion } from 'kage-ui';
       ...

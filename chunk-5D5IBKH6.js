@@ -1,4 +1,4 @@
-import{a as c}from"./chunk-YX7X4TWZ.js";import{G as x,f as d,h as s}from"./chunk-AQZ4Q2VB.js";import"./chunk-3GFDRZ37.js";import{Ib as n,Sa as a,bb as p,mb as r,ub as e,vb as t,wb as m}from"./chunk-KDFRMSR3.js";var u=class o{htmlCode="";scssCode="";tsCode=`
+import{a as c}from"./chunk-YX7X4TWZ.js";import{G as x,f as d,h as s}from"./chunk-AQZ4Q2VB.js";import"./chunk-3GFDRZ37.js";import{Ib as n,Sa as a,bb as p,mb as r,ub as e,vb as t,wb as m}from"./chunk-KDFRMSR3.js";var u=class o{htmlCode="<kage-textarea></kage-textarea>";scssCode="";tsCode=`
   import { Component } from '@angular/core';
   import { KageTextarea } from 'kage-ui';
   ...
