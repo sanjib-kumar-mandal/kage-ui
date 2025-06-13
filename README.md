@@ -1,8 +1,8 @@
 # Kage UI Demo
 
-This is the **demo site** for the [Kage UI](https://github.com/sanjib-kumar-mandal/kage-ui-documentation) Angular component library. It showcases how to use various components from the library with real-world examples.
+This is the **demo site** for the [Kage UI](https://github.com/sanjib-kumar-mandal/kage-ui) Angular component library. It showcases how to use various components from the library with real-world examples.
 
-🌐 Live demo: [https://github.com/sanjib-kumar-mandal/kage-ui-documentation](https://sanjib-kumar-mandal.github.io/kage-ui-documentation/)
+🌐 Live demo: [https://github.com/sanjib-kumar-mandal/kage-ui](https://sanjib-kumar-mandal.github.io/kage-ui/)
 
 ---
 

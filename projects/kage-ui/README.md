@@ -25,7 +25,7 @@ npm install kage-ui
 
 ## 📚 Documentation
 
-Full documentation is available at: [Here](https://sanjib-kumar-mandal.github.io/kage-ui-documentation)
+Full documentation is available at: [Here](https://sanjib-kumar-mandal.github.io/kage-ui)
 There you'll find:
 
 - Component examples
@@ -37,7 +37,7 @@ There you'll find:
 To work on Kage UI locally:
 
 ```npm
-git clone https://github.com/sanjib-kumar-mandal/kage-ui-documentation.git
+git clone https://github.com/sanjib-kumar-mandal/kage-ui.git
 cd kage-ui
 npm install
 npm run start
