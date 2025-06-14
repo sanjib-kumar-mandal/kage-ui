@@ -29,6 +29,15 @@ export class KageIcon implements AfterViewInit {
   svgSrc = input<string>();
   size = input<number>();
   depth = input<number>();
+  color = input<
+    | 'primary'
+    | 'secondary'
+    | 'tertiary'
+    | 'success'
+    | 'warning'
+    | 'danger'
+    | 'info'
+  >();
 
   private renderer = inject(Renderer2);
   private elementRef = inject(ElementRef);
@@ -78,7 +87,9 @@ export class KageIcon implements AfterViewInit {
       'style',
       `height: ${this.size() ?? 20}px; --kage-icon-depth: ${calculateIconDepth(
         this.depth()
-      )}`
+      )}; color: ${
+        this.color() ? 'var(--color-' + this.color() + ')' : 'inherit'
+      }`
     );
 
     this.elementRef.nativeElement.innerHTML = svgContent;

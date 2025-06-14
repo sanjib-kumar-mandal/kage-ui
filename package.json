@@ -22,7 +22,7 @@
     "@angular/router": "^19.2.0",
     "@types/prismjs": "^1.26.5",
     "angular-cli-ghpages": "^2.0.3",
-    "kage-ui": "^0.0.8",
+    "kage-ui": "^0.0.9",
     "prismjs": "^1.30.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
