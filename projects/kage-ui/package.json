@@ -1,6 +1,6 @@
 {
   "name": "kage-ui",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "A minimal, border-focused Angular UI component library.",
   "author": {
     "name": "Sanjib Kumar Mandal",
@@ -12,6 +12,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/sanjib-kumar-mandal/kage-ui.git"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/sanjib-kumar-mandal"
   },
   "publishConfig": {
     "access": "public"
