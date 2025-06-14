@@ -19,6 +19,7 @@
     "target": "ES2022",
     "module": "ES2022",
     "paths": {
+      "@env/*": ["src/environments/*"],
       "@page/*": ["src/app/pages/*"],
       "@component/*": [
         "src/app/components/*"

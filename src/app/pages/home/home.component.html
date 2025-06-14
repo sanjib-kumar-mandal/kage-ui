@@ -3,6 +3,11 @@
     <h1>Kage UI Librery in angular</h1>
     <p class="description">An open source UI toolkit for building modern, high quality app in <a href="https://angular.dev/" target="_blank">Angular</a></p>
     <button routerLink="/introduction">Get Started</button>
+    <div class="published-icons">
+        @for (each of published; track $index) {
+            <a [href]="each.url" target="_blank"><img [src]="each.logo" [alt]="each.name"></a>
+        }
+    </div>
     <div class="cards">
         <div class="card">
             <kage-icon name="code" [size]="40" [depth]="3"></kage-icon>
@@ -16,7 +21,7 @@
         </div>
         <div class="card">
             <kage-icon name="terminal" [size]="30" [depth]="2" color="danger"></kage-icon>
-            <h3>Server side rendering enabled (SSR)</h3>
+            <h3>SSR enabled</h3>
             <p>Built-in server-side rendering support for SEO, performance, and seamless hydration.</p>
         </div>
         <div class="card">

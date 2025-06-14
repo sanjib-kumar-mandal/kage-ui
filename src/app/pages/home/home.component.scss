@@ -15,7 +15,7 @@
         rgba(var(--color-primary-rgb), .2)
     );
     .page-icon{
-        margin-top: 180px;
+        margin-top: 20vh;
     }
     h1{
         font-size: 40px;
@@ -38,11 +38,24 @@
         cursor: pointer;
         border-radius: 3px;
     }
-    .cards{
+    .published-icons{
         display: flex;
+        align-items: center;
         justify-content: center;
+        gap: 10px;
+        margin-top: 30px;
+        a{
+            text-decoration: none;
+            img{
+                max-height: 30px;
+            }
+        }
+    }
+    .cards{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(17%, 1fr));
         gap: 7px;
-        margin-top: 180px;
+        margin-top: 20vh;
         width: 100%;
         .card{
             display: flex;
@@ -128,6 +141,28 @@
             p{
                 font-family: var(--default-font, 'my-font-medium');
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .banner{
+        .cards{
+            grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+        }
+    }
+}
+@media only screen and (max-width: 780px) {
+    .banner{
+        .cards{
+            grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+        }
+    }
+}
+@media only screen and (max-width: 460px) {
+    .banner{
+        .cards{
+            grid-template-columns: repeat(auto-fill, minmax(55%, 1fr));
         }
     }
 }

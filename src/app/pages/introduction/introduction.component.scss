@@ -16,6 +16,17 @@
         h1{
             color: var(--color-primary);
         }
+        .ban-image{
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 10px;
+            img{
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
         h2{
             color: rgba(var(--color-primary-rgb), .7);
             margin-top: 10px;

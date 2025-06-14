@@ -8,8 +8,9 @@
         <ul>
             <li><a routerLink="/library">Librery</a></li>
             <li><a routerLink="/icons">Icons</a></li>
-            <li><a href="https://www.npmjs.com/package/kage-ui" target="_blank"><img src="assets/npm.png" alt=""></a></li>
-            <li><a href="https://github.com/sanjib-kumar-mandal/kage-ui-documentation" target="_blank"><img src="assets/github.png" alt=""></a></li>
+            @for (publishedOn of publishingAreas; track $index) {
+                <li><a [href]="publishedOn.url" target="_blank"><img [src]="publishedOn.logo" [alt]="publishedOn.name"></a></li>
+            }
         </ul>
     </div>
 </div>
