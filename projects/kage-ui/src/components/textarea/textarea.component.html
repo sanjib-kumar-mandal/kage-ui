@@ -1,4 +1,4 @@
-<label class="k-textarea-wrapper">
+<label class="kage-textarea-wrapper" [class]="cssClass() ?? ''">
     @if (label()) {
         <p class="label-title">{{label()}}</p>
     }
@@ -12,7 +12,7 @@
                 [placeholder]="placeholder()" 
                 [disabled]="disabled()" 
                 [readOnly]="readonly()" 
-                [maxLength]="maxLength() ?? 524288"
+                [attr.maxLength]="maxLength()"
                 [autofocus]="autoFocus()"
                 [autocomplete]="autocomplete()"
                 (input)="handleInput($event)"

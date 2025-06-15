@@ -1,68 +1,69 @@
-.k-select {
-  border: var(--border-width, 1px) solid var(--k-input-border-color);
-  padding: var(--k-input-padding-top) var(--k-input-padding-right) var(--k-input-padding-bottom) var(--k-input-padding-left);
-  position: relative;
-  cursor: pointer;
-  user-select: none;
-  background: var(--color-background);
-
-  .selected-value {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .chevron {
-    transition: transform 0.2s ease;
-    display: inline-block;
-    margin-left: 0.5rem;
-  }
-
-  .chevron.open {
-    transform: rotate(180deg);
-  }
-
-  .dropdown {
-    position: absolute;
-    left: calc(var(--border-width, 1px) * -1);
-    right: 0;
-    top: calc(100% + 5px);
+:host{
+  display: block;
+  .kage-select-wrapper {
+    position: relative;
     width: 100%;
-    background: color-mix(in srgb, var(--color-background) 95%, var(--color-medium) 5%);
-    z-index: 10;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease, opacity 0.2s ease;
-    opacity: 0;
-    pointer-events: none;
-    border: var(--border-width, 1px) solid var(--k-input-border-color);
-    border-bottom: none;
-  }
-
-  .dropdown.open {
-    max-height: 300px;
-    opacity: 1;
-    overflow-y: auto;
-    pointer-events: auto;
-  }
-
-  .option {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem;
+    border-style: solid;
+    border-color: var(--kage-select-border-color, var(--color-medium, transparent));
+    border-top-width: var(--kage-select-border-top-width, 1px);
+    border-right-width: var(--kage-select-border-right-width, 1px);
+    border-bottom-width: var(--kage-select-border-bottom-width, 1px);
+    border-left-width: var(--kage-select-border-left-width, 1px);
     cursor: pointer;
-
-    &.selected {
-      background: var(--color-primary);
-      color: white;
+    user-select: none;
+    font-family: sans-serif;
+    background: var(--kage-select-background, transparent);
+    border-radius: var(--kage-select-border-radius, 0px);
+    .kage-select-selected {
+      display: flex;
+      .kage-select-icon{
+        &:not(:empty) {
+          width: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &.start{
+            border-right: var(--kage-select-border-width, 1px) solid var(--kage-select-border-color, var(--color-medium, transparent));
+          }
+          &.end{
+            border-left: var(--kage-select-border-width, 1px) solid var(--kage-select-border-color, var(--color-medium, transparent));
+          }
+        }
+      }
+      .kage-select-stage-area{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 9px 10px;
+      }
     }
-
-    &:hover {
-      background: #f1f1f1;
+    .kage-select-options {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border: var(--kage-select-border-width, 1px) solid var(--kage-select-border-color, var(--color-medium, transparent));
+      border-top: none;
+      background: var(--kage-select-background, var(--color-background, transparent));
+      position: absolute;
+      top: 45px;
+      left: -1px;
+      width: 100%;
+      z-index: 10;
+      li {
+        padding: 10px;
+        border-top: var(--kage-select-border-width, 1px) solid var(--kage-select-border-color, var(--color-medium, transparent));
+        &.focused,
+        &:hover {
+          background-color: var(--kage-select-background-hover, transparent);
+        }
+        &.selected {
+          font-weight: bold;
+        }
+      }
     }
-
-    .indicator input {
+    &.disabled{
+      opacity: .6;
       pointer-events: none;
     }
   }

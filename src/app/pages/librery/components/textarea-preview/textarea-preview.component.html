@@ -8,7 +8,7 @@
 <app-code-preview [tsCode]="tsCode" [htmlCode]="htmlCode" [scssCode]="scssCode">
     <kage-textarea></kage-textarea>
 </app-code-preview>
-<h3>Input</h3>
+<h3>Input Signals</h3>
 <p class="description">List of Input Parameters.</p>
 <div class="two-col-table">
     <div class="two-col-table-head">
@@ -28,7 +28,7 @@
         <div class="each"><p>autocomplete</p><p>Type `string`. Default 'off'</p></div>
     </div>
 </div>
-<h3>Output</h3>
+<h3>Output Signals</h3>
 <p class="description">List of Output Parameters.</p>
 <div class="two-col-table">
     <div class="two-col-table-head">
@@ -37,5 +37,29 @@
     </div>
     <div class="two-col-table-body">
         <div class="each"><p>valueChanged</p><p>Type `string`</p></div>
+    </div>
+</div>
+<h3>Custom CSS Variables</h3>
+<p class="description">Recommended CSS Variable List — Defining values using these variables is advised to enhance maintainability and optimize CSS performance.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Fallback Values</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>--kage-textarea-background</p><p>transparent</p></div>
+        <div class="each"><p>--kage-textarea-border-top-width</p><p>1px</p></div>
+        <div class="each"><p>--kage-textarea-border-right-width</p><p>1px</p></div>
+        <div class="each"><p>--kage-textarea-border-bottom-width</p><p>1px</p></div>
+        <div class="each"><p>--kage-textarea-border-left-width</p><p>1px</p></div>
+        <div class="each"><p>--kage-textarea-border-color</p><p>--color-medium</p></div>
+        <div class="each"><p>--kage-textarea-border-radius</p><p>0px</p></div>
+        <div class="each"><p>--kage-textarea-padding-top</p><p>9px</p></div>
+        <div class="each"><p>--kage-textarea-padding-right</p><p>10px</p></div>
+        <div class="each"><p>--kage-textarea-padding-bottom</p><p>9px</p></div>
+        <div class="each"><p>--kage-textarea-padding-left</p><p>10px</p></div>
+        <div class="each"><p>--kage-textarea-text-color</p><p>inherit</p></div>
+        <div class="each"><p>--kage-textarea-font-family</p><p>inherit</p></div>
+        <div class="each"><p>--kage-textarea-active-border-color</p><p>--color-primary</p></div>
     </div>
 </div>

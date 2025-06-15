@@ -1,82 +1,92 @@
-.k-textarea-wrapper{
-    display: flex;
-    flex-direction: column;
-    .label-title{
-        &:not(:empty) {
-            margin-bottom: 6px;
-        }
-    }
-    .input-area{
+:host{
+    display: block;
+    .kage-textarea-wrapper{
         display: flex;
-        border: var(--border-width, 1px) solid var(--k-input-border-color);
-        transition: .4s;
-        .input{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            textarea{
-                padding: var(--k-input-padding-top) var(--k-input-padding-right) var(--k-input-padding-bottom) var(--k-input-padding-left);
-                color: var(--k-input-text-color);
-                font-family: var(--k-input-font-family);
-                background: transparent;
-                resize: none;
-            }
-        }
-        .icon{
-            display: none;
+        flex-direction: column;
+        .label-title{
             &:not(:empty) {
-                width: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                overflow: hidden;
-                --stroke-width: var(--border-width, 1px);
+                margin-bottom: 6px;
             }
         }
-        &:focus-within{
-            border-color: var(--k-input-border-color-active);
-            .icon{
-                color: var(--k-input-left-icon-color-active);
-                border-color: var(--k-input-border-color-active);
-            }
-        }
-    }
-    .validators{
-        display: flex;
-        .left{
-            width: 100%;
+        .input-area{
             display: flex;
-            flex-direction: column;
-            .hint{
+            background: var(--kage-textarea-background, transparent);
+            border-style: solid;
+            border-color: var(--kage-textarea-border-color, var(--color-medium, transparent));
+            border-top-width: var(--kage-textarea-border-top-width, 1px);
+            border-right-width: var(--kage-textarea-border-right-width, 1px);
+            border-bottom-width: var(--kage-textarea-border-bottom-width, 1px);
+            border-left-width: var(--kage-textarea-border-left-width, 1px);
+            border-radius: var(--kage-textarea-border-radius, 0px);
+            transition: .4s;
+            .input{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                textarea{
+                    padding: var(--kage-textarea-padding-top, 9px) var(--kage-textarea-padding-right, 10px) var(--kage-textarea-padding-bottom, 9px) var(--kage-textarea-padding-left, 10px);
+                    color: var(--kage-textarea-text-color, inherit);
+                    font-family: var(--kage-textarea-font-family, inherit);
+                    background: transparent;
+                    resize: none;
+                }
+            }
+            .icon{
                 display: none;
                 &:not(:empty) {
-                    display: block;
-                    margin-top: 3px;
-                    color: var(--color-medium);
+                    width: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
                 }
             }
-            .error{
-                display: none;
-                &:not(:empty){
-                    display: block;
-                    margin-top: 3px;
+            &:focus-within{
+                border-color: var(--kage-textarea-active-border-color, var(--color-primary, inherit));
+                .icon{
+                    &.start, &.end{
+                        border-color: var(--kage-textarea-active-border-color, var(--color-primary, inherit));
+                    }
                 }
             }
         }
-        .right{
-            &:not(:empty){
-                margin-left: 10px;
-                margin-top: 3px;
-            }
-            .counter{
+        .validators{
+            display: flex;
+            .left{
+                width: 100%;
                 display: flex;
-                align-items: center;
-                justify-content: flex-end;
-                font-size: 12px;
-                color: var(--color-medium);
-                span{
-                    margin-right: 3px;
-                    color: var(--color-dark);
+                flex-direction: column;
+                .hint{
+                    display: none;
+                    &:not(:empty) {
+                        display: block;
+                        margin-top: 3px;
+                        color: var(--color-medium);
+                    }
+                }
+                .error{
+                    display: none;
+                    &:not(:empty){
+                        display: block;
+                        margin-top: 3px;
+                    }
+                }
+            }
+            .right{
+                &:not(:empty){
+                    margin-left: 10px;
+                    margin-top: 3px;
+                }
+                .counter{
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    font-size: 12px;
+                    color: var(--color-medium);
+                    span{
+                        margin-right: 3px;
+                        color: var(--color-dark);
+                    }
                 }
             }
         }

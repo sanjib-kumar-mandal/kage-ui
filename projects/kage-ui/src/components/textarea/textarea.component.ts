@@ -39,6 +39,7 @@ export class KageTextarea {
   rows = input<number>(4);
   autoResize = input<boolean>();
   autocomplete = input<InputAutoComplete>('off');
+  cssClass = input<string>();
 
   valueChanged = output<string>();
 

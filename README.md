@@ -1,6 +1,5 @@
 > [!CAUTION]
 > Package is still on developer preview
-> Fixing internal errors and giving control to the developers
 
 # Kage UI Demo
 

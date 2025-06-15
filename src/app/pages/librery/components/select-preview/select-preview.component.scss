@@ -11,4 +11,7 @@ h3{
 }
 .previewer{
     min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }

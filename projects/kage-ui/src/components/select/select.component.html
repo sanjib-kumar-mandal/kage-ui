@@ -1,21 +1,24 @@
-<div
-  class="k-select"
-  (click)="toggleDropdown()"
-  role="combobox"
-  [attr.aria-expanded]="isOpen"
-  [attr.aria-multiselectable]="multiple()"
-  tabindex="0"
->
-  <div class="selected-value">
-    {{ displayLabel || placeholder() }}
-    <span class="chevron" [class.open]="isOpen">&#9662;</span>
+<div class="kage-select-wrapper" [class.disabled]="disabled()" [class]="cssClass() ?? ''" tabindex="0" (keydown)="onKeyDown($event)" #container>
+  <div class="kage-select-selected" (click)="toggleDropdown()">
+    <div class="kage-select-icon start"><ng-content select="[slot='icon-start']"></ng-content></div>
+    <div class="kage-select-stage-area">
+      {{ selectedOption?.label || placeholder() }}
+      <kage-icon [name]="isOpen ? 'chevron-up' : 'chevron-down'" [depth]="3" [size]="16"></kage-icon>
+    </div>
+    <div class="kage-select-icon end"><ng-content select="[slot='icon-end']"></ng-content></div>
   </div>
 
-  <div
-    class="dropdown scroll-bar"
-    [class.open]="isOpen"
-    role="listbox"
-  >
-    <ng-content></ng-content>
-  </div>
+  @if (isOpen) {
+    <ul class="kage-select-options">
+      @for (option of options; track $index; let i = $index) {
+        <li
+          (click)="selectOption(option, i)"
+          [class.focused]="i === focusedIndex"
+          [class.selected]="option.value === selectedOption?.value"
+        >
+          {{ option.label }}
+        </li>
+      }
+    </ul>
+  }
 </div>

@@ -1,6 +1,6 @@
-<div class="k-searchbar-wrapper" [class.disabled]="disabled()">
+<div class="kage-searchbar-wrapper" [class.disabled]="disabled()">
   <span class="search-icon" aria-hidden="true">
-    <kage-icon name="search"></kage-icon>
+    <kage-icon name="search" [depth]="3"></kage-icon>
   </span>
 
   <input
@@ -15,8 +15,8 @@
   />
 
   @if (value && showClear()) {
-    <button class="clear-btn" type="button" aria-label="Clear search" (click)="clear()">
-      <kage-icon name="remove"></kage-icon>
-    </button>
+    <div class="clear-btn" type="button" aria-label="Clear search" (click)="clear()">
+      <kage-icon name="remove" [depth]="3"></kage-icon>
+    </div>
   }
 </div>
