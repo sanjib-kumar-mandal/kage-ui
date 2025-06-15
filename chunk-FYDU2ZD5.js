@@ -1,0 +1,20 @@
+import{a as u}from"./chunk-DLNBYVDD.js";import{f as b,h as c}from"./chunk-ZZD5EEJJ.js";import{l as p}from"./chunk-SSMOU5CR.js";import{Eb as s,Ga as n,Ra as d,ab as a,ib as t,jb as e,kb as m,wb as r}from"./chunk-5TPMHWM3.js";var C=()=>({opr:"bread-crumb"}),g=class o{htmlCode=`
+  <kage-bread-crumbs>
+      <kage-bread-crumb label="Test" [routerLink]="'/ui-components'" [queryParams]="{opr: 'bread-crumb'}"></kage-bread-crumb>
+      <kage-bread-crumb label="Test" href="#test"></kage-bread-crumb>
+      <kage-bread-crumb label="Test" href="#test"></kage-bread-crumb>
+      <kage-bread-crumb label="Test" href="#test"></kage-bread-crumb>
+  </kage-bread-crumbs>
+  `;scssCode="";tsCode=`
+      import { Component } from '@angular/core';
+      import { KageBreadCrumb, KageBreadCrumbs } from 'kage-ui';
+      ...
+
+      @Component({
+        selector: 'app-example',
+        imports: [ KageBreadCrumb, KageBreadCrumbs, ... ],
+        templateUrl: '...',
+        styleUrl: '...',
+      })
+      export class AppExampleComponent {}
+  `;static \u0275fac=function(i){return new(i||o)};static \u0275cmp=d({type:o,selectors:[["app-bread-crumbs-preview"]],decls:92,vars:7,consts:[[1,"page-tag"],[1,"component"],["href","/library","label","Library"],["href","/library/bread-crumb","label","Bread Crumb"],[1,"description"],[3,"htmlCode","scssCode","tsCode"],[3,"iconDepth"],["label","Test",3,"routerLink","queryParams"],["label","Test","href","#test"],[1,"two-col-table"],[1,"two-col-table-head"],[1,"two-col-table-body"],[1,"each"]],template:function(i,l){i&1&&(t(0,"p",0)(1,"span",1),r(2,"Component"),e()(),t(3,"h1"),r(4,"Bread Crumbs"),e(),t(5,"kage-bread-crumbs"),m(6,"kage-bread-crumb",2)(7,"kage-bread-crumb",3),e(),t(8,"p",4),r(9,"The Breadcrumbs component provides a navigational trail that shows the user's current location within a site's hierarchy. It helps users understand the structure of the application and quickly navigate to previous levels. Supports custom separators, links, and dynamic generation from routes."),e(),t(10,"app-code-preview",5)(11,"kage-bread-crumbs",6),m(12,"kage-bread-crumb",7)(13,"kage-bread-crumb",8)(14,"kage-bread-crumb",8)(15,"kage-bread-crumb",8),e()(),t(16,"h3"),r(17,"Input Signals (k-bread-crumb)"),e(),t(18,"p",4),r(19,"List of Input Parameters."),e(),t(20,"div",9)(21,"div",10)(22,"p"),r(23,"Name"),e(),t(24,"p"),r(25,"Default Value | Type"),e()(),t(26,"div",11)(27,"div",12)(28,"p"),r(29,"label"),e(),t(30,"p"),r(31,"`string`"),e()(),t(32,"div",12)(33,"p"),r(34,"href"),e(),t(35,"p"),r(36,"`string`"),e()(),t(37,"div",12)(38,"p"),r(39,"cssClass"),e(),t(40,"p"),r(41,"`string`"),e()()()(),t(42,"h3"),r(43,"Custom CSS Variables"),e(),t(44,"p",4),r(45,"Recommended CSS Variable List \u2014 Defining values using these variables is advised to enhance maintainability and optimize CSS performance."),e(),t(46,"div",9)(47,"div",10)(48,"p"),r(49,"Name"),e(),t(50,"p"),r(51,"Fallback Values"),e()(),t(52,"div",11)(53,"div",12)(54,"p"),r(55,"--kage-breadcrumbs-flow-direction"),e(),t(56,"p"),r(57,"row"),e()(),t(58,"div",12)(59,"p"),r(60,"--kage-bread-crumbs-space"),e(),t(61,"p"),r(62,"10px"),e()(),t(63,"div",12)(64,"p"),r(65,"--kage-bread-crumbs-overflow"),e(),t(66,"p"),r(67,"wrap"),e()(),t(68,"div",12)(69,"p"),r(70,"--kage-bread-crumb-link-decoration"),e(),t(71,"p"),r(72,"none"),e()(),t(73,"div",12)(74,"p"),r(75,"--kage-bread-crumb-link-color"),e(),t(76,"p"),r(77,"inherit"),e()(),t(78,"div",12)(79,"p"),r(80,"--kage-bread-crumb-font-family"),e(),t(81,"p"),r(82,"inherit"),e()(),t(83,"div",12)(84,"p"),r(85,"--kage-bread-crumb-link-hover-color"),e(),m(86,"p"),e(),t(87,"div",12)(88,"p"),r(89,"--kage-bread-crumb-no-link-color"),e(),t(90,"p"),r(91,"inherit"),e()()()()),i&2&&(n(10),a("htmlCode",l.htmlCode)("scssCode",l.scssCode)("tsCode",l.tsCode),n(),a("iconDepth",3),n(),a("routerLink","/ui-components")("queryParams",s(6,C)))},dependencies:[u,b,c,p],styles:["h1[_ngcontent-%COMP%]{margin-bottom:10px}.description[_ngcontent-%COMP%]{color:var(--color-medium);margin:10px 0}h3[_ngcontent-%COMP%]{color:color-mix(in srgb,var(--color-dark) 80%,var(--color-light) 20%);margin:10px 0}"]})};export{g as BreadCrumbsPreviewComponent};
