@@ -1,3 +1,4 @@
+import { NgClass } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -11,7 +12,7 @@ import { debounceTime, Subject } from 'rxjs';
 
 @Component({
   selector: 'kage-range',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './range.component.html',
   styleUrl: './range.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -34,6 +35,7 @@ export class KageRange {
   valueChange = output<number>();
   focus = output<void>();
   blur = output<void>();
+  cssClass = input<string>();
   color = input<
     | 'primary'
     | 'secondary'

@@ -1,14 +1,14 @@
 <p class="page-tag"><span class="component">Component</span></p>
 <h1>Progress Bar</h1>
-<kage-bread-crumbs>
+<kage-bread-crumbs [iconDepth]="3">
     <kage-bread-crumb [href]="'/library'" label="Library"></kage-bread-crumb>
     <kage-bread-crumb [href]="'/library/progress-bar'" label="Progress Bar"></kage-bread-crumb>
 </kage-bread-crumbs>
 <p class="description">The Progress Bar component visually represents task progress in a linear format. It supports determinate and indeterminate modes, custom colors, and dynamic value updates.</p>
 <app-code-preview [htmlCode]="htmlCode" [tsCode]="tsCode">
-    <kage-progress-bar></kage-progress-bar>
-    <kage-progress-bar [value]="30" mode="determinate"></kage-progress-bar>
-    <kage-progress-bar mode="buffer" [value]="20"></kage-progress-bar>
+    <kage-progress-bar color="secondary"></kage-progress-bar>
+    <kage-progress-bar color="danger" [value]="30" mode="determinate"></kage-progress-bar>
+    <kage-progress-bar color="success" mode="buffer" [value]="20"></kage-progress-bar>
 </app-code-preview>
 <h3>Input</h3>
 <p class="description">List of Input Parameters.</p>
@@ -20,6 +20,19 @@
     <div class="two-col-table-body">
         <div class="each"><p>mode</p><p>'determinate' | 'buffer' | 'indeterminate'. Default 'indeterminate'</p></div>
         <div class="each"><p>value</p><p>Type `number`. Default 0</p></div>
-        <div class="each"><p>color</p><p>Type `string`. Default 'var(--color-primary)'</p></div>
+        <div class="each"><p>color</p><p>'primary' | 'secondary' | 'tertiary' | 'warning' | 'danger' | 'success' | 'info'. Default 'primary'</p></div>
+    </div>
+</div>
+<h3>Custom CSS Variables</h3>
+<p class="description">Recommended CSS Variable List — Defining values using these variables is advised to enhance maintainability and optimize CSS performance.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Fallback Values</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>--kage-progress-bar-size</p><p>3px</p></div>
+        <div class="each"><p>--kage-progress-bar-track-color</p><p>transparent</p></div>
+        <div class="each"><p>--kage-progress-bar-thumb-color</p><p></p></div>
     </div>
 </div>

@@ -1,15 +1,15 @@
-.k-progress-bar-wrapper {
+.kage-progress-bar-wrapper {
     width: 100%;
-    height: var(--k-progress-bar-size);
+    height: var(--kage-progress-bar-size, 3px);
     overflow: hidden;
     .progress-bar-track {
         width: 100%;
         height: 100%;
         position: relative;
-        background: var(--k-progress-bar-track-color);
+        background: var(--kage-progress-bar-track-color, transparent);
         .progress-bar-fill,
         .progress-bar-buffer {
-            background: var(--k-progress-bar-thumb-color);
+            background: var(--kage-progress-bar-thumb-color, var(--color-primary, transparent));
             height: 100%;
             transition: width 0.3s ease;
             position: absolute;
@@ -30,10 +30,31 @@
                 width: 40%;
                 height: 100%;
                 position: absolute;
-                background: var(--k-progress-bar-indeterminate-color);
+                background: var(--kage-progress-bar-thumb-color, var(--color-primary, transparent));
                 animation: indeterminate 2s infinite ease-in-out;
             }
         }
+    }
+    &.primary{
+        --kage-progress-bar-thumb-color: var(--color-primary);
+    }
+    &.secondary{
+        --kage-progress-bar-thumb-color: var(--color-secondary);
+    }
+    &.tertiary{
+        --kage-progress-bar-thumb-color: var(--color-tertiary);
+    }
+    &.success{
+        --kage-progress-bar-thumb-color: var(--color-success);
+    }
+    &.danger{
+        --kage-progress-bar-thumb-color: var(--color-danger);
+    }
+    &.warning{
+        --kage-progress-bar-thumb-color: var(--color-warning);
+    }
+    &.info{
+        --kage-progress-bar-thumb-color: var(--color-info);
     }
 }
 

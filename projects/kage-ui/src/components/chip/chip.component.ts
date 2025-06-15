@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -9,13 +8,12 @@ import { KageIcon } from '../icon/icon.component';
 
 @Component({
   selector: 'kage-chip',
-  imports: [NgClass, KageIcon],
+  imports: [KageIcon],
   templateUrl: './chip.component.html',
   styleUrl: './chip.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class KageChip {
-  removable = input<boolean>(false);
   color = input<
     | 'primary'
     | 'secondary'
@@ -25,9 +23,10 @@ export class KageChip {
     | 'warning'
     | 'info'
   >();
-  shape = input<'radial' | 'sharp'>('sharp');
 
   onRemove = output<void>();
+  removable = input<boolean>(false);
+  removeIconDepth = input<number>();
 
   removeChip() {
     this.onRemove.emit();

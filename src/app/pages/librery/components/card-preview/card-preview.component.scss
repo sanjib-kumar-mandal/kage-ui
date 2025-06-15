@@ -9,13 +9,26 @@ h3{
     color: color-mix(in srgb, var(--color-dark) 80%, var(--color-light) 20%);
     margin: 10px 0;
 }
-.btns{
-    display: flex;
-    k-button{
-        display: block;
-        margin-right: 5px;
-        &:last-child{
-            margin-right: 0 !important;
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 10px;
+    .firstCard{
+        --kage-card-border-top-width: 5px;
+        --kage-card-border-color: var(--color-warning);
+    }
+    .secondCard{
+        --kage-card-border-bottom-width: 5px;
+        --kage-card-border-color: var(--color-primary);
+    }
+    .btns{
+        display: flex;
+        kage-button{
+            display: block;
+            margin-right: 5px;
+            &:last-child{
+                margin-right: 0 !important;
+            }
         }
     }
 }

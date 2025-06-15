@@ -33,6 +33,7 @@ export class KageFab {
   position = input<'top-right' | 'top-left' | 'bottom-left' | 'bottom-right'>(
     'bottom-left'
   );
+  cssClass = input<string>();
 
   onClick = output<Event>();
   onChange = output<string>();

@@ -10,7 +10,7 @@ import { KageBreadCrumb, KageBreadCrumbs, KageChip } from 'kage-ui';
 })
 export class ChipPreviewComponent {
   htmlCode = `
-    <kage-chip>Chip</kage-chip>
+    <kage-chip>Default</kage-chip>
     <kage-chip color="danger" [removable]="true">Danger</kage-chip>
     <kage-chip color="success">Success</kage-chip>
     <kage-chip color="warning">Warning</kage-chip>
@@ -18,15 +18,6 @@ export class ChipPreviewComponent {
     <kage-chip color="secondary">Secondary</kage-chip>
     <kage-chip color="tertiary">Tertiary</kage-chip>
     <kage-chip color="info">Info</kage-chip>
-
-    <kage-chip shape="radial">Chip</kage-chip>
-    <kage-chip color="danger" shape="radial">Chip</kage-chip>
-    <kage-chip color="success" shape="radial" [removable]="true">Chip</kage-chip>
-    <kage-chip color="warning" shape="radial">Chip</kage-chip>
-    <kage-chip color="primary" shape="radial">Primary</kage-chip>
-    <kage-chip color="secondary" shape="radial">Secondary</kage-chip>
-    <kage-chip color="tertiary" shape="radial">Tertiary</kage-chip>
-    <kage-chip color="info" shape="radial">Info</kage-chip>
   `;
   scssCode = ``;
   tsCode = `

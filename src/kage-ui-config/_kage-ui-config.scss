@@ -4,20 +4,16 @@
 @import "./size/size";
 @import "./scrollbar/scrollbar";
 @import "./toast/toast";
-@import "./accordion/accordion";
-@import "./radio/radio";
-@import "./badge/badge";
-@import "./bread-crumb/bread-crumb";
-@import "./button/button";
-@import "./checkbox/checkbox";
-@import "./chip/chip";
 @import "./drawer/drawer";
-@import "./fab/fab";
-@import "./input/input";
-@import "./progress-bar/progress-bar";
-@import "./range/range";
-@import "./toggle/toggle";
 @import "./image-view/image-view";
+
+/* == BORDER CONFIG == */
+:host{
+    --border-width: 1px;
+    --border-color: color-mix(in srgb, var(--color-medium) 60%, var(--color-background) 40%);
+    --border-color-active: color-mix(in srgb, var(--color-medium) 80%, var(--color-background) 20%);
+    --default-font: 'my-font-medium';
+}
 
 *{
     margin: 0;
@@ -30,11 +26,6 @@
 body{
     background: var(--color-background);
     color: var(--color-text);
-    // Global variable
-    --border-width: 2px;
-    --border-color: color-mix(in srgb, var(--color-medium) 60%, var(--color-background) 40%);
-    --border-color-active: color-mix(in srgb, var(--color-medium) 80%, var(--color-background) 20%);
-    --default-font: 'my-font-medium';
     .container{
         width: 90%;
         margin: 0 auto;

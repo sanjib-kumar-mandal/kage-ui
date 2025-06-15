@@ -1,17 +1,12 @@
-@if (href() || routerLink()) {
-    <a
-        class="kage-card-link-wrapper"
-        [href]="href()"
-        [routerLink]="href() || routerLink()"
-        tabindex="0"
-    >
-        <div class="kage-card">
-          <ng-container *ngTemplateOutlet="cardContent"></ng-container>
-        </div>
+@if (href()) {
+    <a class="kage-card-link-wrapper" [routerLink]="href()" tabindex="0">
+      <div class="kage-card-wrapper" [class]="cssClass() ?? ''">
+        <ng-container *ngTemplateOutlet="cardContent"></ng-container>
+      </div>
     </a>
 } @else {
-    <div class="kage-card">
-        <ng-container *ngTemplateOutlet="cardContent"></ng-container>
+    <div class="kage-card-wrapper" [class]="cssClass() ?? ''">
+      <ng-container *ngTemplateOutlet="cardContent"></ng-container>
     </div>
 }
 

@@ -7,9 +7,9 @@ import { RouterLink, RouterLinkWithHref } from '@angular/router';
   imports: [RouterLink, RouterLinkWithHref, NgTemplateOutlet],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class KageCard {
   href = input<string>();
-  routerLink = input<string>();
+  cssClass = input<string>();
 }

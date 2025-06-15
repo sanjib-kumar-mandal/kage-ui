@@ -1,141 +1,137 @@
 :host{
   display: inline-block;
-}
-.k-calendar-wrapper {
-  max-width: 320px;
-  font-family: system-ui, sans-serif;
-  border: var(--border-width, 1px) solid var(--border-color);
-  overflow: hidden;
-  background: color-mix(in srgb, var(--color-background) 90%, var(--color-medium) 10%);
-  .k-calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: color-mix(in srgb, var(--color-background) 80%, var(--color-medium) 20%);
-    padding: 8px;
-    gap: 4px;
-    button {
-      background: transparent;
-      border: none;
-      font-size: 18px;
-      cursor: pointer;
-      color: var(--color-text);
+  .kage-calendar-wrapper {
+    max-width: 320px;
+    font-family: system-ui, sans-serif;
+    border: var(--kage-calendar-border-width, 1px) solid var(--kage-clendar-border-color, var(--color-primary, inherit));
+    overflow: hidden;
+    background: var(--kage-calendar-background, color-mix(in srgb, var(--color-background) 90%, var(--color-medium) 10%));
+    .kage-calendar-header {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      k-icon{
-        --icon-depth: var(--border-width, 1px);
-        color: var(--border-color);
-      }
-    }
-
-    select {
-      padding: 4px 6px;
-      border: var(--border-width, 1px) solid var(--border-color);
-      font-size: 14px;
-      background: transparent;
-      color: var(--color-text);
-      option{
-        background: var(--color-background);
-        color: var(--color-text);
-      }
-    }
-  }
-
-  .k-calendar-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
-    th, td {
-      padding: 6px;
-      border: var(--border-width, 1px) solid var(--border-color);
-      width: 36px;
-      height: 25px;
-      &:first-child{
-        border-left: none;
-      }
-      &:last-child{
-        border-right: none;
-      }
-    }
-
-    th {
-      background: color-mix(in srgb, var(--color-background) 80%, var(--color-medium) 20%);
-      font-weight: bold;
-      font-size: 12px;
-    }
-
-    td {
-      &:not(:empty){
+      background: var(--kage-caelndar-header-background, color-mix(in srgb, var(--color-background) 80%, var(--color-medium) 20%));
+      padding: 8px;
+      gap: 4px;
+      button {
+        background: transparent;
+        border: none;
+        font-size: 18px;
         cursor: pointer;
-        transition: background 0.2s ease;
-        font-size: 13px;
-        &:hover {
-          background: color-mix(in srgb, var(--color-background) 80%, var(--color-medium) 20%);
+        color: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      select {
+        padding: 4px 6px;
+        border: var(--kage-calendar-border-width, 1px) solid var(--kage-clendar-dropdown-border-color, var(--color-primary, inherit));
+        font-size: 14px;
+        background: var(--kage-clendar-dropdown-background-color, transparent);
+        color: var(--kage-clendar-dropdown-text-color, inherit);
+        option{
+          background: var(--color-background);
+          color: var(--color-text);
+        }
+      }
+    }
+
+    .kage-calendar-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      th, td {
+        padding: 6px;
+        border: var(--border-width, 1px) solid var(--border-color);
+        width: 36px;
+        height: 25px;
+        &:first-child{
+          border-left: none;
+        }
+        &:last-child{
+          border-right: none;
         }
       }
 
-      &.selected {
-        background: var(--color-primary) !important;
-        color: white !important;
-        &:hover{
-          background: var(--color-primary) !important;
-        }
-      }
-
-      &.today{
-        background: var(--border-color);
-        color: var(--color-text);
-      }
-
-      &.week-number {
+      th {
         background: color-mix(in srgb, var(--color-background) 80%, var(--color-medium) 20%);
         font-weight: bold;
-        cursor: default;
+        font-size: 12px;
       }
-    }
-    tbody{
-      tr{
-        &:last-child{
-          td{
-            border-bottom: none;
+
+      td {
+        &:not(:empty){
+          cursor: pointer;
+          transition: background 0.2s ease;
+          font-size: 13px;
+          &:hover {
+            background: color-mix(in srgb, var(--color-background) 80%, var(--color-medium) 20%);
+          }
+        }
+
+        &.selected {
+          background: var(--color-primary) !important;
+          color: white !important;
+          &:hover{
+            background: var(--color-primary) !important;
+          }
+        }
+
+        &.today{
+          background: var(--border-color);
+          color: var(--color-text);
+        }
+
+        &.week-number {
+          background: color-mix(in srgb, var(--color-background) 80%, var(--color-medium) 20%);
+          font-weight: bold;
+          cursor: default;
+        }
+      }
+      tbody{
+        tr{
+          &:last-child{
+            td{
+              border-bottom: none;
+            }
           }
         }
       }
     }
-  }
 
-  .time-picker {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8px;
-    gap: 4px;
-    border-top: var(--border-width, 1px) solid var(--border-color);
-    input, select {
-      width: 48px;
-      padding: 4px;
-      font-size: 14px;
-      border: var(--border-width, 1px) solid var(--border-color);
-      text-align: center;
-      background: transparent;
-      color: var(--color-text);
+    .time-picker {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px;
+      gap: 4px;
+      border-top: var(--border-width, 1px) solid var(--border-color);
+      input, select {
+        width: 48px;
+        padding: 4px;
+        font-size: 14px;
+        border: var(--border-width, 1px) solid var(--border-color);
+        text-align: center;
+        background: transparent;
+        color: var(--color-text);
+      }
+
+      select {
+        width: auto;
+      }
     }
 
-    select {
-      width: auto;
-    }
-  }
-
-  .btns{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    border-top: var(--border-width, 1px) solid var(--border-color);
-    gap: 10px;
-    k-button{
-      width: 50%;
+    .btns{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border-top: var(--border-width, 1px) solid var(--border-color);
+      gap: 10px;
+      kage-button{
+        width: 50%;
+      }
     }
   }
 }

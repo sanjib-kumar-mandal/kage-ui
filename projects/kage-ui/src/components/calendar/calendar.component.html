@@ -1,7 +1,7 @@
-<div class="k-calendar-wrapper">
-  <div class="k-calendar-header">
+<div class="kage-calendar-wrapper">
+  <div class="kage-calendar-header">
     <button (click)="prevMonth()">
-      <kage-icon name="chevron-backward"></kage-icon>
+      <kage-icon name="chevron-backward" [depth]="2"></kage-icon>
     </button>
 
     <!-- (change)="setMonth(+($event.target as HTMLSelectElement).value)" -->
@@ -18,11 +18,11 @@
     </select>
 
     <button (click)="nextMonth()">
-      <kage-icon name="chevron-forward"></kage-icon>
+      <kage-icon name="chevron-forward" [depth]="2"></kage-icon>
     </button>
   </div>
 
-  <table class="k-calendar-table">
+  <table class="kage-calendar-table">
     <thead>
       <tr>
         <th>Wk</th>

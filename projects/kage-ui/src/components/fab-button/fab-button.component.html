@@ -1,10 +1,10 @@
-<div class="k-fab-button-wrapper" [ngClass]="[color() ?? '', position()]">
+<div class="kage-fab-button-wrapper" [ngClass]="[color() ?? '', position(), cssClass() ?? '']">
 	<input type="checkbox" (change)="onChangeEffect($event)" />
 	<div class="fab-button" (click)="clicked($event)"><ng-content select="[slot='icon']"></ng-content></div>
-    @if (expandItems?.length) {
+    @if (expandItems.length) {
         <div class="fab-slot-buttons">
             @for (item of expandItems; track $index) {
-                <a [routerLink]="item.redirectURI()" [ngClass]="[item.color() ?? '']" [attr.title]="item.title() ?? ''" [class.disabled]="item.disabled()">
+                <a [routerLink]="item.redirectURI()" [ngClass]="[item.color() ?? '', item.cssClass() ?? '']" [attr.title]="item.title() ?? ''" [class.disabled]="item.disabled()">
                     <ng-container *ngTemplateOutlet="item.content"></ng-container>
                 </a>
             }

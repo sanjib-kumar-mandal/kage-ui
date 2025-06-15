@@ -1,6 +1,6 @@
 <p class="page-tag"><span class="component">Component</span></p>
 <h1>Radio</h1>
-<kage-bread-crumbs>
+<kage-bread-crumbs [iconDepth]="3">
     <kage-bread-crumb [href]="'/library'" label="Library"></kage-bread-crumb>
     <kage-bread-crumb [href]="'/library/radio'" label="Radio"></kage-bread-crumb>
 </kage-bread-crumbs>
@@ -24,8 +24,8 @@
         <p>Default Value | Type</p>
     </div>
     <div class="two-col-table-body">
-        <div class="each"><p>name</p><p>Type `string`.</p></div>
-        <div class="each"><p>disabled</p><p>Type `boolean`. Default false</p></div>
+        <div class="each"><p>name</p><p>`string`.</p></div>
+        <div class="each"><p>disabled</p><p>`boolean`. Default false</p></div>
     </div>
 </div>
 <h3>Input (kage-radio)</h3>
@@ -36,8 +36,29 @@
         <p>Default Value | Type</p>
     </div>
     <div class="two-col-table-body">
-        <div class="each"><p>value</p><p>Type `any`.</p></div>
-        <div class="each"><p>disabled</p><p>Type `boolean`. Default false</p></div>
+        <div class="each"><p>value</p><p>`any`.</p></div>
+        <div class="each"><p>disabled</p><p>`boolean`. Default false</p></div>
+        <div class="each"><p>cssClass</p><p>`string`</p></div>
         <div class="each"><p>color</p><p>'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'danger' | 'info'</p></div>
+    </div>
+</div>
+<h3>Custom CSS Variables</h3>
+<p class="description">Recommended CSS Variable List — Defining values using these variables is advised to enhance maintainability and optimize CSS performance.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Fallback Values</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>--kage-radio-size</p><p>16px</p></div>
+        <div class="each"><p>--kage-radio-border-radius</p><p>0px</p></div>
+        <div class="each"><p>--kage-radio-border-width</p><p>1px</p></div>
+        <div class="each"><p>--kage-radio-border-color</p><p>--color-medium</p></div>
+        <div class="each"><p>--kage-radio-indicator-size</p><p>9px</p></div>
+        <div class="each"><p>--kage-radio-disable-opacity</p><p>.6</p></div>
+        <div class="each"><p>--kage-radio-color-checked</p><p>--color-primary</p></div>
+        <div class="each"><p>--kage-radio-buttons-direction</p><p>column</p></div>
+        <div class="each"><p>--kage-radio-buttons-gap</p><p>10px</p></div>
+        <div class="each"><p>--kage-radio-buttons-disable-opacity</p><p>.6</p></div>
     </div>
 </div>

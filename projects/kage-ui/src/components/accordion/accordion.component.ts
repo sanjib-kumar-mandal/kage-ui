@@ -22,6 +22,7 @@ export class KageAccordion implements AfterViewInit {
   @ViewChild('header', { read: ElementRef }) header!: ElementRef;
   @ViewChild('content', { read: ElementRef }) content!: ElementRef;
 
+  cssClass = input<string>();
   color = input<
     | 'primary'
     | 'secondary'

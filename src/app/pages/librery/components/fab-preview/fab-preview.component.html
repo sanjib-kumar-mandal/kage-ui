@@ -8,28 +8,27 @@
 <app-code-preview [htmlCode]="htmlCode" [tsCode]="tsCode">
     <div class="fab-container">
         <kage-fab-button color="success" position="top-right">
-            <mat-icon slot='icon' fontIcon="add"></mat-icon>
-            <kage-fab-item color="danger"><mat-icon fontIcon="home"></mat-icon></kage-fab-item>
-            <kage-fab-item><mat-icon fontIcon="refresh"></mat-icon></kage-fab-item>
+            <kage-fab-item color="danger"><kage-icon name="home" [depth]="3"></kage-icon></kage-fab-item>
+            <kage-fab-item><kage-icon name="terminal" [depth]="3"></kage-icon></kage-fab-item>
         </kage-fab-button>
         <kage-fab-button color="danger" position="top-left">
-            <mat-icon slot='icon' fontIcon="add"></mat-icon>
-            <kage-fab-item [disabled]="true"><mat-icon fontIcon="sync"></mat-icon></kage-fab-item>
-            <kage-fab-item><mat-icon fontIcon="terminal"></mat-icon></kage-fab-item>
+            <kage-icon [depth]="3" slot="icon" name="home"></kage-icon>
+            <kage-fab-item [disabled]="true"><kage-icon name="home" [depth]="3"></kage-icon></kage-fab-item>
+            <kage-fab-item><kage-icon name="terminal" [depth]="3"></kage-icon></kage-fab-item>
         </kage-fab-button>
         <kage-fab-button color="warning" position="bottom-left">
-            <mat-icon slot='icon' fontIcon="add"></mat-icon>
-            <kage-fab-item><mat-icon fontIcon="file_open"></mat-icon></kage-fab-item>
-            <kage-fab-item><mat-icon fontIcon="downloading"></mat-icon></kage-fab-item>
+            <kage-icon [depth]="3" slot="icon" name="person"></kage-icon>
+            <kage-fab-item color="danger"><kage-icon name="person" [depth]="3"></kage-icon></kage-fab-item>
+            <kage-fab-item><kage-icon name="download" [depth]="3"></kage-icon></kage-fab-item>
         </kage-fab-button>
         <kage-fab-button position="bottom-right">
-            <mat-icon slot='icon' fontIcon="add"></mat-icon>
-            <kage-fab-item><mat-icon fontIcon="token"></mat-icon></kage-fab-item>
-            <kage-fab-item [disabled]="true"><mat-icon fontIcon="assistant_navigation"></mat-icon></kage-fab-item>
+            <kage-icon [depth]="3" slot="icon" name="chevron-down" [depth]="3"></kage-icon>
+            <kage-fab-item><kage-icon name="terminal" [depth]="3"></kage-icon></kage-fab-item>
+            <kage-fab-item [disabled]="true"><kage-icon name="terminal"></kage-icon></kage-fab-item>
         </kage-fab-button>
     </div>
 </app-code-preview>
-<h3>Inputs</h3>
+<h3>Input Signal</h3>
 <p class="description">List of Input Parameters.</p>
 <div class="two-col-table">
     <div class="two-col-table-head">
@@ -39,9 +38,10 @@
     <div class="two-col-table-body">
         <div class="each"><p>color</p><p>'primary' | 'secondary' | 'tertiary' | 'danger' | 'success' | 'warning' | 'info'</p></div>
         <div class="each"><p>position</p><p>'top-right' | 'top-left' | 'bottom-left' | 'bottom-right'</p></div>
+        <div class="each"><p>cssClass</p><p>`string`</p></div>
     </div>
 </div>
-<h3>Outputs</h3>
+<h3>Output Signal Event</h3>
 <p class="description">List of Output Parameters.</p>
 <div class="two-col-table">
     <div class="two-col-table-head">
@@ -49,7 +49,31 @@
         <p>Default Value | Type</p>
     </div>
     <div class="two-col-table-body">
-        <div class="each"><p>onClick</p><p>Type `Event`</p></div>
-        <div class="each"><p>onChange</p><p>Type `string`</p></div>
+        <div class="each"><p>onClick</p><p>`Event`</p></div>
+        <div class="each"><p>onChange</p><p>`string`</p></div>
+    </div>
+</div>
+<h3>Custom CSS Variables</h3>
+<p class="description">Recommended CSS Variable List — Defining values using these variables is advised to enhance maintainability and optimize CSS performance.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Fallback Values</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>--kage-fab-size</p><p>50px</p></div>
+        <div class="each"><p>--kage-fab-background</p><p>transparent</p></div>
+        <div class="each"><p>--kage-fab-icon-color</p><p></p></div>
+        <div class="each"><p>--kage-fab-border-width</p><p>1px</p></div>
+        <div class="each"><p>--kage-fab-border-color</p><p></p></div>
+        <div class="each"><p>--kage-fab-color</p><p>--color-primary</p></div>
+        <div class="each"><p>--kage-fab-border-radius</p><p>0px</p></div>
+        <div class="each"><p>--kage-fab-item-size</p><p>36px</p></div>
+        <div class="each"><p>--kage-fab-item-border-width</p><p>1px</p></div>
+        <div class="each"><p>--kage-fab-item-border-color</p><p></p></div>
+        <div class="each"><p>--kage-fab-item-border-radius</p><p>0px</p></div>
+        <div class="each"><p>--kage-fab-item-disable-opacity</p><p>.6</p></div>
+        <div class="each"><p>--kage-fab-item-background</p><p>transparent</p></div>
+        <div class="each"><p>--kage-fab-item-color</p><p></p></div>
     </div>
 </div>

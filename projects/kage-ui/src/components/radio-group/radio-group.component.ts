@@ -15,7 +15,7 @@ import { KageRadio } from '../radio/radio.component';
   selector: 'kage-radio-group',
   imports: [],
   template: `
-    <div class="k-radio-group" [class.disabled]="disabled() === true">
+    <div class="kage-radio-group" [class.disabled]="disabled() === true">
       <ng-content></ng-content>
     </div>
   `,
@@ -28,9 +28,7 @@ import { KageRadio } from '../radio/radio.component';
     },
   ],
 })
-export class KageRadioGroup
-  implements ControlValueAccessor, AfterContentInit
-{
+export class KageRadioGroup implements ControlValueAccessor, AfterContentInit {
   name = input<string>('');
   disabled = model<boolean>(false);
 

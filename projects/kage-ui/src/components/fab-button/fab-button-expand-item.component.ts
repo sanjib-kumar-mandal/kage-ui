@@ -18,5 +18,6 @@ export class KageFabItem {
   color = input<'danger' | 'success' | 'warning'>();
   redirectURI = input<string>();
   disabled: InputSignal<boolean> = input<boolean>(false);
+  cssClass = input<string>();
   @ViewChild('content', { read: TemplateRef }) content!: TemplateRef<any>;
 }

@@ -1,4 +1,4 @@
-<div class="k-accordion-wrapper" [ngClass]="[color() ?? '']">
-    <div class="k-accordion-header" #header><ng-content select="[slot='header']"></ng-content></div>
-    <div class="k-accordion-content" #content><ng-content select="[slot='content']"></ng-content></div>
+<div class="kage-accordion-wrapper" [ngClass]="[color() ?? '', cssClass() ?? '']">
+    <div class="kage-accordion-header" #header><ng-content select="[slot='header']"></ng-content></div>
+    <div class="kage-accordion-content" #content><ng-content select="[slot='content']"></ng-content></div>
 </div>

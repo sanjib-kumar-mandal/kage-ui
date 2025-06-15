@@ -37,6 +37,7 @@ export class KageCheckbox implements ControlValueAccessor {
   checked = false;
   name = input<string>();
   id = input<string>();
+  cssClass = input<string>();
 
   private onChange = (value: boolean) => {};
   private onTouched = () => {};

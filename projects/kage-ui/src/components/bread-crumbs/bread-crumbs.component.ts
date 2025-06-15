@@ -17,6 +17,7 @@ import { KageIcon } from '../icon/icon.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class KageBreadCrumbs {
+  cssClass = input<string>();
   iconDepth = input<number>();
   @ContentChildren(KageBreadCrumb)
   breadCrumps!: QueryList<KageBreadCrumb>;

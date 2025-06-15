@@ -11,5 +11,13 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 export class KageProgressBar {
   mode = input<'determinate' | 'buffer' | 'indeterminate'>('indeterminate');
   value = input<number>(0);
-  color = input<string>('var(--color-primary)');
+  color = input<
+    | 'primary'
+    | 'secondary'
+    | 'tertiary'
+    | 'warning'
+    | 'danger'
+    | 'success'
+    | 'info'
+  >('primary');
 }

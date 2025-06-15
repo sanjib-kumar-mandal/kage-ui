@@ -1,4 +1,4 @@
-<div class="k-progress-bar-wrapper" [ngClass]="mode()">
+<div class="kage-progress-bar-wrapper" [ngClass]="[mode(), color()]">
     <div class="progress-bar-track">
         @if (mode() !== 'indeterminate') {
             <div class="progress-bar-fill" [style.width.%]="value()"></div>

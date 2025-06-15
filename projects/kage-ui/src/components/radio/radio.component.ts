@@ -21,6 +21,7 @@ export class KageRadio {
     | 'info'
   >('primary');
   checked = false;
+  cssClass = input<string>();
 
   name = '';
   private group!: KageRadioGroup;

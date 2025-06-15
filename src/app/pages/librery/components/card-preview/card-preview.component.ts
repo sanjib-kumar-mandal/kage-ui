@@ -27,7 +27,12 @@ export class CardPreviewComponent {
       </div>
   </kage-card>
   `;
-  scssCode = ``;
+  scssCode = `
+  .firstCard{
+    --kage-card-border-top-width: 5px;
+    --kage-card-border-color: var(--color-warning);
+  }
+  `;
   tsCode = `
   import { Component } from '@angular/core';
   import { KageCard } from 'kage-ui';

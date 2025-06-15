@@ -1,19 +1,20 @@
-.k-breadcrumbs-wrapper{
+.kage-breadcrumbs-wrapper{
     display: flex;
     align-items: center;
-    gap: var(--k-bread-crumb-space);
-    flex-wrap: var(--k-bread-crumb-flex-wrap);
+    flex-direction: var(--kage-breadcrumbs-flow-direction, row);
+    gap: var(--kage-bread-crumbs-space, 10px);
+    flex-wrap: var(--kage-bread-crumbs-overflow, wrap);
     a, p{
-        text-decoration: var(--k-bread-crumb-link-text-decoration);
-        color: var(--k-bread-crumb-link-text-color);
-        font-family: var(--k-bread-crumb-font-family);
+        text-decoration: var(--kage-bread-crumb-link-decoration, none);
+        color: var(--kage-bread-crumb-link-color, inherit);
+        font-family: var(--kage-bread-crumb-font-family, inherit);
         transition: color .3s;
         &:hover{
-            color: var(--k-bread-crumb-link-hover-text-color);
+            color: var(--kage-bread-crumb-link-hover-color, var(--color-primary, inherit));
         }
     }
     p{
         pointer-events: none;
-        color: var(--k-bread-crumb-last-text-color);
+        color: var(--kage-bread-crumb-no-link-color, var(--color-primary, inherit));
     }
 }

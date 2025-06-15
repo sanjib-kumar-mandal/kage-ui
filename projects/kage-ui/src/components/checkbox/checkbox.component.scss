@@ -1,44 +1,45 @@
-.k-checkbox-wrapper{
+.kage-checkbox-wrapper{
     display: flex;
     align-items: center;
     justify-content: flex-start;
     cursor: pointer;
-    width: var(--k-checkbox-width);
+    width: var(--kage-checkbox-area-width, fit-content);
     input{
         display: none;
     }
     .check-box {
-        height: var(--k-checkbox-size);
-        width: var(--k-checkbox-size);
+        height: var(--kage-checkbox-size, 18px);
+        width: var(--kage-checkbox-size, 18px);
         background-color: transparent;
-        border: calc(var(--k-checkbox-size) * .1) solid var(--k-checkbox-border-color);
+        border: calc(var(--kage-checkbox-size, 18px) * .1) solid var(--kage-checkbox-color, var(--color-medium, inherit));
         position: relative;
         display: inline-block;
         box-sizing: border-box;
-        transition: border-color ease calc(var(--k-checkbox-animation-duration) / 2);
+        transition: border-color ease calc(var(--kage-checkbox-animation-duration, 0.4s) / 2);
         cursor:pointer;
+        border-radius: var(--kage-checkbox-radius, 0px);
         &::before, &::after {
             box-sizing: border-box;
             position: absolute;
             height: 0;
-            width: calc(var(--k-checkbox-size) * .2);
+            width: calc(var(--kage-checkbox-size, 18px) * .2);
             display: inline-block;
             transform-origin: left top;
             content: ' ';
             transition: opacity ease .5;
-            background-color: var(--k-checkbox-checked-color);
+            background-color: var(--kage-checkbox-checked-color, var(--color-primary));
         }
 
         &::before {
-            top: calc(var(--k-checkbox-size) * .72);
-            left: calc(var(--k-checkbox-size) * .41);
-            box-shadow: 0 0 0 calc(var(--k-checkbox-size) * .05) transparent;
+            top: calc(var(--kage-checkbox-size, 18px) * .72);
+            left: calc(var(--kage-checkbox-size, 18px) * .41);
+            box-shadow: 0 0 0 calc(var(--kage-checkbox-size, 18px) * .05) transparent;
             transform: rotate(-135deg);
         }
 
         &::after {
-            top: calc(var(--k-checkbox-size) * .37);
-            left: calc(var(--k-checkbox-size) * .05);
+            top: calc(var(--kage-checkbox-size, 18px) * .37);
+            left: calc(var(--kage-checkbox-size, 18px) * .05);
             transform: rotate(-45deg);
         }
     }
@@ -48,51 +49,51 @@
         }
     }
     &.disabled{
-        opacity: var(--k-checkbox-disabled-opacity);
+        opacity: var(--kage-checkbox-disabled-opacity, 0.6);
         pointer-events: none;
     }
     input:checked + .check-box, .check-box.checked{
-        border-color: var(--k-checkbox-checked-color);
+        border-color: var(--kage-checkbox-checked-color, var(--color-primary));
         &::after{
-            height: calc(var(--k-checkbox-size) * .5);
-            animation: dothabottomcheck calc(calc(var(--k-checkbox-animation-duration) / 2)) ease 0s forwards;
+            height: calc(var(--kage-checkbox-size, 18px) * .5);
+            animation: dothabottomcheck calc(calc(var(--kage-checkbox-animation-duration, 0.4s) / 2)) ease 0s forwards;
         }
         
         &::before{
-            height: calc(var(--k-checkbox-size) * 1.2);
-            animation: dothatopcheck var(--k-checkbox-animation-duration) ease 0s forwards;
+            height: calc(var(--kage-checkbox-size, 18px) * 1.2);
+            animation: dothatopcheck var(--kage-checkbox-animation-duration, 0.4s) ease 0s forwards;
         }
     }
     &.primary{
-        --k-checkbox-checked-color: var(--color-primary);
+        --kage-checkbox-checked-color: var(--color-primary);
     }
     &.secondary{
-        --k-checkbox-checked-color: var(--color-secondary);
+        --kage-checkbox-checked-color: var(--color-secondary);
     }
     &.tertiary{
-        --k-checkbox-checked-color: var(--color-tertiary);
+        --kage-checkbox-checked-color: var(--color-tertiary);
     }
     &.success{
-        --k-checkbox-checked-color: var(--color-success);
+        --kage-checkbox-checked-color: var(--color-success);
     }
     &.danger{
-        --k-checkbox-checked-color: var(--color-danger);
+        --kage-checkbox-checked-color: var(--color-danger);
     }
     &.warning{
-        --k-checkbox-checked-color: var(--color-warning);
+        --kage-checkbox-checked-color: var(--color-warning);
     }
     &.info{
-        --k-checkbox-checked-color: var(--color-info);
+        --kage-checkbox-checked-color: var(--color-info);
     }
 }
 
 @keyframes dothabottomcheck{
     0% { height: 0; }
-    100% { height: calc(var(--k-checkbox-size) / 2);  }
+    100% { height: calc(var(--kage-checkbox-size, 18px) / 2);  }
 }
 
 @keyframes dothatopcheck{
     0% { height: 0; }
     50% { height: 0; }
-    100% { height: calc(var(--k-checkbox-size) * 1.2); }
+    100% { height: calc(var(--kage-checkbox-size, 18px) * 1.2); }
 }

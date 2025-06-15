@@ -41,6 +41,7 @@ export class KageInput implements ControlValueAccessor, AfterViewInit {
   autoFocus = input<boolean>(false);
   debounce = input<number>();
   autocomplete = input<InputAutoComplete>('off');
+  cssClass = input<string>();
 
   valueChanged = output<string>();
 

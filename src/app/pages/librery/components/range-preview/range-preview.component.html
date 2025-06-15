@@ -11,7 +11,7 @@
     <kage-range color="success" [showTooltip]="true"></kage-range>
     <kage-range color="warning" [showTooltip]="true"></kage-range>
 </app-code-preview>
-<h3>Input</h3>
+<h3>Input Signals</h3>
 <p class="description">List of Input Parameters.</p>
 <div class="two-col-table">
     <div class="two-col-table-head">
@@ -19,16 +19,17 @@
         <p>Default Value | Type</p>
     </div>
     <div class="two-col-table-body">
-        <div class="each"><p>min</p><p>Type `number`. Default 0</p></div>
-        <div class="each"><p>max</p><p>Type `number`. Default 100</p></div>
-        <div class="each"><p>step</p><p>Type `number`. Default 1</p></div>
-        <div class="each"><p>disabled</p><p>Type `boolean`. Default false</p></div>
-        <div class="each"><p>ticks</p><p>Type `boolean | Array&lt;string>`. Default false</p></div>
-        <div class="each"><p>showTooltip</p><p>Type `boolean`. Default false</p></div>
+        <div class="each"><p>min</p><p>`number`. Default 0</p></div>
+        <div class="each"><p>max</p><p>`number`. Default 100</p></div>
+        <div class="each"><p>step</p><p>`number`. Default 1</p></div>
+        <div class="each"><p>disabled</p><p>`boolean`. Default false</p></div>
+        <div class="each"><p>cssClass</p><p>`string`</p></div>
+        <div class="each"><p>ticks</p><p>`boolean | Array&lt;string>`. Default false</p></div>
+        <div class="each"><p>showTooltip</p><p>`boolean`. Default false</p></div>
         <div class="each"><p>color</p><p>'primary' | 'secondary' | 'tertiary' | 'success' | 'danger' | 'warning' | 'info'</p></div>
     </div>
 </div>
-<h3>Output</h3>
+<h3>Output Signals</h3>
 <p class="description">List of Output Parameters.</p>
 <div class="two-col-table">
     <div class="two-col-table-head">
@@ -36,8 +37,28 @@
         <p>Default Value | Type</p>
     </div>
     <div class="two-col-table-body">
-        <div class="each"><p>valueChange</p><p>Type `number`</p></div>
-        <div class="each"><p>focus</p><p>Type `void`</p></div>
-        <div class="each"><p>blur</p><p>Type `void`</p></div>
+        <div class="each"><p>valueChange</p><p>`number`</p></div>
+        <div class="each"><p>focus</p><p>`void`</p></div>
+        <div class="each"><p>blur</p><p>`void`</p></div>
+    </div>
+</div>
+<h3>Custom CSS Variables</h3>
+<p class="description">Recommended CSS Variable List — Defining values using these variables is advised to enhance maintainability and optimize CSS performance.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Fallback Values</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>--kage-range-min-height</p><p>48px</p></div>
+        <div class="each"><p>--kage-range-track-size</p><p>48px</p></div>
+        <div class="each"><p>--kage-range-track-color</p><p>--color-primary</p></div>
+        <div class="each"><p>--kage-range-thumb-size</p><p>20px</p></div>
+        <div class="each"><p>--kage-range-thumb-color</p><p>--color-primary</p></div>
+        <div class="each"><p>--kage-range-tooltip-color</p><p>--color-primary</p></div>
+        <div class="each"><p>--kage-range-tooltip-size</p><p>80px</p></div>
+        <div class="each"><p>--kage-range-tooltip-color</p><p>--color-primary</p></div>
+        <div class="each"><p>--kage-range-tooltip-height</p><p>25px</p></div>
+        <div class="each"><p>--kage-range-tooltip-font-family</p><p>inherit</p></div>
     </div>
 </div>

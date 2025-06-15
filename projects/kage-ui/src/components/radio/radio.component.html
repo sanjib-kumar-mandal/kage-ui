@@ -1,4 +1,4 @@
-<label [ngClass]="[color()]">
+<label class="kage-radio-wrapper" [ngClass]="[color(), cssClass() ?? '']">
     <input
         type="radio"
         [name]="name"
@@ -7,6 +7,6 @@
         [disabled]="disabled()"
         (change)="onSelect()"
     />
-    <span class="k-radio"></span>
+    <span class="kage-radio"></span>
     <ng-content></ng-content>
 </label>

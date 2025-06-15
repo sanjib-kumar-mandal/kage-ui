@@ -1,60 +1,78 @@
-.k-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--k-button-padding-top) var(--k-button-padding-right) var(--k-button-padding-bottom) var(--k-button-padding-left);
-    cursor: pointer;
-    background: transparent;
-    transition: background 0.2s ease, transform 0.1s ease;
-    position: relative;
-    font-family: var(--k-button-font-family);
-    border: var(--border-width, 1px) solid var(--k-button-color);
-    text-transform: var(--k-button-text-transform);
-    color: var(--k-button-color);
-    font-size: var(--k-button-font-size);
-    width: 100%;
-    &:disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
-        pointer-events: none;
+:host{
+    .kage-button-wrapper {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: var(--kage-button-padding-top, 5px) var(--kage-button-padding-right, 10px) var(--kage-button-padding-bottom, 5px) var(--kage-button-padding-left, 10px);
+        cursor: pointer;
+        background: var(--kage-button-background, transparent);
+        transition: background 0.2s ease, transform 0.1s ease;
+        position: relative;
+        font-family: var(--kage-button-font-family, inherit);
+        border: var(--kage-button-border-width, 1px) solid var(--kage-button-border-color, var(--color-primary, inherit));
+        text-transform: var(--kage-button-text-transform, uppercase);
+        color: var(--kage-button-color, var(--color-primary, inherit));
+        font-size: var(--kage-button-font-size, inherit);
+        border-radius: var(--kage-button-radial-value, 0px);
+        width: 100%;
+        &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        /* Spinner */
+        .spinner {
+            width: var(--kage-button-spinner-size, 17px);
+            height: var(--kage-button-spinner-size, 17px);
+            border: var(--kage-button-border-width, 1px) solid var(--kage-button-spinner-color, var(--color-primary, inherit));
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        } 
+        &.primary{
+            --kage-button-border-color: var(--color-primary);
+            --kage-button-color: var(--color-primary);
+            --kage-button-spinner-color: var(--color-primary);
+        }    
+        &.secondary {
+            --kage-button-border-color: var(--color-secondary);
+            --kage-button-color: var(--color-secondary);
+            --kage-button-spinner-color: var(--color-secondary);
+        }    
+        &.tertiary {
+            --kage-button-border-color: var(--color-tertiary);
+            --kage-button-color: var(--color-tertiary);
+            --kage-button-spinner-color: var(--color-tertiary);
+        }
+        &.warning{
+            --kage-button-border-color: var(--color-warning);
+            --kage-button-color: var(--color-warning);
+            --kage-button-spinner-color: var(--color-warning);
+        }
+        &.danger {
+            --kage-button-border-color: var(--color-danger);
+            --kage-button-color: var(--color-danger);
+            --kage-button-spinner-color: var(--color-danger);
+        }
+        &.success {
+            --kage-button-border-color: var(--color-success);
+            --kage-button-color: var(--color-success);
+            --kage-button-spinner-color: var(--color-success);
+        } 
+        &.info {
+            --kage-button-border-color: var(--color-info);
+            --kage-button-color: var(--color-info);
+            --kage-button-spinner-color: var(--color-info);
+        } 
+        &.clear{
+            --kage-button-border-color: transparent !important;
+            // border-color: transparent;
+        }
     }
-    /* Spinner */
-    .spinner {
-        width: var(--k-button-spinner-size);
-        height: var(--k-button-spinner-size);
-        border: var(--border-width, 1px) solid var(--k-button-color);
-        border-top-color: transparent;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-    } 
-    &.primary{
-        --k-button-color: var(--color-primary);
-    }    
-    &.secondary {
-        --k-button-color: var(--color-secondary);
-    }    
-    &.tertiary {
-        --k-button-color: var(--color-tertiary);
-    }
-    &.warning{
-        --k-button-color: var(--color-warning);
-    }
-    &.danger {
-        --k-button-color: var(--color-danger);
-    }
-    &.success {
-        --k-button-color: var(--color-success);
-    } 
-    &.info {
-        --k-button-color: var(--color-info);
-    } 
-    &.clear{
-        border-color: transparent;
-    }
-}
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
 }

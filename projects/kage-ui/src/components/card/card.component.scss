@@ -1,46 +1,53 @@
 :host{
     display: block;
-}
-.kage-card-link-wrapper{
-    text-decoration: none;
-    color: inherit;
-}
-.kage-card {
-    display: flex;
-    flex-direction: column;
-    border: var(--border-width, 1px) solid var(--border-color);
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
-    .kage-card-image {
-        &::ng-deep{
-            img {
-                max-width: 100%;
-                display: block;
-            }
-        }
+    .kage-card-link-wrapper{
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
     }
-
-    .kage-card-body {
-        padding: 5px;
-        .kage-card-header {
-            margin-bottom: 0.5rem;
+    .kage-card-wrapper {
+        display: flex;
+        flex-direction: column;
+        border-style: solid;
+        border-color: var(--kage-card-border-color, transparent);
+        border-top-width: var(--kage-card-border-top-width, 0px);
+        border-right-width: var(--kage-card-border-right-width, 0px);
+        border-bottom-width: var(--kage-card-border-bottom-width, 0px);
+        border-left-width: var(--kage-card-border-left-width, 0px);
+        border-radius: var(--kage-card-border-radious, 0px);
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        background: var(--kage-card-background, color-mix(in srgb, var(--color-background) 90%, var(--color-medium) 10%));
+        .kage-card-image {
             &::ng-deep{
-                [slot="card-title"] {
-                    display: block;
-                }
-                [slot="card-subtitle"] {
-                    color: var(--color-medium);
-                    margin-top: 5px;
+                img {
+                    max-width: 100%;
                     display: block;
                 }
             }
         }
 
-        .kage-card-footer {
-            text-align: right;
-            &:not(:empty) {
-                margin-top: 1rem;
+        .kage-card-body {
+            padding: 5px;
+            .kage-card-header {
+                margin-bottom: 0.5rem;
+                &::ng-deep{
+                    [slot="card-title"] {
+                        display: block;
+                    }
+                    [slot="card-subtitle"] {
+                        color: var(--kage-card-subtitle-color, var(--color-medium, inherit));
+                        margin-top: 5px;
+                        display: block;
+                    }
+                }
+            }
+
+            .kage-card-footer {
+                text-align: right;
+                &:not(:empty) {
+                    margin-top: 1rem;
+                }
             }
         }
     }

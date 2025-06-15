@@ -1,101 +1,108 @@
-.k-input-wrapper{
-    display: flex;
-    flex-direction: column;
-    .label-title{
-        &:not(:empty) {
-            margin-bottom: 6px;
-        }
-    }
-    .input-area{
+:host{
+    display: block;
+    .kage-input-wrapper{
         display: flex;
-        background: transparent;
-        border: var(--border-width, 1px) solid var(--k-input-border-color);
-        transition: .4s;
-        .input{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            input{
-                padding: var(--k-input-padding-top) var(--k-input-padding-right) var(--k-input-padding-bottom) var(--k-input-padding-left);
-                color: var(--k-input-text-color);
-                font-family: var(--k-input-font-family);
-                background: transparent;
-            }
-        }
-        .icon{
-            display: none;
-            transition: .3s;
+        flex-direction: column;
+        .label-title{
             &:not(:empty) {
-                width: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                overflow: hidden;
-                --stroke-width: var(--border-width, 1px);
-                &.start{
-                    border-right: var(--border-width, 1px) solid var(--k-input-border-color);
-                    color: var(--k-input-left-icon-color);
-                }
-                &.end{
-                    border-left: var(--border-width, 1px) solid var(--k-input-border-color);
-                    color: var(--k-input-right-icon-color);
-                }
+                margin-bottom: 6px;
             }
         }
-        &:focus-within{
-            border-color: var(--k-input-border-color-active);
-            .icon{
-                border-color: var(--k-input-border-color-active);
-                &.start{
-                    color: var(--k-input-left-icon-color-active);
-                }
-                &.end{
-                    color: var(--k-input-right-icon-color-active);
-                }
-            }
-        }
-    }
-    .validators{
-        display: flex;
-        .left{
-            width: 100%;
+        .input-area{
             display: flex;
-            flex-direction: column;
-            .hint{
-                display: none;
-                &:not(:empty) {
-                    display: block;
-                    margin-top: 5px;
-                    color: var(--color-medium);
+            background: var(--kage-input-background, transparent);
+            border-style: solid;
+            border-color: var(--kage-input-border-color, var(--kage-input-border-color, var(--color-medium, transparent)));
+            border-top-width: var(--kage-input-border-top-width, 1px);
+            border-right-width: var(--kage-input-border-right-width, 1px);
+            border-bottom-width: var(--kage-input-border-bottom-width, 1px);
+            border-left-width: var(--kage-input-border-left-width, 1px);
+            transition: .4s;
+            border-radius: var(--kage-input-border-radius, 0px);
+            overflow: hidden;
+            .input{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                input{
+                    padding: var(--kage-input-padding-top, 9px) var(--kage-input-padding-right, 10px) var(--kage-input-padding-bottom, 9px) var(--kage-input-padding-left, 10px);
+                    color: var(--kage-input-text-color, inherit);
+                    font-family: var(--kage-input-font-family);
+                    background: transparent;
                 }
-                &::ng-deep{
-                    [slot="hint"]{
-                        font-size: 10px;
+            }
+            .icon{
+                display: none;
+                transition: .3s;
+                &:not(:empty) {
+                    width: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    &.start{
+                        border-right: var(--kage-input-border-left-width, 1px) solid var(--kage-input-icon-border-color, var(--kage-input-border-color, var(--color-medium, transparent)));
+                    }
+                    &.end{
+                        border-left: var(--kage-input-border-right-width, 1px) solid var(--kage-input-icon-border-color, var(--kage-input-border-color, var(--color-medium, transparent)));
                     }
                 }
             }
-            .error{
-                display: none;
-                &:not(:empty){
-                    display: block;
-                    margin-top: 3px;
+            &:focus-within{
+                border-color: var(--kage-input-active-border-color, var(--color-primary, inherit));
+                .icon{
+                    border-color: var(--kage-input-active-border-color, var(--color-primary, inherit));
+                    .start{
+                        border-color: var(--kage-input-active-border-color, var(--color-primary, inherit));
+                    }
+                    .end{
+                        border-color: var(--kage-input-active-border-color, var(--color-primary, inherit));
+                    }
                 }
             }
         }
-        .right{
-            &:not(:empty){
-                margin-left: 10px;
-                margin-top: 3px;
-            }
-            .counter{
+        .validators{
+            display: flex;
+            .left{
+                width: 100%;
                 display: flex;
-                align-items: center;
-                justify-content: flex-end;
-                font-size: 12px;
-                color: var(--color-medium);
-                span{
-                    margin-right: 3px;
-                    color: var(--color-dark);
+                flex-direction: column;
+                .hint{
+                    display: none;
+                    &:not(:empty) {
+                        display: block;
+                        margin-top: 5px;
+                        color: var(--color-medium);
+                    }
+                    &::ng-deep{
+                        [slot="hint"]{
+                            font-size: 10px;
+                        }
+                    }
+                }
+                .error{
+                    display: none;
+                    &:not(:empty){
+                        display: block;
+                        margin-top: 3px;
+                    }
+                }
+            }
+            .right{
+                &:not(:empty){
+                    margin-left: 10px;
+                    margin-top: 3px;
+                }
+                .counter{
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    font-size: 12px;
+                    color: var(--color-medium);
+                    span{
+                        margin-right: 3px;
+                        color: var(--color-dark);
+                    }
                 }
             }
         }

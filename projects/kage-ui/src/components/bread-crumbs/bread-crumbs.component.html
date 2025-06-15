@@ -1,4 +1,4 @@
-<div class="k-breadcrumbs-wrapper">
+<div class="kage-breadcrumbs-wrapper" [class]="cssClass() ?? ''">
     @for (item of breadCrumps; track $index; let l = $last) {
         @if (!l) {
             <a [routerLink]="item.href()">{{item.label()}}</a>

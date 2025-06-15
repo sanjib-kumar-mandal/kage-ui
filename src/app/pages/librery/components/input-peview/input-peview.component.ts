@@ -17,19 +17,19 @@ import { KageBreadCrumb, KageBreadCrumbs, KageInput, KageIcon } from 'kage-ui';
 })
 export class InputPeviewComponent {
   htmlCode = `
-    <kage-input></kage-input>
-    <kage-input>
-        <kage-icon name="mail" slot="icon-start"></kage-icon>
+    <kage-input [maxLength]="100"></kage-input>
+    <kage-input style="display: block; margin-top: 20px;">
+        <kage-icon name="mail" slot="icon-start" [depth]="2"></kage-icon>
     </kage-input>
-    <kage-input placeholder="Password" type="password">
-        <kage-icon name="eye" slot="icon-end"></kage-icon>
+    <kage-input style="display: block; margin-top: 20px;" placeholder="Password" type="password">
+        <kage-icon name="eye" slot="icon-end" [depth]="2"></kage-icon>
     </kage-input>
-    <kage-input>
-        <kage-icon name="eye" slot="icon-end"></kage-icon>
+    <kage-input style="display: block; margin-top: 20px;">
+        <kage-icon name="eye" slot="icon-end" [depth]="2"></kage-icon>
         <p slot="hint">Place your hint here</p>
     </kage-input>
-    <kage-input label="Lebel here">
-        <kage-icon name="eye" slot="icon-end"></kage-icon>
+    <kage-input style="display: block; margin-top: 20px;" label="Lebel here">
+        <kage-icon name="eye" slot="icon-end" [depth]="2"></kage-icon>
         <p slot="hint">Place your hint here</p>
         <p slot="error" style="color: red;">Place your error here</p>
     </kage-input>

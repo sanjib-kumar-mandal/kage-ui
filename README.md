@@ -1,3 +1,7 @@
+> [!CAUTION]
+> Package is still on developer preview
+> Fixing internal errors and giving control to the developers
+
 # Kage UI Demo
 
 This is the **demo site** for the [Kage UI](https://github.com/sanjib-kumar-mandal/kage-ui/tree/master/projects/kage-ui) Angular component library. It showcases how to use various components from the library with real-world examples.

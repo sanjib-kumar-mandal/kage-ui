@@ -1,5 +1,5 @@
-<label class="k-range-wrapper" [class]="[color()]">
-    <div class="k-field">
+<label class="kage-range-wrapper" [ngClass]="[color() ?? '', cssClass() ?? '']">
+    <div class="kage-field">
         <input 
             type="range" 
             [attr.min]="min()"
@@ -8,10 +8,11 @@
             (input)="onInput($event)"
             (focus)="onFocus()"
             (blur)="onBlur()"
+            [value]="value"
         />
     </div>
     @if (showTooltip()) {
-        <div class="k-range-tooltip">
+        <div class="kage-range-tooltip">
             <span>{{value}}</span>
         </div>
     }

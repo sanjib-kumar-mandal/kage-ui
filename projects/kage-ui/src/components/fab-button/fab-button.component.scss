@@ -1,96 +1,183 @@
-.k-fab-button-wrapper {
-    position: fixed;
-    input {
-        appearance: none;
-        position: absolute;
-        border-radius: 50%;
-        top: 0; 
-        left: 0;
-        margin: 0;
-        width: 100%;
-        height: 100%;
-        cursor: pointer;
-        background: transparent;
-        border: none;
-        outline: none;
-        z-index: 2;
-        transition: box-shadow .2s ease-in-out;
-        &:checked ~ .fab-slot-buttons {
-            a { 
-                opacity: 1;
-                visibility: visible;
+:host{
+    .kage-fab-button-wrapper {
+        position: fixed;
+        input {
+            appearance: none;
+            position: absolute;
+            top: 0; 
+            left: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            outline: none;
+            z-index: 2;
+            transition: box-shadow .2s ease-in-out;
+            &:checked ~ .fab-slot-buttons {
+                a { 
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+            &:checked ~ .fab-button{
+                &:empty{
+                    &::after, &::before{
+                        transform: translate(-50%, -50%) rotate(45deg);
+                    }
+                }
             }
         }
-    }
-    .fab-button {
-        height: var(--k-fab-button-size);
-        width: var(--k-fab-button-size);
-        background: var(--k-fab-button-background);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--k-fab-button-color);
-        text-align: center;
-        position: relative;
-        z-index: 1;
-    }
-    .fab-slot-buttons {
-        position: absolute;
-        width: 100%;
-        text-align: center;
-        a {
+        .fab-button {
+            height: var(--kage-fab-size, 50px);
+            width: var(--kage-fab-size, 50px);
+            background: var(--kage-fab-background, var(--color-background, transparent));
             display: flex;
             align-items: center;
             justify-content: center;
-            width: var(--k-fab-slot-button-size);
-            height: var(--k-fab-slot-button-size);
-            border: var(--border-width, 1px) solid var(--k-fab-slot-button-background);
-            text-decoration: none;
-            margin: 10px auto 0;
-            line-height: 1.15;
-            opacity: 0;
-            visibility: hidden;
+            color: var(--kage-fab-icon-color, var(--kage-fab-color, var(--color-primary, transparent)));
+            text-align: center;
             position: relative;
-            cursor: pointer;
-            color: var(--k-fab-slot-button-background);
-            transition: opacity .2s ease-in-out .3s, transform .15s ease-in-out;
-            &:hover {
-                transform: scale(1.05);
+            border: var(--kage-fab-border-width, 1px) solid var(--kage-fab-border-color, var(--kage-fab-color, var(--color-primary, transparent)));
+            z-index: 1;
+            border-radius: var(--kage-fab-border-radius, 0px);
+            &:empty{
+                &::after{
+                    content: "";
+                    width: 2px;
+                    height: 16px;
+                    background: var(--kage-fab-icon-color, var(--kage-fab-color, var(--color-primary, transparent)));
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    transition: .4s;
+                }
+                &::before{
+                    content: "";
+                    width: 16px;
+                    height: 2px;
+                    background: var(--kage-fab-icon-color, var(--kage-fab-color, var(--color-primary, transparent)));
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    transition: .4s;
+                }
             }
-            &.disabled{
-                opacity: var(--k-fab-slot-button-disable-opacity) !important;
-                pointer-events: none;
-                cursor: none;
+        }
+        .fab-slot-buttons {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: var(--kage-fab-item-size, 36px);
+                height: var(--kage-fab-item-size, 36px);
+                border: var(--kage-fab-item-border-width, 1px) solid var(--kage-fab-item-border-color, var(--color-primary, transparent));
+                text-decoration: none;
+                margin: 10px auto 0;
+                line-height: 1.15;
+                opacity: 0;
+                visibility: hidden;
+                position: relative;
+                cursor: pointer;
+                background: var(--kage-fab-item-background, var(--color-background, transparent));
+                color: var(--kage-fab-item-color, var(--color-primary, inherit));
+                transition: opacity .2s ease-in-out .3s, transform .15s ease-in-out;
+                border-radius: var(--kage-fab-item-border-radius, 0px);
+                &:hover {
+                    transform: scale(1.05);
+                }
+                &.disabled{
+                    opacity: var(--kage-fab-item-disable-opacity, .6) !important;
+                    pointer-events: none;
+                    cursor: none;
+                }
+                // color
+                &.primary{
+                    --kage-fab-item-border-color: var(--color-primary);
+                    --kage-fab-item-color: var(--color-primary);
+                }
+                &.secondary{
+                    --kage-fab-item-border-color: var(--color-secondary);
+                    --kage-fab-item-color: var(--color-secondary);
+                }
+                &.tertiary{
+                    --kage-fab-item-border-color: var(--color-tertiary);
+                    --kage-fab-item-color: var(--color-tertiary);
+                }
+                &.success{
+                    --kage-fab-item-border-color: var(--color-success);
+                    --kage-fab-item-color: var(--color-success);
+                }
+                &.danger{
+                    --kage-fab-item-border-color: var(--color-danger);
+                    --kage-fab-item-color: var(--color-danger);
+                }
+                &.warning{
+                    --kage-fab-item-border-color: var(--color-warning);
+                    --kage-fab-item-color: var(--color-warning);
+                }
+                &.info{
+                    --kage-fab-item-border-color: var(--color-info);
+                    --kage-fab-item-color: var(--color-info);
+                }
             }
         }
-    }
-    //============== POSITION ==============//
-    &.top-right{
-        top: 35px; 
-        right: 35px;
-        .fab-slot-buttons{
-            top: 100%;
+        //============== POSITION ==============//
+        &.top-right{
+            top: 35px; 
+            right: 35px;
+            .fab-slot-buttons{
+                top: 100%;
+            }
         }
-    }
-    &.top-left{
-        top: 35px; 
-        left: 35px;
-        .fab-slot-buttons{
-            top: 100%;
+        &.top-left{
+            top: 35px; 
+            left: 35px;
+            .fab-slot-buttons{
+                top: 100%;
+            }
         }
-    }
-    &.bottom-left{
-        bottom: 35px; 
-        left: 35px;
-        .fab-slot-buttons{
-            bottom: 120%;
+        &.bottom-left{
+            bottom: 35px; 
+            left: 35px;
+            .fab-slot-buttons{
+                bottom: 120%;
+            }
         }
-    }
-    &.bottom-right{
-        bottom: 35px; 
-        right: 35px;
-        .fab-slot-buttons{
-            bottom: 120%;
+        &.bottom-right{
+            bottom: 35px; 
+            right: 35px;
+            .fab-slot-buttons{
+                bottom: 120%;
+            }
+        }
+        // color
+        &.primary{
+            --kage-fab-color: var(--color-primary);
+        }
+        &.secondary{
+            --kage-fab-color: var(--color-secondary);
+        }
+        &.tertiary{
+            --kage-fab-color: var(--color-tertiary);
+        }
+        &.success{
+            --kage-fab-color: var(--color-success);
+        }
+        &.danger{
+            --kage-fab-color: var(--color-danger);
+        }
+        &.warning{
+            --kage-fab-color: var(--color-warning);
+        }
+        &.info{
+            --kage-fab-color: var(--color-info);
         }
     }
 }

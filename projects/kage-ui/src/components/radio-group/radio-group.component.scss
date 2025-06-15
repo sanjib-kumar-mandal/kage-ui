@@ -1,10 +1,10 @@
-.k-radio-group {
+.kage-radio-group {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: var(--k-radio-buttons-direction);
-  gap: var(--k-radio-buttons-gap);
+  flex-direction: var(--kage-radio-buttons-direction, column);
+  gap: var(--kage-radio-buttons-gap, 10px);
   &.disabled {
-    opacity: var(--k-radio-disable-opacity, .6);
+    opacity: var(--kage-radio-buttons-disable-opacity, .6);
     pointer-events: none;
   }
 }

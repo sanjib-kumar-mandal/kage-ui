@@ -2,7 +2,13 @@ import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { CodePreviewComponent } from '@component/code-preview/code-preview.component';
 
-import { KageBreadCrumb, KageBreadCrumbs, KageFab, KageFabItem } from 'kage-ui';
+import {
+  KageBreadCrumb,
+  KageBreadCrumbs,
+  KageFab,
+  KageFabItem,
+  KageIcon,
+} from 'kage-ui';
 
 @Component({
   selector: 'app-fab-preview',
@@ -13,34 +19,32 @@ import { KageBreadCrumb, KageBreadCrumbs, KageFab, KageFabItem } from 'kage-ui';
     KageBreadCrumbs,
     KageFab,
     KageFabItem,
+    KageIcon,
   ],
   templateUrl: './fab-preview.component.html',
   styleUrl: './fab-preview.component.scss',
 })
 export class FabPreviewComponent {
   htmlCode = `
-  <div class="fab-container">
-      <kage-fab-button color="success" position="top-right">
-          <mat-icon slot='icon' fontIcon="add"></mat-icon>
-          <kage-fab-item color="danger"><mat-icon fontIcon="home"></mat-icon></kage-fab-item>
-          <kage-fab-item><mat-icon fontIcon="refresh"></mat-icon></kage-fab-item>
-      </kage-fab-button>
-      <kage-fab-button color="danger" position="top-left">
-          <mat-icon slot='icon' fontIcon="add"></mat-icon>
-          <kage-fab-item [disabled]="true"><mat-icon fontIcon="sync"></mat-icon></kage-fab-item>
-          <kage-fab-item><mat-icon fontIcon="terminal"></mat-icon></kage-fab-item>
-      </kage-fab-button>
-      <kage-fab-button color="warning" position="bottom-left">
-          <mat-icon slot='icon' fontIcon="add"></mat-icon>
-          <kage-fab-item><mat-icon fontIcon="file_open"></mat-icon></kage-fab-item>
-          <kage-fab-item><mat-icon fontIcon="downloading"></mat-icon></kage-fab-item>
-      </kage-fab-button>
-      <kage-fab-button position="bottom-right">
-          <mat-icon slot='icon' fontIcon="add"></mat-icon>
-          <kage-fab-item><mat-icon fontIcon="token"></mat-icon></kage-fab-item>
-          <kage-fab-item [disabled]="true"><mat-icon fontIcon="assistant_navigation"></mat-icon></kage-fab-item>
-      </kage-fab-button>
-  </div>
+  <kage-fab-button color="success" position="top-right">
+      <kage-fab-item color="danger"><kage-icon name="home" [depth]="3"></kage-icon></kage-fab-item>
+      <kage-fab-item><kage-icon name="terminal" [depth]="3"></kage-icon></kage-fab-item>
+  </kage-fab-button>
+  <kage-fab-button color="danger" position="top-left">
+      <kage-icon [depth]="3" slot="icon" name="home"></kage-icon>
+      <kage-fab-item [disabled]="true"><kage-icon name="home" [depth]="3"></kage-icon></kage-fab-item>
+      <kage-fab-item><kage-icon name="terminal" [depth]="3"></kage-icon></kage-fab-item>
+  </kage-fab-button>
+  <kage-fab-button color="warning" position="bottom-left">
+      <kage-icon [depth]="3" slot="icon" name="person"></kage-icon>
+      <kage-fab-item color="danger"><kage-icon name="person" [depth]="3"></kage-icon></kage-fab-item>
+      <kage-fab-item><kage-icon name="download" [depth]="3"></kage-icon></kage-fab-item>
+  </kage-fab-button>
+  <kage-fab-button position="bottom-right">
+      <kage-icon [depth]="3" slot="icon" name="chevron-down" [depth]="3"></kage-icon>
+      <kage-fab-item><kage-icon name="terminal" [depth]="3"></kage-icon></kage-fab-item>
+      <kage-fab-item [disabled]="true"><kage-icon name="terminal"></kage-icon></kage-fab-item>
+  </kage-fab-button>
   `;
   tsCode = `
     import { Component } from '@angular/core';

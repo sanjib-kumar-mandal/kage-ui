@@ -25,6 +25,7 @@ import { KageRippleDirective } from '../../directives/directives';
   ],
 })
 export class KageButton {
+  cssClass = input<string>();
   type = input<'button' | 'submit' | 'reset'>('button');
   color = input<
     | 'primary'

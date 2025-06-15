@@ -1,33 +1,40 @@
 :host{
     display: inline-block;
-}
-.k-badge-wrapper{
-    padding: var(--k-badge-padding-top) var(--k-badge-padding-right) var(--k-badge-padding-bottom) var(--k-badge-padding-left);
-    background: transparent;
-    font-family: var(--k-badge-font-family);
-    display: inline-block;
-    font-size: var(--k-badge-font-size);
-    color: var(--k-badge-default-color);
-    border: var(--border-width, 1px) solid var(--k-badge-default-color);
-    &.primary{
-        --k-badge-default-color: var(--color-primary);
-    }
-    &.secondary{
-        --k-badge-default-color: var(--color-secondary);
-    }
-    &.tertiary{
-        --k-badge-default-color: var(--color-tertiary);
-    }
-    &.danger{
-        --k-badge-default-color: var(--color-danger);
-    }
-    &.warning{
-        --k-badge-default-color: var(--color-warning);
-    }
-    &.success{
-        --k-badge-default-color: var(--color-success);
-    }
-    &.info{
-        --k-badge-default-color: var(--color-info);
+    .kage-badge-wrapper{
+        padding: var(--kage-badge-padding-top, 2px) var(--kage-badge-padding-right, 5px) var(--kage-badge-padding-bottom, 2px) var(--kage-badge-padding-left, 5px);
+        background: var(--kage-badge-background, transparent);
+        font-family: var(--kage-badge-font-family, inherit);
+        display: inline-block;
+        font-size: var(--kage-badge-font-size, inherit);
+        color: var(--kage-badge-color, inherit);
+        border: var(--kage-badge-border-width, 1px) solid var(--kage-badge-border-color, transparent);
+        &.primary{
+            --kage-badge-border-color: var(--color-primary);
+            --kage-badge-color: var(--color-primary);
+        }
+        &.secondary{
+            --kage-badge-border-color: var(--color-secondary);
+            --kage-badge-color: var(--color-secondary);
+        }
+        &.tertiary{
+            --kage-badge-border-color: var(--color-tertiary);
+            --kage-badge-color: var(--color-tertiary);
+        }
+        &.danger{
+            --kage-badge-border-color: var(--color-danger);
+            --kage-badge-color: var(--color-danger);
+        }
+        &.warning{
+            --kage-badge-border-color: var(--color-warning);
+            --kage-badge-color: var(--color-warning);
+        }
+        &.success{
+            --kage-badge-border-color: var(--color-success);
+            --kage-badge-color: var(--color-success);
+        }
+        &.info{
+            --kage-badge-border-color: var(--color-info);
+            --kage-badge-color: var(--color-info);
+        }
     }
 }
