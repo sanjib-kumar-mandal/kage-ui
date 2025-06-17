@@ -1,4 +1,5 @@
 export { KageAccordion } from './accordion/accordion.component';
+export { KageAvatar } from './avatar/avatar.component';
 export { KageBadge } from './badge/badge.component';
 export { KageBreadCrumb } from './bread-crumb/bread-crumb.component';
 export { KageBreadCrumbs } from './bread-crumbs/bread-crumbs.component';

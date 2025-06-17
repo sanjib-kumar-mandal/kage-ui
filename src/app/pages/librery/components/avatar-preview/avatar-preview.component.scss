@@ -1,0 +1,19 @@
+h1{
+    margin-bottom: 10px;
+}
+.description{
+    color: var(--color-medium);
+    margin: 10px 0;
+}
+h3{
+    color: color-mix(in srgb, var(--color-dark) 80%, var(--color-light) 20%);
+    margin: 10px 0;
+}
+.avatars{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    .radial-avatar{
+        --kage-avatar-border-radius: 50%
+    }
+}

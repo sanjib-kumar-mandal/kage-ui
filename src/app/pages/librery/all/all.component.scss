@@ -25,20 +25,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
             gap: 10px;
-            .item{
-                width: 100%;
-                a{
-                    text-decoration: none;
-                    color: var(--color-text);
-                    transition: .4s;
-                    padding: 10px;
-                    display: block;
-                    &:hover{
-                        color: var(--color-secondary);
-                        background: rgba(var(--color-secondary-rgb), .1);
-                    }
-                }
-            }
             kage-card{
                 .img{
                     height: 200px;
@@ -53,6 +39,13 @@
                 }
                 p[slot="card-content"]{
                     color: var(--color-medium);
+                }
+                $colors: var(--color-primary), var(--color-secondary), var(--color-tertiary), var(--color-success), var(--color-danger), var(--color-warning);
+                @for $i from 1 through 6 {
+                    &:nth-child(#{$i}n) {
+                        --kage-card-border-color: #{nth($colors, $i)};
+                        --kage-card-border-top-width: 5px;
+                    }
                 }
             }
         }

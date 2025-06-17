@@ -26,6 +26,13 @@ export const routes: Routes = [
           import('@page/librery/all/all.component').then((m) => m.AllComponent),
       },
       {
+        path: 'avatar',
+        loadComponent: () =>
+          import(
+            '@page/librery/components/avatar-preview/avatar-preview.component'
+          ).then((m) => m.AvatarPreviewComponent),
+      },
+      {
         path: 'accordion',
         loadComponent: () =>
           import(

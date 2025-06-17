@@ -3,6 +3,13 @@
     <div class="each-group">
         <h1 class="comp-title">Components</h1>
         <div class="group-items">
+            <kage-card [href]="'/library/avatar'">
+                <div class="img" slot="card-image">
+                    <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/accordion.png" alt="">
+                </div>
+                <h2 slot="card-title">Avatar</h2>
+                <p slot="card-content" class="line-limit-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi autem id illum mollitia sunt quis perspiciatis eaque amet delectus labore voluptas iure exercitationem laboriosam, sit, nostrum dolores, iste repellat tempore?</p>
+            </kage-card>
             <kage-card [href]="'/library/accordion'">
                 <div class="img" slot="card-image">
                     <img [kageImageFallback]="'assets/no-image.png'" src="assets/features/accordion.png" alt="">

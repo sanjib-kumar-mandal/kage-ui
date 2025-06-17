@@ -1,0 +1,41 @@
+<p class="page-tag"><span class="component">Component</span></p>
+<h1>Avatar</h1>
+<kage-bread-crumbs [iconDepth]="3">
+    <kage-bread-crumb href="/library" label="Library"></kage-bread-crumb>
+    <kage-bread-crumb href="/library/avatar" label="Avatar"></kage-bread-crumb>
+</kage-bread-crumbs>
+<p class="description">The Badge component displays small status indicators or counts, typically used to highlight notifications, messages, or item quantities. Useful for emphasizing dynamic updates or statuses in a clean, compact way.</p>
+<app-code-preview [htmlCode]="htmlCode" [tsCode]="tsCode" [scssCode]="scssCode">
+    <div class="avatars">
+        <kage-avatar [src]="'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyzTWQoCUbRNdiyorem5Qp1zYYhpliR9q0Bw&s'"></kage-avatar>
+        <kage-avatar class="radial-avatar" [src]="'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyzTWQoCUbRNdiyorem5Qp1zYYhpliR9q0Bw&s'"></kage-avatar>
+    </div>
+</app-code-preview>
+<h3>Input Signals</h3>
+<p class="description">Below is the list of inputs supported by this component. It is recommended to apply custom styling by passing class names through the cssClass input.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>src</p><p>`string`</p></div>
+        <div class="each"><p>alt</p><p>`string`</p></div>
+    </div>
+</div>
+<h3>Custom CSS Variables</h3>
+<p class="description">Recommended CSS Variable List — Defining values using these variables is advised to enhance maintainability and optimize CSS performance.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Fallback Values</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>--kage-avatar-size</p><p>35px</p></div>
+        <div class="each"><p>--kage-avatar-border-width</p><p>1px</p></div>
+        <div class="each"><p>--kage-avatar-border-color</p><p>--color-medium</p></div>
+        <div class="each"><p>--kage-avatar-border-radius</p><p>0px</p></div>
+        <div class="each"><p>--kage-avatar-border-image-gap</p><p>2px</p></div>
+        <div class="each"><p>--kage-avatar-background</p><p>transparent</p></div>
+    </div>
+</div>
