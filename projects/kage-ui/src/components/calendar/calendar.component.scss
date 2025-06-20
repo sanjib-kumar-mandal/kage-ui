@@ -1,136 +1,151 @@
 :host{
   display: inline-block;
-  .kage-calendar-wrapper {
-    max-width: 320px;
-    font-family: system-ui, sans-serif;
-    border: var(--kage-calendar-border-width, 1px) solid var(--kage-clendar-border-color, var(--color-primary, inherit));
-    overflow: hidden;
+  min-width: var(--kage-calendar-min-width, 260px);
+  .kage-calendar-wrapper{
     background: var(--kage-calendar-background, color-mix(in srgb, var(--color-background) 90%, var(--color-medium) 10%));
-    .kage-calendar-header {
+    border: var(--kage-calendar-border-width, 1px) solid var(--kage-calendar-border-color, var(--color-medium));
+    overflow: hidden;
+    width: 100%;
+    .kage-calendar-header{
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      background: var(--kage-caelndar-header-background, color-mix(in srgb, var(--color-background) 80%, var(--color-medium) 20%));
-      padding: 8px;
-      gap: 4px;
-      button {
-        background: transparent;
-        border: none;
-        font-size: 18px;
-        cursor: pointer;
-        color: inherit;
+      justify-content: space-between;
+      padding: 7px 10px;
+      background: var(--kage-calendar-sections-background, color-mix(in srgb, var(--color-background) 80%, var(--color-medium) 20%));
+      .kage-calendar-button{
+        width: 22px;
+        height: 22px;
+        border-radius: 0px;
+        border: var(--kage-calendar-border-width, 1px) solid var(--kage-calendar-border-color, var(--color-medium));
         display: flex;
         align-items: center;
         justify-content: center;
-      }
-
-      select {
-        padding: 4px 6px;
-        border: var(--kage-calendar-border-width, 1px) solid var(--kage-clendar-dropdown-border-color, var(--color-primary, inherit));
-        font-size: 14px;
-        background: var(--kage-clendar-dropdown-background-color, transparent);
-        color: var(--kage-clendar-dropdown-text-color, inherit);
-        option{
-          background: var(--color-background);
-          color: var(--color-text);
+        cursor: pointer;
+        &.disabled{
+          pointer-events: none;
+          opacity: .5;
         }
+      }
+      .kage-calendar-month-year-selected{
+        font-family: inherit;
+        font-size: 14px;
+        padding: 5px 50px;
       }
     }
-
-    .kage-calendar-table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: center;
-      th, td {
-        padding: 6px;
-        border: var(--border-width, 1px) solid var(--border-color);
-        width: 36px;
-        height: 25px;
-        &:first-child{
-          border-left: none;
+    .kage-calendar-body{
+      border-top: var(--kage-calendar-border-width, 1px) solid var(--kage-calendar-border-color, var(--color-medium));
+      display: flex;
+      flex-direction: column;
+      .kage-calendar-weeks-names{
+        background: var(--kage-calendar-sections-background, color-mix(in srgb, var(--color-background) 80%, var(--color-medium) 20%));
+      }
+      .kage-calendar-cells, .kage-calendar-date-cells-row{
+        display: grid;
+        grid-template-columns: minmax(calc(100% / 7), 1fr) minmax(calc(100% / 7), 1fr) minmax(calc(100% / 7), 1fr) minmax(calc(100% / 7), 1fr) minmax(calc(100% / 7), 1fr) minmax(calc(100% / 7), 1fr) minmax(calc(100% / 7), 1fr);
+        gap: 0;
+        border-bottom: var(--kage-calendar-border-width, 1px) solid var(--kage-calendar-sections-background, color-mix(in srgb, var(--color-background) 80%, var(--color-medium) 20%));
+        p{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 30px;
+          border-right: var(--kage-calendar-border-width, 1px) solid var(--kage-calendar-sections-background, color-mix(in srgb, var(--color-background) 80%, var(--color-medium) 20%));
+          span{
+            display: inline-block;
+          }
+          &:focus{
+            background: var(--kage-calendar-disabled-date-background, rgba(var(--color-medium-rgb), .3));
+          }
+          &.kage-calendar-today{
+            position: relative;
+            span{
+              color: var(--color-tertiary);
+            }
+            &::after{
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: rgba(var(--color-tertiary-rgb), .2);
+            }
+          }
+          &.kage-calendar-date-on-range, &.kage-calendar-date-selected, &.kage-calender-date-multiple{
+            position: relative;
+            pointer-events: none;
+            span{
+              color: var(--kage-calendar-selection-color, var(--color-secondary));
+            }
+            &::after{
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: var(--kage-calendar-selection-background, rgba(var(--color-secondary-rgb), .4));
+            }
+          }
+          &.kage-calendar-date-disabled{
+            position: relative;
+            pointer-events: none;
+            span{
+              color: var(--kage-calendar-disabled-date-color, var(--color-medium));
+            }
+            &::after{
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: var(--kage-calendar-disabled-date-background, rgba(var(--color-medium-rgb), .1));
+            }
+          }
+          &.kage-calendar-invalid-date{
+            position: relative;
+            pointer-events: none;
+            span{
+              color: var(--kage-calendar-invalid-date-color, var(--color-danger));
+            }
+            &::after{
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: var(--kage-calendar-disabled-date-background, rgba(var(--color-danger-rgb), .1));
+            }
+          }
+          &:nth-child(7) {
+            border-right: none;
+          }
         }
         &:last-child{
-          border-right: none;
+          border-bottom: none;
         }
       }
-
-      th {
-        background: color-mix(in srgb, var(--color-background) 80%, var(--color-medium) 20%);
-        font-weight: bold;
-        font-size: 12px;
-      }
-
-      td {
-        &:not(:empty){
-          cursor: pointer;
-          transition: background 0.2s ease;
-          font-size: 13px;
-          &:hover {
-            background: color-mix(in srgb, var(--color-background) 80%, var(--color-medium) 20%);
-          }
-        }
-
-        &.selected {
-          background: var(--color-primary) !important;
-          color: white !important;
-          &:hover{
-            background: var(--color-primary) !important;
-          }
-        }
-
-        &.today{
-          background: var(--border-color);
-          color: var(--color-text);
-        }
-
-        &.week-number {
-          background: color-mix(in srgb, var(--color-background) 80%, var(--color-medium) 20%);
-          font-weight: bold;
-          cursor: default;
-        }
-      }
-      tbody{
-        tr{
-          &:last-child{
-            td{
-              border-bottom: none;
+      .kage-calendar-date-cells {
+        display: flex;
+        flex-direction: column;
+        .kage-calendar-date-cells-row{
+          &.disabled {
+            p{
+              pointer-events: none;
+              cursor: alias;
             }
           }
         }
       }
-    }
-
-    .time-picker {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 8px;
-      gap: 4px;
-      border-top: var(--border-width, 1px) solid var(--border-color);
-      input, select {
-        width: 48px;
-        padding: 4px;
-        font-size: 14px;
-        border: var(--border-width, 1px) solid var(--border-color);
-        text-align: center;
-        background: transparent;
-        color: var(--color-text);
-      }
-
-      select {
-        width: auto;
-      }
-    }
-
-    .btns{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px;
-      border-top: var(--border-width, 1px) solid var(--border-color);
-      gap: 10px;
-      kage-button{
-        width: 50%;
+      .kage-calendar-btn-holder{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 3px 10px;
+        border-top: var(--kage-calendar-border-width, 1px) solid var(--kage-calendar-border-color, var(--color-medium));
+        background: var(--kage-calendar-sections-background, color-mix(in srgb, var(--color-background) 80%, var(--color-medium) 20%));
       }
     }
   }

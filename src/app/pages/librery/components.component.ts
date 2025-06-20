@@ -30,7 +30,6 @@ export class ComponentsComponent {
         )
         .subscribe({
           next: () => {
-            console.log('Event');
             this.container.nativeElement.scrollTo({
               top: 0,
               left: 0,

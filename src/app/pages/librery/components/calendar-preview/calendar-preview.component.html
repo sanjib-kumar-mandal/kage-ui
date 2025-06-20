@@ -1,14 +1,19 @@
 <p class="page-tag"><span class="component">Component</span></p>
 <h1>Calendar</h1>
-<kage-bread-crumbs>
+<kage-bread-crumbs [iconDepth]="3">
     <kage-bread-crumb [href]="'/library'" label="Library"></kage-bread-crumb>
     <kage-bread-crumb [href]="'/library/calendar'" label="Calendar"></kage-bread-crumb>
 </kage-bread-crumbs>
 <p class="description">The Calendar component lets users view and select dates or ranges in a monthly grid layout. It supports features like week numbers, inline display, custom date formats, time selection, and locale customization for internationalization.</p>
 <app-code-preview [htmlCode]="htmlCode" [scssCode]="scssCode" [tsCode]="tsCode">
-    <kage-calendar [(ngModel)]="dateSelected" (ngModelChange)="dateChanged($event)"></kage-calendar>
+    <kage-calendar 
+        [mode]="'single'"
+        [(ngModel)]="dateSelected" 
+        [disabledDateFn]="datesToDisable" 
+        [invalidDateFn]="invalidDate">
+    </kage-calendar>
 </app-code-preview>
-<h3>Inputs</h3>
+<h3>Input Signals</h3>
 <p class="description">List of Input Parameters.</p>
 <div class="two-col-table">
     <div class="two-col-table-head">
@@ -16,10 +21,22 @@
         <p>Default Value | Type</p>
     </div>
     <div class="two-col-table-body">
-        <div class="each"><p>selectionMode</p><p>'single' | 'range' | 'multiple'. Default 'single'</p></div>
-        <div class="each"><p>showTimePicker</p><p>Type `boolean`. Default false</p></div>
-        <div class="each"><p>timeFormat</p><p>'12h' | '24h'. Default '24h'</p></div>
-        <div class="each"><p>locale</p><p>Local. Default `LOCALE_ID`</p></div>
+        <div class="each"><p>mode</p><p>'single' | 'range' | 'multiple'. Default 'single'</p></div>
+        <div class="each"><p>disabled</p><p>`boolean`</p></div>
+        <div class="each"><p>disabledDateFn</p><p>`(date: Date | null) => boolean`</p></div>
+        <div class="each"><p>invalidDateFn</p><p>`(date: Date | null) => boolean`</p></div>
+    </div>
+</div>
+<h3>Output Signals</h3>
+<p class="description">List of Output Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>kageChange</p><p>`void`</p></div>
+        <div class="each"><p>kageTouched</p><p>`void`</p></div>
     </div>
 </div>
 <h3>Custom CSS Variables</h3>
@@ -30,12 +47,15 @@
         <p>Fallback Values</p>
     </div>
     <div class="two-col-table-body">
-        <div class="each"><p>--kage-calendar-border-width</p><p>1px</p></div>
-        <div class="each"><p>--kage-clendar-border-color</p><p>10px</p></div>
-        <div class="each"><p>--kage-caelndar-header-background</p><p>color-mix(in srgb, var(--color-background) 80%, var(--color-medium) 20%)</p></div>
         <div class="each"><p>--kage-calendar-background</p><p>color-mix(in srgb, var(--color-background) 90%, var(--color-medium) 10%)</p></div>
-        <div class="each"><p>--kage-clendar-dropdown-border-color</p><p></p></div>
-        <div class="each"><p>--kage-clendar-dropdown-background-color</p><p>transparent</p></div>
-        <div class="each"><p>--kage-clendar-dropdown-text-color</p><p>inherit</p></div>
+        <div class="each"><p>--kage-calendar-min-width</p><p>260px</p></div>
+        <div class="each"><p>--kage-calendar-border-color</p><p>--color-primary</p></div>
+        <div class="each"><p>--kage-calendar-border-width</p><p>1px</p></div>
+        <div class="each"><p>--kage-calendar-sections-background</p><p>color-mix(in srgb, var(--color-background) 80%, var(--color-primary) 20%)</p></div>
+        <div class="each"><p>--kage-calendar-disabled-date-color</p><p>--color-medium</p></div>
+        <div class="each"><p>--kage-calendar-disabled-date-background</p><p>rgba(var(--color-medium-rgb), .1)</p></div>
+        <div class="each"><p>--kage-calendar-invalid-date-color</p><p>--color-danger</p></div>
+        <div class="each"><p>--kage-calendar-selection-color</p><p>--color-secondary</p></div>
+        <div class="each"><p>--kage-calendar-selection-background</p><p>rgba(var(--color-secondary-rgb), .4)</p></div>
     </div>
 </div>

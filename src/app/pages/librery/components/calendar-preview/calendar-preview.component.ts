@@ -16,7 +16,14 @@ import { KageBreadCrumb, KageBreadCrumbs, KageCalendar } from 'kage-ui';
   styleUrl: './calendar-preview.component.scss',
 })
 export class CalendarPreviewComponent {
-  htmlCode = `<kage-calendar [(ngModel)]="dateSelected" (ngModelChange)="dateChanged($event)"></kage-calendar>`;
+  htmlCode = `
+  <kage-calendar 
+      [mode]="'single'"
+      [(ngModel)]="dateSelected" 
+      [disabledDateFn]="datesToDisable" 
+      [invalidDateFn]="invalidDate">
+  </kage-calendar>
+  `;
   scssCode = ``;
   tsCode = `
   import { Component } from '@angular/core';
@@ -35,6 +42,32 @@ export class CalendarPreviewComponent {
     dateChanged(event: any) {
       console.log(this.dateSelected);
     }
+
+    datesToDisable(date: Date | null) {
+      const dateToDisable = new Date('2025-06-25');
+      if (date) {
+        return (
+          date.getDate() === dateToDisable.getDate() &&
+          date.getMonth() === dateToDisable.getMonth() &&
+          date.getFullYear() === dateToDisable.getFullYear()
+        );
+      } else {
+        return false;
+      }
+    }
+
+    invalidDate(date: Date | null) {
+      const invalidDate = new Date('2025-07-12');
+      if (date) {
+        return (
+          date.getDate() === invalidDate.getDate() &&
+          date.getMonth() === invalidDate.getMonth() &&
+          date.getFullYear() === invalidDate.getFullYear()
+        );
+      } else {
+        return false;
+      }
+    }
   }
   `;
 
@@ -42,5 +75,31 @@ export class CalendarPreviewComponent {
 
   dateChanged(event: any) {
     console.log(this.dateSelected);
+  }
+
+  datesToDisable(date: Date | null) {
+    const dateToDisable = new Date('2025-06-25');
+    if (date) {
+      return (
+        date.getDate() === dateToDisable.getDate() &&
+        date.getMonth() === dateToDisable.getMonth() &&
+        date.getFullYear() === dateToDisable.getFullYear()
+      );
+    } else {
+      return false;
+    }
+  }
+
+  invalidDate(date: Date | null) {
+    const invalidDate = new Date('2025-07-12');
+    if (date) {
+      return (
+        date.getDate() === invalidDate.getDate() &&
+        date.getMonth() === invalidDate.getMonth() &&
+        date.getFullYear() === invalidDate.getFullYear()
+      );
+    } else {
+      return false;
+    }
   }
 }

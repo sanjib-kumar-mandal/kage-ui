@@ -1,60 +1,45 @@
 <div class="kage-calendar-wrapper">
   <div class="kage-calendar-header">
-    <button (click)="prevMonth()">
-      <kage-icon name="chevron-backward" [depth]="2"></kage-icon>
-    </button>
-
-    <!-- (change)="setMonth(+($event.target as HTMLSelectElement).value)" -->
-    <select [value]="month" (change)="setMonth($event)">
-        @for (m of months; track $index; let i = $index) {
-            <option [selected]="month === i" [value]="i">{{ m }}</option>
-        }
-    </select>
-
-    <select [value]="year" (change)="setYear($event)">
-        @for (y of yearRange; track $index) {
-            <option [value]="y" [selected]="year === y">{{ y }}</option>
-        }
-    </select>
-
-    <button (click)="nextMonth()">
-      <kage-icon name="chevron-forward" [depth]="2"></kage-icon>
-    </button>
-  </div>
-
-  <table class="kage-calendar-table">
-    <thead>
-      <tr>
-        <th>Wk</th>
-        @for (d of ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']; track $index) {
-            <th>{{ d }}</th>
-        }
-      </tr>
-    </thead>
-    <tbody>
-        @for (week of daysMatrix; track $index; let i = $index) {
-            <tr>
-                <td class="week-number">{{ weekNumbers[i] }}</td>
-                @for (day of week; track $index) {
-                    <td [class.selected]="isSelected(day)" (click)="day && selectDate(day)" [class.today]="isToday(day)">{{ day?.getDate() }}</td>
-                }
-            </tr>
-        }
-    </tbody>
-  </table>
-
-  @if (showTimePicker() && selectionMode() === 'single') {
-    <div class="time-picker">
-        <input type="number" [value]="hour()" [(ngModel)]="hour" min="0" [max]="(timeFormat() === '12h') ? 12 : 23">
-        :
-        <input type="number" [value]="minute()" [(ngModel)]="minute" min="0" max="59">
-
-        @if (timeFormat() === '12h') {
-            <select [(ngModel)]="meridian">
-                <option value="AM" [selected]="meridian() === 'AM'">AM</option>
-                <option value="PM" [selected]="meridian() === 'PM'">PM</option>
-            </select>
-        }
+    <div class="kage-calendar-button" (click)="prevMonth()">
+      <kage-icon name="chevron-backward" color="primary" [depth]="3" [size]="16"></kage-icon>
     </div>
-  }
+    <p class="kage-calendar-month-year-selected">{{calendar.length ? (calendar[1][0] | date: 'MMM y') : ''}}</p>
+    <div class="kage-calendar-button" (click)="nextMonth()">
+      <kage-icon name="chevron-forward" color="primary" [depth]="3" [size]="16"></kage-icon>
+    </div>
+  </div>
+  <div class="kage-calendar-body">
+    <div class="kage-calendar-cells kage-calendar-weeks-names">
+      @for (wk of ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']; track $index) {
+        <p>{{wk}}</p>
+      }
+    </div>
+    <div class="kage-calendar-cells kage-calendar-date-cells">
+      @for (dates of calendar; track $index) {
+        <div class="kage-calendar-date-cells-row">
+          @for (date of dates; track $index) {
+            <p 
+              [attr.tabIndex]="date ? 0 : null"
+              [style.cursor]="date ? 'pointer' : 'inherit'"
+              [class.kage-calendar-today]="isToday(date)" 
+              [class.kage-calendar-date-on-range]="isInRange(date)"
+              [class.kage-calendar-date-selected]="isDateSelected(date)"
+              [class.kage-calender-date-multiple]="isDateMultiple(date)"
+              [class.kage-calendar-date-disabled]="isDateDisabled(date)" 
+              [class.kage-calendar-invalid-date]="isinvalidDate(date)"
+              (keyup.enter)="dateClicked(date)"
+              (click)="dateClicked(date)">
+                <span>{{date ? (date | date: 'd') : ''}}</span>
+            </p>
+          }
+        </div>
+      }
+    </div>
+    <!-- @if (mode() === 'multiple' || mode() === 'range') {
+      <div class="kage-calendar-btn-holder">
+        <kage-button color="danger" fill="clear">Cancel</kage-button>
+        <kage-button color="success" fill="clear">Apply</kage-button>
+      </div>
+    } -->
+  </div>
 </div>

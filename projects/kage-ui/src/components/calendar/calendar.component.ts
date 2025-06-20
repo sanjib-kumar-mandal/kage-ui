@@ -1,19 +1,13 @@
+import { DatePipe } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
-  effect,
   forwardRef,
-  inject,
   input,
-  LOCALE_ID,
+  model,
   output,
-  signal,
 } from '@angular/core';
-import {
-  FormsModule,
-  NG_VALUE_ACCESSOR,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { KageIcon } from '../icon/icon.component';
 
 @Component({
@@ -27,215 +21,253 @@ import { KageIcon } from '../icon/icon.component';
       multi: true,
     },
   ],
-  imports: [FormsModule, ReactiveFormsModule, KageIcon],
+  imports: [DatePipe, KageIcon],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class KageCalendar {
-  private localId = inject(LOCALE_ID);
-  selectionMode = input<'single' | 'range' | 'multiple'>('single');
-  showTimePicker = input<boolean>(false);
-  timeFormat = input<'12h' | '24h'>('24h');
-  locale = input<string>(this.localId);
-
-  currentDate = signal(new Date());
-  selected = signal<Date | [Date, Date] | Date[] | null>(null);
-  from = signal<Date | null>(null);
-  to = signal<Date | null>(null);
-
-  hour = signal(0);
-  minute = signal(0);
-  meridian = signal<'AM' | 'PM'>('AM');
-
-  months = Array.from({ length: 12 }, (_, i) =>
-    new Date(2000, i, 1).toLocaleString(this.locale() ?? this.localId, {
-      month: 'long',
-    })
-  );
-  yearRange = Array.from(
-    { length: 101 },
-    (_, i) => new Date().getFullYear() - 50 + i
-  );
-
+export class KageCalendar implements ControlValueAccessor {
+  mode = input<'single' | 'range' | 'multiple'>('single');
+  disabled = model<boolean>(false);
+  disabledDateFn = input<(date: Date | null) => boolean>();
+  invalidDateFn = input<(date: Date | null) => boolean>();
+  // Element function
   onChange = (_: any) => {};
   onTouched = () => {};
-
-  onSelected = output<any>();
-
-  get year() {
-    return this.currentDate().getFullYear();
-  }
-
-  get month() {
-    return this.currentDate().getMonth();
-  }
-
-  get daysMatrix() {
-    const first = new Date(this.year, this.month, 1);
-    const last = new Date(this.year, this.month + 1, 0);
-    const matrix: (Date | null)[][] = [];
-    let week: (Date | null)[] = [];
-
-    for (let i = 0; i < first.getDay(); i++) week.push(null);
-    for (let d = 1; d <= last.getDate(); d++) {
-      const date = new Date(this.year, this.month, d);
-      week.push(date);
-      if (week.length === 7) {
-        matrix.push(week);
-        week = [];
-      }
-    }
-    while (week.length < 7) week.push(null);
-    if (week.some(Boolean)) matrix.push(week);
-    return matrix;
-  }
-
-  get weekNumbers() {
-    return this.daysMatrix.map((week) => {
-      const firstDay = week.find((d) => !!d);
-      return firstDay ? this.getWeekNumber(firstDay) : '';
-    });
-  }
+  // Output Events
+  kageChange = output<void>();
+  kageTouched = output<void>();
+  // Local variable
+  calendar: Array<Array<Date | null>> = [];
+  value: any = {};
+  private range: any = {};
+  private multipleDates: Array<Date> = [];
 
   constructor() {
-    effect(() => {
-      this.onSelected.emit(this.selected());
-    });
+    const d = new Date();
+    this.createCalendar(d.getMonth(), d.getFullYear());
   }
 
-  getWeekNumber(date: Date): number {
-    const temp = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-    const dayNum = temp.getDay() || 7;
-    temp.setDate(temp.getDate() + 4 - dayNum);
-    const yearStart = new Date(temp.getFullYear(), 0, 1);
-    return Math.ceil(
-      ((temp.getTime() - yearStart.getTime()) / 86400000 + 1) / 7
-    );
-  }
-
-  isSelected(date: Date | null): boolean {
-    if (!date || !this.selected()) return false;
-    if (this.selectionMode() === 'single') {
-      return this.compareDates(this.selected() as Date, date);
-    } else if (this.selectionMode() === 'range') {
-      const [from, to] = this.selected() as [Date, Date];
-      return from && to && date >= from && date <= to;
-    } else if (this.selectionMode() === 'multiple') {
-      return (this.selected() as Date[]).some((d) =>
-        this.compareDates(d, date)
-      );
-    } else {
-      return false;
-    }
-  }
-
-  compareDates(d1: Date, d2: Date): boolean {
-    return (
-      d1.getFullYear() === d2.getFullYear() &&
-      d1.getMonth() === d2.getMonth() &&
-      d1.getDate() === d2.getDate()
-    );
-  }
-
-  selectDate(date: Date) {
-    if (this.selectionMode() === 'single') {
-      const finalDate = this.combineWithTime(date);
-      this.selected.set(finalDate);
-      this.onChange(finalDate);
-    } else if (this.selectionMode() === 'range') {
-      const fromVal = this.from();
-      const toVal = this.to();
-      if (!fromVal || (fromVal && toVal)) {
-        this.from.set(date);
-        this.to.set(null);
-        this.selected.set(null);
-      } else {
-        const newTo = date >= fromVal ? date : fromVal;
-        const newFrom = date >= fromVal ? fromVal : date;
-        const range: [Date, Date] = [
-          this.combineWithTime(newFrom),
-          this.combineWithTime(newTo),
-        ];
-        this.selected.set(range);
-        this.from.set(newFrom);
-        this.to.set(newTo);
-        this.onChange(range);
-      }
-    } else if (this.selectionMode() === 'multiple') {
-      let selectedDates = (this.selected() as Date[] | null) || [];
-      const exists = selectedDates.find((d) => this.compareDates(d, date));
-      if (exists) {
-        selectedDates = selectedDates.filter(
-          (d) => !this.compareDates(d, date)
-        );
-      } else {
-        selectedDates = [...selectedDates, this.combineWithTime(date)];
-      }
-      this.selected.set(selectedDates);
-      this.onChange(selectedDates);
-    }
-    this.onTouched();
-  }
-
-  combineWithTime(date: Date): Date {
-    const h =
-      this.timeFormat() === '12h'
-        ? this.meridian() === 'PM'
-          ? (this.hour() % 12) + 12
-          : this.hour() % 12
-        : this.hour();
-    const m = this.minute();
-    return new Date(date.getFullYear(), date.getMonth(), date.getDate(), h, m);
-  }
-
-  prevMonth() {
-    this.currentDate.set(new Date(this.year, this.month - 1, 1));
-  }
-
-  nextMonth() {
-    this.currentDate.set(new Date(this.year, this.month + 1, 1));
-  }
-
-  setMonth(event: any) {
-    let index = +(event.target as HTMLSelectElement).value;
-    this.currentDate.set(new Date(this.year, index, 1));
-  }
-
-  setYear(event: any) {
-    let year = +(event.target as HTMLSelectElement).value;
-    this.currentDate.set(new Date(year, this.month, 1));
-  }
-
-  writeValue(obj: Date | [Date, Date] | null): void {
-    if (!obj) {
-      this.selected.set(null);
-      this.from.set(null);
-      this.to.set(null);
-      return;
-    }
-    this.selected.set(obj);
-    if (this.selectionMode() === 'range') {
-      const [f, t] = obj as [Date, Date];
-      this.from.set(f);
-      this.to.set(t);
-    } else {
-      const d = obj as Date;
-      this.hour.set(d.getHours());
-      this.minute.set(d.getMinutes());
-      this.meridian.set(d.getHours() >= 12 ? 'PM' : 'AM');
-    }
+  // Default options
+  writeValue(obj: any): void {
+    this.value = obj;
   }
 
   registerOnChange(fn: any): void {
     this.onChange = fn;
+    this.kageTouched.emit();
   }
 
   registerOnTouched(fn: any): void {
     this.onTouched = fn;
+    this.kageChange.emit();
   }
 
-  isToday(day: any) {
-    return (
-      new Date(day).setHours(0, 0, 0, 0) === new Date().setHours(0, 0, 0, 0)
-    );
+  setDisabledState?(isDisabled: boolean): void {
+    this.disabled.set(Boolean(isDisabled));
+  }
+
+  onBlur(): void {
+    this.onTouched();
+  }
+
+  /**
+   * Adjust class based on boolean values
+   * @param date - Disable date
+   * @returns - boolean
+   */
+  isDateMultiple(date: Date | null) {
+    if (date) {
+      const toDateString = (date: Date) =>
+        new Date(date).toISOString().split('T')[0];
+      return this.multipleDates.some(
+        (d) => toDateString(d) === toDateString(date)
+      );
+    }
+    return false;
+  }
+  /**
+   * Adjust class based on boolean values
+   * @param date - Disable date
+   * @returns - boolean
+   */
+  isDateSelected(date: Date | null) {
+    if (date && this.value?.hasOwnProperty('selected')) {
+      const d = new Date(this.value.selected);
+      return (
+        date.getDate() === d.getDate() &&
+        date.getMonth() === d.getMonth() &&
+        date.getFullYear() === d.getFullYear()
+      );
+    }
+    return false;
+  }
+  /**
+   * Modify calendar based on these
+   * @param date - Date
+   * @returns - Booelan
+   */
+  isInRange(date: Date | null) {
+    if (date) {
+      const dateObj = this.range;
+      if (dateObj.hasOwnProperty('start') && dateObj?.hasOwnProperty('end')) {
+        return date >= new Date(dateObj.start) && date <= new Date(dateObj.end);
+      }
+      return false;
+    }
+    return false;
+  }
+  /**
+   * Adjust class based on boolean values
+   * @param date - Disable date
+   * @returns - boolean
+   */
+  isDateDisabled(date: Date | null) {
+    const fn = this.disabledDateFn();
+    if (fn) {
+      return fn(date);
+    }
+    return false;
+  }
+  /**
+   * Depends on user which date to be set as invalid
+   * @param date - Date
+   * @returns - Boolean
+   */
+  isinvalidDate(date: Date | null) {
+    const fn = this.invalidDateFn();
+    if (fn) {
+      return fn(date);
+    }
+    return false;
+  }
+  /**
+   * Today validation
+   * @param date - For any date
+   * @returns - boolean
+   */
+  isToday(date: Date | null): boolean {
+    if (date) {
+      const today = new Date();
+      return (
+        date.getDate() === today.getDate() &&
+        date.getMonth() === today.getMonth() &&
+        date.getFullYear() === today.getFullYear()
+      );
+    }
+    return false;
+  }
+  /**
+   * Calculate and recalculate date
+   * @param date
+   */
+  dateClicked(date: Date | null) {
+    if (date) {
+      if (this.mode() === 'single') {
+        const obj = { selected: date };
+        if (!this.isDateDisabled(date) && !this.isinvalidDate(date)) {
+          this.writeValue(obj);
+          this.onChange(obj);
+        }
+      } else if (this.mode() === 'range') {
+        if (!this.isDateDisabled(date) && !this.isinvalidDate(date)) {
+          if (this.range?.hasOwnProperty('start')) {
+            if (this.range?.hasOwnProperty('end')) {
+              delete this.range.end;
+              Object.assign(this.range, { start: date });
+              this.onChange(this.range);
+            } else {
+              Object.assign(this.range, { end: date });
+              this.writeValue(this.range);
+              this.onChange(this.range);
+            }
+          } else {
+            Object.assign(this.range, { start: date });
+            this.onChange(this.range);
+          }
+        }
+      } else if (this.mode() === 'multiple') {
+        if (!this.isDateDisabled(date) && !this.isinvalidDate(date)) {
+          const toDateString = (date: Date) =>
+            new Date(date).toISOString().split('T')[0];
+          const index = this.multipleDates.findIndex(
+            (d) => toDateString(d) === toDateString(date)
+          );
+          if (index === -1) {
+            this.multipleDates.push(date);
+          } else {
+            this.multipleDates.splice(index, 1);
+          }
+          this.writeValue(this.multipleDates);
+          this.onChange(this.multipleDates);
+        }
+      }
+    }
+  }
+
+  /**
+   * Calendar navigation next month
+   */
+  nextMonth() {
+    const currentCalendar = this.calendar[1][0];
+    if (currentCalendar?.getMonth() === 11) {
+      const month = 0;
+      const year = (currentCalendar?.getFullYear() ?? 0) + 1;
+      this.createCalendar(month, year);
+    } else {
+      const month = (currentCalendar?.getMonth() ?? 0) + 1;
+      const year = currentCalendar?.getFullYear();
+      this.createCalendar(month, year!);
+    }
+  }
+  /**
+   * Calendar navigation prev month
+   */
+  prevMonth() {
+    const currentCalendar = this.calendar[1][0];
+    if (currentCalendar?.getMonth() === 0) {
+      const month = 11;
+      const year = (currentCalendar?.getFullYear() ?? 0) - 1;
+      this.createCalendar(month, year);
+    } else {
+      const month = (currentCalendar?.getMonth() ?? 0) - 1;
+      const year = currentCalendar?.getFullYear();
+      this.createCalendar(month, year!);
+    }
+  }
+  // Create calendar dates
+  createCalendar(month: number, year: number) {
+    // Create date object
+    const date = new Date();
+    date.setFullYear(year);
+    date.setMonth(month);
+    date.setDate(1);
+    // last date of a month
+    const lastDate = new Date(year, month + 1, 0);
+    // get week day of the date
+    const weekDay = date.getDay();
+    const output = [];
+    let arr = [];
+    if (weekDay) {
+      for (let wk = 0; wk < weekDay; wk++) {
+        arr.push(null);
+      }
+    }
+    for (let i = 0; i < lastDate.getDate(); i++) {
+      const addedDate = new Date();
+      addedDate.setFullYear(year);
+      addedDate.setMonth(month);
+      addedDate.setDate(i + 1);
+      arr.push(addedDate);
+      if (arr.length === 7 || i + 1 === lastDate.getDate()) {
+        output.push(arr);
+        arr = [];
+      }
+    }
+    // check if last array is filled or not
+    const lastArr = output[output.length - 1];
+    if (lastArr.length !== 7) {
+      const extraArr = new Array(7 - lastArr.length).fill(null);
+      output.splice(output.length - 1, 1, lastArr.concat(extraArr));
+    }
+    this.calendar = output;
   }
 }
