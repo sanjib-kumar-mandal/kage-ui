@@ -1,5 +1,4 @@
-> [!CAUTION]
-> Package is still on developer preview
+[![npm version](https://img.shields.io/npm/v/kage-ui.svg)](https://www.npmjs.com/package/kage-ui)
 
 # Kage UI
 
@@ -26,8 +25,7 @@ npm install kage-ui
 
 ## 📚 Documentation
 
-Full documentation is available at [here](https://sanjib-kumar-mandal.github.io/kage-ui)
-There you'll find:
+Full documentation is available at [here](https://sanjib-kumar-mandal.github.io/kage-ui). There you'll find:
 
 - Component examples
 - Theming and customization guide

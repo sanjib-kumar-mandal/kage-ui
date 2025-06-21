@@ -92,6 +92,13 @@ export class AllComponent {
           image: 'assets/features/grid.png',
         },
         {
+          name: 'Icon',
+          description:
+            'A lightweight, customizable SVG-based icon component designed for modern Angular apps. Supports dynamic stroke width, color, accessibility, and sharp-edged designs with consistent viewBox="0 0 40 40" geometry.',
+          href: '/library/icon',
+          image: 'assets/features/icon.png',
+        },
+        {
           name: 'Input',
           description:
             'The Input component offers a customizable form control for capturing user input. It supports various types, states, and enhancements like labels, icons, error messages, and form integrations.',

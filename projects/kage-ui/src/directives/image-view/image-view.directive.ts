@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { AfterViewInit, Directive, ElementRef, inject } from '@angular/core';
 import { KageToastCtrl } from '../../services/toast/toast.service';
+import { KageAvatar } from '../../components/avatar/avatar.component';
 
 @Directive({
   selector: '[kageImageView]',
@@ -9,11 +10,14 @@ export class KageImageViewDirective implements AfterViewInit {
   private element = inject(ElementRef);
   private document = inject(DOCUMENT);
   private toastService = inject(KageToastCtrl);
+  private imageCmp = inject(KageAvatar, { optional: true, host: true });
 
   ngAfterViewInit(): void {
     const ele = this.element.nativeElement;
     ele.style.cursor = 'pointer';
-    ele.onclick = () => this.previewImage(ele.src, ele.alt);
+    const src = ele.src || this.imageCmp?.src();
+    const alt = ele.alt || this.imageCmp?.alt();
+    ele.onclick = () => this.previewImage(src, alt);
   }
 
   private previewImage(imageUrl: string, imageAlt?: string) {

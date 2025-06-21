@@ -1,0 +1,42 @@
+<p class="page-tag"><span class="component">Component</span></p>
+<h1>Icon</h1>
+<kage-bread-crumbs [iconDepth]="3">
+    <kage-bread-crumb [href]="'/library'" label="Library"></kage-bread-crumb>
+    <kage-bread-crumb [href]="'/library/icon'" label="Icon"></kage-bread-crumb>
+</kage-bread-crumbs>
+<p class="description">A lightweight, customizable SVG-based icon component designed for modern Angular apps. Supports dynamic stroke width, color, accessibility, and sharp-edged designs with consistent viewBox="0 0 40 40" geometry.</p>
+<app-code-preview [htmlCode]="htmlCode" [scssCode]="scssCode" [tsCode]="tsCode">
+    <div class="lines">
+        <div class="line">
+            <kage-icon name="home"></kage-icon>
+            <kage-icon name="home" [depth]="2"></kage-icon>
+            <kage-icon name="home" [depth]="3"></kage-icon>
+            <kage-icon name="home" [depth]="4"></kage-icon>
+            <kage-icon name="home" [depth]="5"></kage-icon>
+            <kage-icon name="home" [depth]="6"></kage-icon>
+        </div>
+        <div class="line">
+            <kage-icon name="add" [color]="'primary'"></kage-icon>
+            <kage-icon name="add" [depth]="2" [color]="'secondary'"></kage-icon>
+            <kage-icon name="add" [depth]="3" [color]="'tertiary'"></kage-icon>
+            <kage-icon name="add" [depth]="4" [color]="'success'"></kage-icon>
+            <kage-icon name="add" [depth]="5" [color]="'danger'"></kage-icon>
+            <kage-icon name="add" [depth]="6" [color]="'warning'"></kage-icon>
+        </div>
+    </div>
+</app-code-preview>
+<h3>Input Signals</h3>
+<p class="description">List of Input Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>name</p><p>`string`</p></div>
+        <div class="each"><p>svgSrc</p><p>`string`</p></div>
+        <div class="each"><p>size</p><p>`number`</p></div>
+        <div class="each"><p>depth</p><p>`string`</p></div>
+        <div class="each"><p>color</p><p>'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'danger' | 'info'</p></div>
+    </div>
+</div>

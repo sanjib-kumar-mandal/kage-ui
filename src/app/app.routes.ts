@@ -110,6 +110,13 @@ export const routes: Routes = [
           ).then((m) => m.GridPreviewComponent),
       },
       {
+        path: 'icon',
+        loadComponent: () =>
+          import(
+            '@page/librery/components/icon-preview/icon-preview.component'
+          ).then((m) => m.IconPreviewComponent),
+      },
+      {
         path: 'input',
         loadComponent: () =>
           import(
