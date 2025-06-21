@@ -1,10 +1,10 @@
 <p class="page-tag"><span class="pipe">Pipe</span></p>
 <h1>Truncate Pipe</h1>
-<kage-bread-crumbs>
+<kage-bread-crumbs [iconDepth]="3">
     <kage-bread-crumb [href]="'/library'" label="Library"></kage-bread-crumb>
     <kage-bread-crumb [href]="'/library/ordinate'" label="Truncate Pipe"></kage-bread-crumb>
 </kage-bread-crumbs>
-<p class="description">Pipe Behavior and Input Breakdown</p>
+<p class="description">The Kage-UI Truncate Pipe shortens long text to a specified length and appends an ellipsis or custom suffix. It's perfect for displaying concise previews of content like titles, summaries, or messages in Angular applications.</p>
 <app-code-preview [htmlCode]="htmlCode" [tsCode]="tsCode" [scssCode]="scssCode">
     <!-- Truncate to 10 characters -->
     <p>{{ 'This is a long sentence that needs truncation.' | truncate:10 }}</p><br/>

@@ -1,10 +1,10 @@
 <p class="page-tag"><span class="component">Component</span></p>
 <h1>Segment</h1>
-<kage-bread-crumbs>
+<kage-bread-crumbs [iconDepth]="3">
     <kage-bread-crumb [href]="'/library'" label="Library"></kage-bread-crumb>
     <kage-bread-crumb [href]="'/library/segment'" label="Segment"></kage-bread-crumb>
 </kage-bread-crumbs>
-<p class="description">Component Behavior and Input Breakdown</p>
+<p class="description">Segment is a customer data platform (CDP) that helps you collect, unify, and route user data across your apps and tools. It enables businesses to streamline analytics, marketing, and data infrastructure by providing a single API for all event tracking and customer interactions.</p>
 <app-code-preview [htmlCode]="htmlCode" [scssCode]="scssCode" [tsCode]="tsCode">
     <kage-segment [options]="options" (onSegmentChange)="segmentChanged($event)" [(ngModel)]="tabId">
         <p>Tab {{tabId}}</p>

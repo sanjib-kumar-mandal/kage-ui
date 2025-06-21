@@ -4,27 +4,36 @@
     .each-group{
         display: flex;
         flex-direction: column;
-        .comp-title, .service-title, .directive-title, .pipe-title{
-            font-size: 19px;
-            margin-bottom: 20px;
-            margin-top: 10px;
-        }
         .comp-title{
-            color: var(--color-warning);
-        }
-        .service-title{
-            color: var(--color-success);
-        }
-        .directive-title{
-            color: var(--color-danger);
-        }
-        .pipe-title{
-            color: var(--color-tertiary);
+            position: relative;
+            height: 40px;
+            span{
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translate(0, -50%);
+                padding: 5px 10px 5px 0;
+                background: var(--color-background);
+                z-index: 2;
+                font-size: 13px;
+            }
+            &::after {
+                content: '';
+                width: 100%;
+                height: 1px;
+                background: rgba(var(--color-medium-rgb), .3);
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translate(0, -50%);
+                z-index: 1;
+            }
         }
         .group-items{
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 10px;
+            gap: 20px;
+            margin-bottom: 10px;
             kage-card{
                 .img{
                     height: 200px;
@@ -37,6 +46,9 @@
                         max-width: 100%;
                     }
                 }
+                h2{
+                    font-size: 16px;
+                }
                 p[slot="card-content"]{
                     color: var(--color-medium);
                 }
@@ -44,7 +56,8 @@
                 @for $i from 1 through 6 {
                     &:nth-child(#{$i}n) {
                         --kage-card-border-color: #{nth($colors, $i)};
-                        --kage-card-border-top-width: 5px;
+                        --kage-card-border-bottom-width: 5px;
+                        --kage-card-border-top-width: 1px;
                     }
                 }
             }

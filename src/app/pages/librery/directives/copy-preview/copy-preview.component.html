@@ -1,10 +1,10 @@
 <p class="page-tag"><span class="directive">Directive</span></p>
 <h1>Copy Directive</h1>
-<kage-bread-crumbs>
+<kage-bread-crumbs [iconDepth]="3">
     <kage-bread-crumb href="/library" label="Library"></kage-bread-crumb>
     <kage-bread-crumb href="/library/copy" label="Copy Directive"></kage-bread-crumb>
 </kage-bread-crumbs>
-<p class="description">Directive Behavior and Input Breakdown</p>
+<p class="description">The Kage-UI Copy Directive lets you easily copy text or values to the clipboard on user interaction. It supports click and hover triggers, custom feedback messages, and works seamlessly with both static and dynamic content—ideal for enhancing UX in Angular apps.</p>
 <app-code-preview [htmlCode]="htmlCode" [scssCode]="scssCode" [tsCode]="tsCode">
     <p [kageCopy]="'text here'">Click to copy</p>
 </app-code-preview>

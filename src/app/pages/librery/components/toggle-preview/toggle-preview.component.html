@@ -1,10 +1,10 @@
 <p class="page-tag"><span class="component">Component</span></p>
 <h1>Toggle</h1>
-<kage-bread-crumbs>
+<kage-bread-crumbs [iconDepth]="3">
     <kage-bread-crumb [href]="'/library'" label="Library"></kage-bread-crumb>
     <kage-bread-crumb [href]="'/library/toggle'" label="Toggle"></kage-bread-crumb>
 </kage-bread-crumbs>
-<p class="description">Component Behavior and Input Breakdown</p>
+<p class="description">The Toggle component is an accessible switch-style input used to represent boolean values, such as on/off or true/false states. It supports both FormControl and ngModel, and includes keyboard support, animations, labels, and customizable styling for seamless integration in Angular forms.</p>
 <app-code-preview [htmlCode]="htmlCode" [scssCode]="scssCode" [tsCode]="tsCode">
     <div class="toggles">
         <kage-toggle [disabled]="true">Disabled here</kage-toggle>

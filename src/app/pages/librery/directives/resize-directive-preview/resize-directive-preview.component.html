@@ -1,10 +1,10 @@
 <p class="page-tag"><span class="directive">Directive</span></p>
 <h1>Resize DIrective</h1>
-<kage-bread-crumbs>
+<kage-bread-crumbs [iconDepth]="3">
     <kage-bread-crumb href="/library" label="Library"></kage-bread-crumb>
     <kage-bread-crumb href="/library/copy" label="Resize Directive"></kage-bread-crumb>
 </kage-bread-crumbs>
-<p class="description">Directive Behavior and Input Breakdown</p>
+<p class="description">The Kage-UI Resize Directive detects changes in an element’s size and emits events when it resizes. It’s useful for responsive layouts, dynamic content adjustments, and integrating with charts or components that depend on container dimensions in Angular apps.</p>
 <app-code-preview [htmlCode]="htmlCode" [tsCode]="tsCode">
     <div
         [debounceTime]="150"
