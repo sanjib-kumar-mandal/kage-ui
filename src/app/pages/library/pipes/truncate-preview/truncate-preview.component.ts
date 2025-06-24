@@ -33,8 +33,8 @@ export class TruncatePreviewComponent {
     <!-- Output: "This is a ..." -->
 
     <!-- Custom suffix -->
-    <p>{{ 'Stick UI is awesome' | truncate:8:' >>' }}</p>
-    <!-- Output: "Stick UI >>" -->
+    <p>{{ 'Kage UI is awesome' | truncate:8:' >>' }}</p>
+    <!-- Output: "Kage UI >>" -->
 
     <!-- No truncation needed -->
     <p>{{ 'Short' | truncate:10 }}</p>
