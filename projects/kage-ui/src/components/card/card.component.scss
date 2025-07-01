@@ -28,7 +28,7 @@
         }
 
         .kage-card-body {
-            padding: 5px;
+            padding: var(--kage-card-padding, 15px);
             .kage-card-header {
                 margin-bottom: 0.5rem;
                 &::ng-deep{
