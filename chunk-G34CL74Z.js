@@ -1,0 +1,20 @@
+import{a as v}from"./chunk-VL7GI7TC.js";import{e as s,g as d,i as c}from"./chunk-AFG4LWRI.js";import"./chunk-5X2QXVHB.js";import{Ga as i,Ra as p,ab as n,ib as e,jb as t,kb as l,yb as a}from"./chunk-6VEGNWUI.js";var g=class m{htmlCode=`
+  <kage-avatar [src]="'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQykzoZeCE0p7LeuyHnLYCdPP2jju9d5PaMeA&s'"></kage-avatar>
+  <kage-avatar class="radial-avatar" [src]="'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQykzoZeCE0p7LeuyHnLYCdPP2jju9d5PaMeA&s'"></kage-avatar>
+  `;scssCode=`
+  .radial-avatar{
+    --kage-avatar-border-radius: 50%
+  }
+  `;tsCode=`
+    import { Component } from '@angular/core';
+    import { KageAvatar } from 'kage-ui';
+    ...
+
+    @Component({
+      selector: 'app-example',
+      imports: [ KageAvatar, ... ],
+      templateUrl: '...',
+      styleUrl: '...',
+    })
+    export class AppExampleComponent {}
+  `;static \u0275fac=function(r){return new(r||m)};static \u0275cmp=p({type:m,selectors:[["app-avatar-preview"]],decls:76,vars:6,consts:[[1,"page-tag"],[1,"component"],[3,"iconDepth"],["href","/library","label","Library"],["href","/library/avatar","label","Avatar"],[1,"description"],[3,"htmlCode","tsCode","scssCode"],[1,"avatars"],[3,"src"],[1,"radial-avatar",3,"src"],[1,"two-col-table"],[1,"two-col-table-head"],[1,"two-col-table-body"],[1,"each"]],template:function(r,o){r&1&&(e(0,"p",0)(1,"span",1),a(2,"Component"),t()(),e(3,"h1"),a(4,"Avatar"),t(),e(5,"kage-bread-crumbs",2),l(6,"kage-bread-crumb",3)(7,"kage-bread-crumb",4),t(),e(8,"p",5),a(9,"An avatar description typically refers to a concise written portrayal of a character's visual appearance, personality, and sometimes their backstory or role \u2014 often used in games, online profiles, or virtual environments."),t(),e(10,"app-code-preview",6)(11,"div",7),l(12,"kage-avatar",8)(13,"kage-avatar",9),t()(),e(14,"h3"),a(15,"Input Signals"),t(),e(16,"p",5),a(17,"Below is the list of inputs supported by this component. It is recommended to apply custom styling by passing class names through the cssClass input."),t(),e(18,"div",10)(19,"div",11)(20,"p"),a(21,"Name"),t(),e(22,"p"),a(23,"Default Value"),t()(),e(24,"div",12)(25,"div",13)(26,"p"),a(27,"src"),t(),e(28,"p"),a(29,"`string`"),t()(),e(30,"div",13)(31,"p"),a(32,"alt"),t(),e(33,"p"),a(34,"`string`"),t()()()(),e(35,"h3"),a(36,"Custom CSS Variables"),t(),e(37,"p",5),a(38,"Recommended CSS Variable List \u2014 Defining values using these variables is advised to enhance maintainability and optimize CSS performance."),t(),e(39,"div",10)(40,"div",11)(41,"p"),a(42,"Name"),t(),e(43,"p"),a(44,"Fallback Values"),t()(),e(45,"div",12)(46,"div",13)(47,"p"),a(48,"--kage-avatar-size"),t(),e(49,"p"),a(50,"35px"),t()(),e(51,"div",13)(52,"p"),a(53,"--kage-avatar-border-width"),t(),e(54,"p"),a(55,"1px"),t()(),e(56,"div",13)(57,"p"),a(58,"--kage-avatar-border-color"),t(),e(59,"p"),a(60,"--color-medium"),t()(),e(61,"div",13)(62,"p"),a(63,"--kage-avatar-border-radius"),t(),e(64,"p"),a(65,"0px"),t()(),e(66,"div",13)(67,"p"),a(68,"--kage-avatar-border-image-gap"),t(),e(69,"p"),a(70,"2px"),t()(),e(71,"div",13)(72,"p"),a(73,"--kage-avatar-background"),t(),e(74,"p"),a(75,"transparent"),t()()()()),r&2&&(i(5),n("iconDepth",3),i(5),n("htmlCode",o.htmlCode)("tsCode",o.tsCode)("scssCode",o.scssCode),i(2),n("src","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyzTWQoCUbRNdiyorem5Qp1zYYhpliR9q0Bw&s"),i(),n("src","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyzTWQoCUbRNdiyorem5Qp1zYYhpliR9q0Bw&s"))},dependencies:[v,d,c,s],styles:["h1[_ngcontent-%COMP%]{margin-bottom:10px}.description[_ngcontent-%COMP%]{color:var(--color-medium);margin:10px 0}h3[_ngcontent-%COMP%]{color:color-mix(in srgb,var(--color-dark) 80%,var(--color-light) 20%);margin:10px 0}.avatars[_ngcontent-%COMP%]{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}.avatars[_ngcontent-%COMP%]   .radial-avatar[_ngcontent-%COMP%]{--kage-avatar-border-radius: 50% }"]})};export{g as AvatarPreviewComponent};
