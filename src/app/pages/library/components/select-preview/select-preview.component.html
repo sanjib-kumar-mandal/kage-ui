@@ -13,7 +13,7 @@
                 <kage-option [value]="fruit" [label]="fruit"></kage-option>
             }
         </kage-select>
-        <kage-select placeholder="Choose fruits">
+        <kage-select placeholder="Choose fruits" label="Select one">
             <kage-icon name="document" slot="icon-start" [depth]="3"></kage-icon>
             @for (fruit of ['Apple', 'Banana', 'Orange']; track $index) {
                 <kage-option [value]="fruit" [label]="fruit"></kage-option>

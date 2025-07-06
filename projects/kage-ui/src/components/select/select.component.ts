@@ -40,6 +40,7 @@ export class KageSelect
 
   private obsDestroyer$ = new Subject<void>();
 
+  label = input<string>();
   placeholder = input<string>('Select...');
   disabled = model<boolean>(false);
   cssClass = input<string>();

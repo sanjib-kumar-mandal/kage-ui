@@ -1,24 +1,31 @@
 <div class="kage-select-wrapper" [class.disabled]="disabled()" [class]="cssClass() ?? ''" tabindex="0" (keydown)="onKeyDown($event)" #container>
-  <div class="kage-select-selected" (click)="toggleDropdown()">
-    <div class="kage-select-icon start"><ng-content select="[slot='icon-start']"></ng-content></div>
-    <div class="kage-select-stage-area">
-      {{ selectedOption?.label || placeholder() }}
-      <kage-icon [name]="isOpen ? 'chevron-up' : 'chevron-down'" [depth]="3" [size]="16"></kage-icon>
+  @if (label()) {
+    <div class="kage-select-label-view">
+      <p>{{label()}}</p>
     </div>
-    <div class="kage-select-icon end"><ng-content select="[slot='icon-end']"></ng-content></div>
-  </div>
-
-  @if (isOpen) {
-    <ul class="kage-select-options">
-      @for (option of options; track $index; let i = $index) {
-        <li
-          (click)="selectOption(option, i)"
-          [class.focused]="i === focusedIndex"
-          [class.selected]="option.value === selectedOption?.value"
-        >
-          {{ option.label }}
-        </li>
-      }
-    </ul>
   }
+  <div class="kage-select-selection-area">
+    <div class="kage-select-selected" (click)="toggleDropdown()">
+      <div class="kage-select-icon start"><ng-content select="[slot='icon-start']"></ng-content></div>
+      <div class="kage-select-stage-area">
+        {{ selectedOption?.label || placeholder() }}
+        <kage-icon [name]="isOpen ? 'chevron-up' : 'chevron-down'" [depth]="3" [size]="16"></kage-icon>
+      </div>
+      <div class="kage-select-icon end"><ng-content select="[slot='icon-end']"></ng-content></div>
+    </div>
+
+    @if (isOpen) {
+      <ul class="kage-select-options">
+        @for (option of options; track $index; let i = $index) {
+          <li
+            (click)="selectOption(option, i)"
+            [class.focused]="i === focusedIndex"
+            [class.selected]="option.value === selectedOption?.value"
+          >
+            {{ option.label }}
+          </li>
+        }
+      </ul>
+    }
+  </div>
 </div>
