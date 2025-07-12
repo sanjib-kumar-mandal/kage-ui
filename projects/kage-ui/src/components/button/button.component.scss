@@ -3,7 +3,7 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: var(--kage-button-padding-top, 5px) var(--kage-button-padding-right, 10px) var(--kage-button-padding-bottom, 5px) var(--kage-button-padding-left, 10px);
+        padding: var(--kage-button-padding-top, 9px) var(--kage-button-padding-right, 10px) var(--kage-button-padding-bottom, 9px) var(--kage-button-padding-left, 10px);
         cursor: pointer;
         background: var(--kage-button-background, transparent);
         transition: background 0.2s ease, transform 0.1s ease;
@@ -12,7 +12,7 @@
         border: var(--kage-button-border-width, 1px) solid var(--kage-button-border-color, var(--color-primary, inherit));
         text-transform: var(--kage-button-text-transform, uppercase);
         color: var(--kage-button-color, var(--color-primary, inherit));
-        font-size: var(--kage-button-font-size, inherit);
+        font-size: var(--kage-button-font-size, 15px);
         border-radius: var(--kage-button-radial-value, 0px);
         width: 100%;
         &:disabled {
