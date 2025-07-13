@@ -1,37 +1,46 @@
-@if (options()?.dismissible) {
-    <div class="k-alert-backdrop" (click)="onBackdrop()"></div>
-    <div class="k-alert-box">
-        @if (options()?.title) {
-            <h3>{{ options()?.title }}</h3>
-        }
-        <p class="k-alert-message">{{ options()!.message }}</p>
+<!-- Backdrop -->
+<div class="kage-alert-backdrop" (click)="onBackdrop()"></div>
 
-        @if (options()?.inputs?.length) {
-            <form #form="ngForm" class="inputs">
-                @for (input of options()?.inputs; track $index) {
-                    <kage-input 
-                        [label]="input.label ?? ''" 
-                        [type]="input.type || 'text'"
-                        [placeholder]="input.placeholder ?? ''"
-                        [name]="input.name">
-                    </kage-input>
-                }
-            </form>
-        }
+<!-- Alert Box -->
+<div class="kage-alert-box" role="alertdialog" aria-modal="true">
+  <!-- Title -->
+   @if (options()?.title) {
+    <h3>{{ options()?.title }}</h3>
+   }
 
-        @if (options()?.buttons?.length) {
-            <div class="actions">
-                @for (btn of options()?.buttons; track $index) {
-                    <kage-button
-                        [disabled]="btn.disabled ?? false"
-                        [class.primary]="btn.primary"
-                        [color]="btn.color ?? 'primary'"
-                        [fill]="options()?.inputs?.length ? 'outline' : 'clear'"
-                        (click)="handle(btn)">
-                    {{ btn.label }}
-                    </kage-button>
-                }
-            </div>
+  <!-- Message -->
+  <p class="kage-alert-message">{{ options()?.message }}</p>
+
+  <!-- Inputs -->
+   @if (options()?.inputs?.length) {
+    <form #form="ngForm" class="inputs">
+        @for (input of options()?.inputs; track trackByIndex($index)) {
+            <kage-input
+                [label]="input.label ?? ''"
+                [type]="input.type || 'text'"
+                [placeholder]="input.placeholder ?? ''"
+                [name]="input.name"
+                [(ngModel)]="inputValues[input.name]"
+                [ngModelOptions]="{ standalone: true }"
+            ></kage-input>
+        }
+    </form>
+   }
+
+  <!-- Action Buttons -->
+   @if (options()?.buttons?.length) {
+    <div class="actions">
+        @for (btn of options()?.buttons; track trackByIndex($index)) {
+            <kage-button
+                [disabled]="btn.disabled ?? false"
+                [class.primary]="btn.primary"
+                [color]="btn.color ?? 'primary'"
+                [fill]="options()?.inputs?.length ? 'outline' : 'clear'"
+                (click)="handle(btn)"
+            >
+            {{ btn.label }}
+            </kage-button>
         }
     </div>
-}
+   }
+</div>

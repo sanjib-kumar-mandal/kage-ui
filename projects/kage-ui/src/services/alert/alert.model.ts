@@ -3,7 +3,7 @@ export type AlertButtonColor = 'info' | 'success' | 'warning' | 'danger';
 export interface AlertButton {
   label: string;
   role?: 'confirm' | 'cancel' | string;
-  handler?: () => void | Promise<void>;
+  handler?: (values?: Record<string, string>) => void | Promise<void>; // updated
   primary?: boolean;
   disabled?: boolean;
   color?:

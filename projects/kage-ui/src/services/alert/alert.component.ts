@@ -1,11 +1,10 @@
 import { Component, output, model } from '@angular/core';
-import { AlertOptions, AlertButton } from './alert.model';
 import { FormsModule } from '@angular/forms';
-import { KageButton } from '../../components/button/button.component';
-import { KageInput } from '../../components/input/input.component';
+import { AlertOptions, AlertButton } from './alert.model';
+import { KageButton, KageInput } from '../../components/components';
 
 @Component({
-  selector: 'k-alert-host',
+  selector: 'kage-alert-host',
   imports: [FormsModule, KageButton, KageInput],
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.scss'],
@@ -21,15 +20,15 @@ export class KageAlertHost {
   inputValues: Record<string, string> = {};
 
   ngOnInit() {
-    // Pre-fill default values
-    this.options()!.inputs?.forEach((input) => {
-      this.inputValues[input.name] = input.value || '';
+    // Pre-fill default input values
+    this.options()?.inputs?.forEach((input) => {
+      this.inputValues[input.name] = input.value ?? '';
     });
   }
 
   async handle(button: AlertButton) {
     if (button.handler) {
-      await button.handler();
+      await button.handler(this.inputValues); // pass input values
     }
 
     this.result.emit({ values: this.inputValues, button });
@@ -37,9 +36,11 @@ export class KageAlertHost {
   }
 
   onBackdrop() {
-    if (this.options()!.dismissible) {
+    if (this.options()?.dismissible) {
       this.result.emit({ values: this.inputValues, button: null });
       this.close.emit();
     }
   }
+
+  trackByIndex = (index: number) => index;
 }
