@@ -100,4 +100,12 @@ export class KageButton {
       this.handleClick();
     }
   }
+
+  @HostListener('click', ['$event'])
+  onHostClick(event: MouseEvent) {
+    if (this.disabled()) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }
+  }
 }
