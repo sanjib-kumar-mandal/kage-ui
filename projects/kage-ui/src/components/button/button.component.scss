@@ -6,6 +6,7 @@
         justify-content: center;
         padding: var(--kage-button-padding-top, 9px) var(--kage-button-padding-right, 10px) var(--kage-button-padding-bottom, 9px) var(--kage-button-padding-left, 10px);
         cursor: pointer;
+        width: inherit;
         background: var(--kage-button-background, transparent);
         transition: background 0.2s ease, transform 0.1s ease;
         position: relative;
