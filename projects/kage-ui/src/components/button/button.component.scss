@@ -6,7 +6,7 @@
         justify-content: center;
         padding: var(--kage-button-padding-top, 9px) var(--kage-button-padding-right, 10px) var(--kage-button-padding-bottom, 9px) var(--kage-button-padding-left, 10px);
         cursor: pointer;
-        width: inherit;
+        width: inherit !important;
         background: var(--kage-button-background, transparent);
         transition: background 0.2s ease, transform 0.1s ease;
         position: relative;
@@ -16,7 +16,6 @@
         color: var(--kage-button-color, var(--color-primary, inherit));
         font-size: var(--kage-button-font-size, 15px);
         border-radius: var(--kage-button-radial-value, 0px);
-        width: 100%;
         &:disabled {
             opacity: 0.6;
             cursor: not-allowed;
