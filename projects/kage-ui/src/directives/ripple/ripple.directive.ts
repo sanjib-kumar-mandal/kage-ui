@@ -28,6 +28,7 @@ export class KageRippleDirective {
       this.renderer.setAttribute(this.el.nativeElement, 'ripple-host', '');
       this.container = this.renderer.createElement('span');
       this.renderer.addClass(this.container, 'ripple-container');
+      this.renderer.setStyle(this.container, 'position', 'absolute');
       this.renderer.appendChild(this.el.nativeElement, this.container);
       this.renderer.setStyle(this.el.nativeElement, 'position', 'relative');
       this.renderer.setStyle(this.el.nativeElement, 'overflow', 'hidden');
@@ -36,9 +37,7 @@ export class KageRippleDirective {
 
   @HostListener('click', ['$event'])
   onClick(event: MouseEvent) {
-    const rippleColor =
-      this.rippleColor() ??
-      getComputedStyle(this.document.body).getPropertyValue('--border-color');
+    const rippleColor = this.rippleColor() ?? 'var(--color-primary)';
 
     const ripple = this.renderer.createElement('span');
     const rect = this.el.nativeElement.getBoundingClientRect();

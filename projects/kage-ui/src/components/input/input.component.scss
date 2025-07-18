@@ -52,12 +52,8 @@
             &:focus-within{
                 border-color: var(--kage-input-active-border-color, var(--color-primary, inherit));
                 .icon{
-                    border-color: var(--kage-input-active-border-color, var(--color-primary, inherit));
-                    .start{
-                        border-color: var(--kage-input-active-border-color, var(--color-primary, inherit));
-                    }
-                    .end{
-                        border-color: var(--kage-input-active-border-color, var(--color-primary, inherit));
+                    &.start, &.end{
+                        border-color: var(--kage-input-active-border-color, var(--color-primary, inherit)) !important;
                     }
                 }
             }
