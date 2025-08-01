@@ -1,3 +1,4 @@
+@use "sass:list";
 .all-preview{
     display: flex;
     flex-direction: column;
@@ -55,7 +56,7 @@
                 $colors: var(--color-primary), var(--color-secondary), var(--color-tertiary), var(--color-success), var(--color-danger), var(--color-warning);
                 @for $i from 1 through 6 {
                     &:nth-child(#{$i}n) {
-                        --kage-card-border-color: #{nth($colors, $i)};
+                        --kage-card-border-color: #{list.nth($colors, $i)};
                         --kage-card-border-bottom-width: 5px;
                         --kage-card-border-top-width: 1px;
                     }

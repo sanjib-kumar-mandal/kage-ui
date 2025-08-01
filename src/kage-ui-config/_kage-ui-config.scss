@@ -1,11 +1,12 @@
-@import "./font-family/font-family";
-@import "./line-limit/line-limit";
-@import "./color/color";
-@import "./size/size";
-@import "./scrollbar/scrollbar";
-@import "./toast/toast";
-@import "./drawer/drawer";
-@import "./image-view/image-view";
+@use "./font-family/font-family";
+@use "./line-limit/line-limit";
+@use "./color/color";
+@use "./size/size";
+@use "./scrollbar/scrollbar";
+@use "./toast/toast";
+@use "./drawer/drawer";
+@use "./image-view/image-view";
+@use "./selection/selection";
 
 /* == BORDER CONFIG == */
 :host{

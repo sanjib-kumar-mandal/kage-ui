@@ -1,0 +1,6 @@
+:root{
+    &::selection{
+        background: var(--color-warning);
+        color: #292826;
+    }
+}

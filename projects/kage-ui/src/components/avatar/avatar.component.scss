@@ -1,18 +1,18 @@
 :host{
-    width: var(--kage-avatar-size, 35px);
-    height: var(--kage-avatar-size, 35px);
-    display: inline-block;
+    display: contents;
     .kage-avatar-wrapper{
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border-radius: var(--kage-avatar-border-radius, 0px);
-        width: 100%;
-        height: 100%;
+        width: var(--kage-avatar-size, 35px);
+        height: var(--kage-avatar-size, 35px);
         background: var(--kage-avatar-background, transparent);
+        border: var(--kage-avatar-border-width, 1px) solid var(--kage-avatar-border-color, var(--color-medium, transparent));
+        overflow: hidden;
         img{
-            width: 100%;
-            height: 100%;
-            border: var(--kage-avatar-border-width, 1px) solid var(--kage-avatar-border-color, var(--color-medium, transparent));
-            padding: var(--kage-avatar-border-image-gap, 2px);
+            max-width: 100%;
+            max-height: 100%;
             border-radius: var(--kage-avatar-border-radius, 0px);
         }
     }

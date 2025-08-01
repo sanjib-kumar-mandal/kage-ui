@@ -1,20 +1,37 @@
 .kage-breadcrumbs-wrapper{
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
     flex-direction: var(--kage-breadcrumbs-flow-direction, row);
-    gap: var(--kage-bread-crumbs-space, 10px);
-    flex-wrap: var(--kage-bread-crumbs-overflow, wrap);
-    a, p{
-        text-decoration: var(--kage-bread-crumb-link-decoration, none);
-        color: var(--kage-bread-crumb-link-color, inherit);
-        font-family: var(--kage-bread-crumb-font-family, inherit);
-        transition: color .3s;
-        &:hover{
-            color: var(--kage-bread-crumb-link-hover-color, var(--color-primary, inherit));
-        }
+    .back{
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-color: var(--color-medium);
+        border-style: solid;
+        border-width: 1px;
+        cursor: pointer;
     }
-    p{
-        pointer-events: none;
-        color: var(--kage-bread-crumb-no-link-color, var(--color-primary, inherit));
+    .links{
+        display: flex;
+        align-items: center;
+        gap: var(--kage-bread-crumbs-space, 10px);
+        flex-wrap: var(--kage-bread-crumbs-overflow, wrap);
+        a, p{
+            text-decoration: var(--kage-bread-crumb-link-decoration, none);
+            color: var(--kage-bread-crumb-link-color, inherit);
+            font-family: var(--kage-bread-crumb-font-family, inherit);
+            transition: color .3s;
+            &:hover{
+                color: var(--kage-bread-crumb-link-hover-color, var(--color-primary, inherit));
+            }
+        }
+        p{
+            pointer-events: none;
+            color: var(--kage-bread-crumb-no-link-color, var(--color-primary, inherit));
+        }
     }
 }
