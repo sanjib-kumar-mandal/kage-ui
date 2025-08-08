@@ -5,14 +5,11 @@
     gap: 20px;
     flex-direction: var(--kage-breadcrumbs-flow-direction, row);
     .back{
-        width: 35px;
-        height: 35px;
+        width: 40px;
+        height: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
-        border-color: var(--color-medium);
-        border-style: solid;
-        border-width: 1px;
         cursor: pointer;
     }
     .links{
