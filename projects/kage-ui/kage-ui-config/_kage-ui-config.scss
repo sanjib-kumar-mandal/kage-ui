@@ -10,6 +10,9 @@
 
 /* == BORDER CONFIG == */
 :host{
+    --border-width: 1px;
+    --border-color: color-mix(in srgb, var(--color-medium) 60%, var(--color-background) 40%);
+    --border-color-active: color-mix(in srgb, var(--color-medium) 80%, var(--color-background) 20%);
     --default-font: 'my-font-medium';
 }
 

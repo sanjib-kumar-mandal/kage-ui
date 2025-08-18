@@ -12,9 +12,9 @@
 
     /* Handle */
     &::-webkit-scrollbar-thumb {
-        background: var(--border-color);
+        background: color-mix(in srgb, var(--color-background) 70%, var(--color-medium) 30%);
         &:hover{
-            background: var(--border-color-active);
+            background: color-mix(in srgb, var(--color-background) 50%, var(--color-medium) 50%);
         }
     }
 }
