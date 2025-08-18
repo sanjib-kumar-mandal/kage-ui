@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, input, model } from '@angular/core';
+import { Component, input, model, signal } from '@angular/core';
 import { KageRadioGroup } from '../radio-group/radio-group.component';
 
 @Component({
@@ -10,7 +10,8 @@ import { KageRadioGroup } from '../radio-group/radio-group.component';
 })
 export class KageRadio {
   value = input<any>();
-  disabled = model<boolean>(false);
+  disabled = input<boolean>(false);
+  isDisabled = signal(this.disabled());
   color = input<
     | 'primary'
     | 'secondary'
@@ -19,6 +20,7 @@ export class KageRadio {
     | 'warning'
     | 'danger'
     | 'info'
+    | 'medium'
   >('primary');
   checked = false;
   cssClass = input<string>();
@@ -32,12 +34,12 @@ export class KageRadio {
   }
 
   setDisabled(disabled: boolean) {
-    this.disabled.set(disabled);
+    this.isDisabled.set(disabled);
   }
 
   onSelect() {
     if (this.group) {
-      if (!this.disabled()) {
+      if (!this.isDisabled()) {
         this.group.selectValue(this.value());
       }
     } else {

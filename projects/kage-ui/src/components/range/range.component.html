@@ -1,4 +1,4 @@
-<label class="kage-range-wrapper" [ngClass]="[color() ?? '', cssClass() ?? '']">
+<label class="kage-range-wrapper" [ngClass]="[color() ?? '', cssClass() ?? '']" [class.disabled]="isDisabled()">
     <div class="kage-field">
         <input 
             type="range" 
@@ -9,6 +9,7 @@
             (focus)="onFocus()"
             (blur)="onBlur()"
             [value]="value"
+            [disabled]="isDisabled()"
         />
     </div>
     @if (showTooltip()) {

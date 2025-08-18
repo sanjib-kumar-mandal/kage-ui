@@ -1,5 +1,5 @@
-<label class="kage-checkbox-wrapper" [ngClass]="[color() ?? '', cssClass() ?? '']" [class.disabled]="disabled()">
-    <input type="checkbox" [disabled]="disabled()" [attr.name]="name()" [attr.id]="id()">
+<label class="kage-checkbox-wrapper" [ngClass]="[color() ?? '', cssClass() ?? '']" [class.disabled]="isDisabled()">
+    <input type="checkbox" [disabled]="isDisabled()" [attr.name]="name()" [attr.id]="id()">
     <span class="check-box"></span>
     <p class="checkbox-label"><ng-content></ng-content></p>
 </label>

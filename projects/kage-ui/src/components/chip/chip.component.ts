@@ -22,6 +22,7 @@ export class KageChip {
     | 'success'
     | 'warning'
     | 'info'
+    | 'medium'
   >();
 
   onRemove = output<void>();

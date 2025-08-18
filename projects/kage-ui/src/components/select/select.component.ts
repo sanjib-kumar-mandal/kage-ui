@@ -11,6 +11,7 @@ import {
   OnDestroy,
   output,
   QueryList,
+  signal,
   ViewChild,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -42,7 +43,8 @@ export class KageSelect
 
   label = input<string>();
   placeholder = input<string>('Select...');
-  disabled = model<boolean>(false);
+  disabled = input<boolean>(false);
+  isDisabled = signal(this.disabled());
   cssClass = input<string>();
   valueChange = output<any>();
 
@@ -68,7 +70,7 @@ export class KageSelect
   }
 
   toggleDropdown() {
-    if (this.disabled()) {
+    if (this.isDisabled()) {
       return;
     }
     this.isOpen = !this.isOpen;
@@ -128,7 +130,7 @@ export class KageSelect
   }
 
   setDisabledState(isDisabled: boolean): void {
-    this.disabled.set(Boolean(isDisabled));
+    this.isDisabled.set(Boolean(isDisabled));
   }
 
   ngOnDestroy(): void {

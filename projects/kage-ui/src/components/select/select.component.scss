@@ -1,5 +1,5 @@
 :host{
-  display: block;
+  display: contents;
   .kage-select-wrapper {
     display: flex;
     flex-direction: column;
@@ -56,16 +56,17 @@
         margin: 0;
         padding: 0;
         border: var(--kage-select-border-width, 1px) solid var(--kage-select-border-color, var(--color-medium, transparent));
-        border-top: none;
         background: var(--kage-select-background, var(--color-background, transparent));
         position: absolute;
         top: 45px;
         left: -1px;
         width: 100%;
         z-index: 10;
+        max-height: 250px;
+        overflow-x: hidden;
         li {
-          padding: 10px;
-          border-top: var(--kage-select-border-width, 1px) solid var(--kage-select-border-color, var(--color-medium, transparent));
+          padding: 9px 10px;
+          border-top: var(--kage-select-border-width, 1px) solid var(--kage-select-border-color, color-mix(in srgb, var(--color-background) 50%, var(--color-medium) 50%));
           &.focused,
           &:hover {
             background-color: var(--kage-select-background-hover, transparent);
@@ -73,12 +74,19 @@
           &.selected {
             font-weight: bold;
           }
+          &:first-child{
+            border-top: none;
+          }
         }
       }
       &.disabled{
         opacity: .6;
         pointer-events: none;
       }
+    }
+    &.disabled{
+      pointer-events: none;
+      opacity: .6;
     }
   }
 }

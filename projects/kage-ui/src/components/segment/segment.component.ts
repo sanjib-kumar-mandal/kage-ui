@@ -5,6 +5,7 @@ import {
   input,
   model,
   output,
+  signal,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -35,11 +36,12 @@ export interface KageSegmentOption {
 })
 export class KageSegment implements ControlValueAccessor {
   options = input<Array<string> | Array<KageSegmentOption>>([]);
-  disabled = model<boolean>(false);
+  disabled = input<boolean>(false);
 
   onSegmentChange = output<string | number>();
 
   selectedValue!: string | number;
+  isDisabled = signal(this.disabled());
 
   private onChange = (value: string | number) => {};
   private onTouched = () => {};
@@ -51,7 +53,7 @@ export class KageSegment implements ControlValueAccessor {
   }
 
   select(value: string | number, disabled = false) {
-    if (disabled || this.disabled()) return;
+    if (disabled || this.isDisabled()) return;
     this.selectedValue = value;
     this.onSegmentChange.emit(value);
     this.onChange(value);
@@ -94,6 +96,6 @@ export class KageSegment implements ControlValueAccessor {
   }
 
   setDisabledState(isDisabled: boolean): void {
-    this.disabled.set(Boolean(isDisabled));
+    this.isDisabled.set(Boolean(isDisabled));
   }
 }

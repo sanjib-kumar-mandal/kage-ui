@@ -37,6 +37,7 @@ export class KageIcon implements AfterViewInit {
     | 'warning'
     | 'danger'
     | 'info'
+    | 'medium'
   >();
 
   private renderer = inject(Renderer2);

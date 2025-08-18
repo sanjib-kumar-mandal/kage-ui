@@ -1,5 +1,5 @@
 :host{
-    display: block;
+    display: contents;
     .kage-toggle-wrapper{
         display: flex;
         align-items: center;
@@ -47,6 +47,10 @@
                 display: block;
             }
         }
+        &.disabled{
+            pointer-events: none;
+            opacity: .6;
+        }
         &.primary{
             --kage-toggle-active-color: var(--color-primary);
         }
@@ -67,6 +71,9 @@
         }
         &.info{
             --kage-toggle-active-color: var(--color-info);
+        }
+        &.medium{
+            --kage-toggle-active-color: var(--color-medium);
         }
     }
 }

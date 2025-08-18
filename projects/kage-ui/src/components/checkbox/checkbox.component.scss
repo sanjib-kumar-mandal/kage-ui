@@ -85,6 +85,9 @@
     &.info{
         --kage-checkbox-checked-color: var(--color-info);
     }
+    &.medium{
+        --kage-checkbox-checked-color: var(--color-medium);
+    }
 }
 
 @keyframes dothabottomcheck{

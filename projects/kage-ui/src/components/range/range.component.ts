@@ -6,6 +6,7 @@ import {
   input,
   model,
   output,
+  signal,
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { debounceTime, Subject } from 'rxjs';
@@ -28,7 +29,7 @@ export class KageRange {
   min = input<number>(0);
   max = input<number>(100);
   step = input<number>(1);
-  disabled = model<boolean>(false);
+  disabled = input<boolean>(false);
   ticks = input<boolean | Array<string>>(false);
   vertical = input<boolean>(false);
   showTooltip = input<boolean>(false);
@@ -44,9 +45,11 @@ export class KageRange {
     | 'danger'
     | 'warning'
     | 'info'
+    | 'medium'
   >();
 
   value = 0;
+  isDisabled = signal(this.disabled());
 
   private onChange = (value: number) => {};
   private onTouched = () => {};
@@ -111,6 +114,6 @@ export class KageRange {
   }
 
   setDisabledState(isDisabled: boolean): void {
-    this.disabled.set(Boolean(isDisabled));
+    this.isDisabled.set(Boolean(isDisabled));
   }
 }

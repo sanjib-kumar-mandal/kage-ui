@@ -9,7 +9,7 @@
     <div class="previewer">
         <kage-select placeholder="Choose fruits" [disabled]="true">
             <kage-icon name="document" slot="icon-start" [depth]="3"></kage-icon>
-            @for (fruit of ['Apple', 'Banana', 'Orange']; track $index) {
+            @for (fruit of ['Apple', 'Banana', 'Orange', 'Guava', 'Walnuts', 'Papaya', 'Mango', 'Grapes', 'Muskmelon', 'Strawberry', 'Peach']; track $index) {
                 <kage-option [value]="fruit" [label]="fruit"></kage-option>
             }
         </kage-select>

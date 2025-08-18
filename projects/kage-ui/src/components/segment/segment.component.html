@@ -1,13 +1,13 @@
-<div class="k-segment-container" [class.disabled]="disabled()">
+<div class="k-segment-container" [class.disabled]="isDisabled()">
     <div class="k-segments">
         @for (opt of normalizedOptions; track $index) {
             <button
                 [class.active]="opt.value === selectedValue"
-                [disabled]="opt.disabled || disabled()"
+                [disabled]="opt.disabled || isDisabled()"
                 (click)="select(opt.value, opt.disabled)"
                 role="radio"
                 [attr.aria-checked]="opt.value === selectedValue"
-                [attr.aria-disabled]="opt.disabled || disabled()"
+                [attr.aria-disabled]="opt.disabled || isDisabled()"
             >
                 {{ opt.label }}
             </button>

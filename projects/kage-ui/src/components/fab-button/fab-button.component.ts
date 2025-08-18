@@ -29,6 +29,7 @@ export class KageFab {
     | 'success'
     | 'warning'
     | 'info'
+    | 'medium'
   >();
   position = input<'top-right' | 'top-left' | 'bottom-left' | 'bottom-right'>(
     'bottom-left'

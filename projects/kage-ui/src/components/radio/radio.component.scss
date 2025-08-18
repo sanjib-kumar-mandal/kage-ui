@@ -60,5 +60,8 @@
         &.info{
             --kage-radio-color-checked: var(--color-info);
         }
+        &.medium{
+            --kage-radio-color-checked: var(--color-medium);
+        }
     }
 }

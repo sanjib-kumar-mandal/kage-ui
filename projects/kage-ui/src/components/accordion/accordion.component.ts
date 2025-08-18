@@ -1,7 +1,6 @@
 import { NgClass } from '@angular/common';
 import {
   AfterViewInit,
-  ChangeDetectionStrategy,
   Component,
   ElementRef,
   inject,
@@ -16,7 +15,6 @@ import { fromEvent } from 'rxjs';
   imports: [NgClass],
   templateUrl: './accordion.component.html',
   styleUrl: './accordion.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class KageAccordion implements AfterViewInit {
   @ViewChild('header', { read: ElementRef }) header!: ElementRef;
@@ -31,6 +29,7 @@ export class KageAccordion implements AfterViewInit {
     | 'success'
     | 'warning'
     | 'info'
+    | 'medium'
   >();
   expanded = input<boolean>(false);
 

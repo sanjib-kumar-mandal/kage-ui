@@ -1,4 +1,4 @@
-<div class="kage-searchbar-wrapper" [class.disabled]="disabled()">
+<div class="kage-searchbar-wrapper" [class.disabled]="isDisabled()">
   <span class="search-icon" aria-hidden="true">
     <kage-icon name="search" [depth]="3"></kage-icon>
   </span>
@@ -7,7 +7,7 @@
     type="text"
     [attr.placeholder]="placeholder()"
     [value]="value"
-    [disabled]="disabled()"
+    [disabled]="isDisabled()"
     (input)="onInput($event)"
     (blur)="onTouched()"
     [attr.aria-label]="placeholder()"

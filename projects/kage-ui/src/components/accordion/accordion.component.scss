@@ -52,5 +52,9 @@
             --kage-accordion-header-border-color: var(--color-info);
             --kage-accordion-content-border-color: var(--color-info);
         }
+        &.medium{
+            --kage-accordion-header-border-color: var(--color-medium);
+            --kage-accordion-content-border-color: var(--color-medium);
+        }
     }
 }

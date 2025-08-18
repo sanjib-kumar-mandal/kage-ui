@@ -1,10 +1,10 @@
 <button
   [attr.type]="type()"
-  [disabled]="disabled() || loading()"
+  [disabled]="isDisabled() || loading()"
   [ngClass]="[color() ?? '', fill(), cssClass() ?? '']"
   class="kage-button-wrapper"
   (click)="handleClick()"
-  [attr.aria-disabled]="disabled() || loading()"
+  [attr.aria-disabled]="isDisabled() || loading()"
   [attr.aria-busy]="loading()"
   [attr.aria-label]="ariaLabel()"
   role="button"

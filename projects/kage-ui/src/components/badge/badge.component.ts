@@ -18,5 +18,6 @@ export class KageBadge {
     | 'success'
     | 'warning'
     | 'info'
+    | 'medium'
   >();
 }

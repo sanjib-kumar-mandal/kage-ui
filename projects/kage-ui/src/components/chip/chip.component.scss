@@ -70,5 +70,8 @@
         &.info{
             --kage-chip-color: var(--color-info);
         }
+        &.medium{
+            --kage-chip-color: var(--color-medium);
+        }
     }
 }

@@ -1,4 +1,4 @@
-<div class="kage-select-wrapper" [class.disabled]="disabled()" [class]="cssClass() ?? ''" tabindex="0" (keydown)="onKeyDown($event)" #container>
+<div class="kage-select-wrapper" [class.disabled]="isDisabled()" [class]="cssClass() ?? ''" tabindex="0" (keydown)="onKeyDown($event)" #container>
   @if (label()) {
     <div class="kage-select-label-view">
       <p>{{label()}}</p>
@@ -15,7 +15,7 @@
     </div>
 
     @if (isOpen) {
-      <ul class="kage-select-options">
+      <ul class="kage-select-options scroll-bar">
         @for (option of options; track $index; let i = $index) {
           <li
             (click)="selectOption(option, i)"

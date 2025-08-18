@@ -126,6 +126,10 @@
                     --kage-fab-item-border-color: var(--color-info);
                     --kage-fab-item-color: var(--color-info);
                 }
+                &.medium{
+                    --kage-fab-item-border-color: var(--color-medium);
+                    --kage-fab-item-color: var(--color-medium);
+                }
             }
         }
         //============== POSITION ==============//
@@ -178,6 +182,9 @@
         }
         &.info{
             --kage-fab-color: var(--color-info);
+        }
+        &.medium{
+            --kage-fab-color: var(--color-medium);
         }
     }
 }

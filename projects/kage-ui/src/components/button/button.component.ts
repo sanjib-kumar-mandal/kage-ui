@@ -6,6 +6,7 @@ import {
   HostListener,
   input,
   model,
+  signal,
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { KageRippleDirective } from '../../directives/directives';
@@ -35,8 +36,10 @@ export class KageButton {
     | 'success'
     | 'warning'
     | 'info'
+    | 'medium'
   >();
-  disabled = model<boolean>(false);
+  disabled = input<boolean>(false);
+  isDisabled = signal(this.disabled());
   loading = input<boolean>(false);
   iconRight = input<boolean>(false);
   ariaLabel = input<string>('Button');
@@ -61,8 +64,10 @@ export class KageButton {
       return `var(--color-danger)`;
     } else if (this.color() === 'info') {
       return `var(--color-info)`;
+    } else if (this.color() === 'medium') {
+      return `var(--color-medium)`;
     } else {
-      return `var(--border-color)`;
+      return `var(--color-primary)`;
     }
   }
 
@@ -79,11 +84,11 @@ export class KageButton {
   }
 
   setDisabledState?(isDisabled: boolean): void {
-    this.disabled.set(Boolean(isDisabled));
+    this.isDisabled.set(Boolean(isDisabled));
   }
 
   handleClick() {
-    if (!this.disabled() && !this.loading()) {
+    if (!this.isDisabled() && !this.loading()) {
       this.onTouched();
       this.onChange(true);
     }
@@ -93,7 +98,7 @@ export class KageButton {
   handleKeydown(event: KeyboardEvent) {
     if (
       (event.key === 'Enter' || event.key === ' ') &&
-      !this.disabled() &&
+      !this.isDisabled() &&
       !this.loading()
     ) {
       event.preventDefault();
@@ -103,7 +108,7 @@ export class KageButton {
 
   @HostListener('click', ['$event'])
   onHostClick(event: MouseEvent) {
-    if (this.disabled()) {
+    if (this.isDisabled()) {
       event.preventDefault();
       event.stopImmediatePropagation();
     }

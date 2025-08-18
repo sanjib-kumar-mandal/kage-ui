@@ -6,6 +6,7 @@ import {
   model,
   OnInit,
   output,
+  signal,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { KageIcon } from '../icon/icon.component';
@@ -29,12 +30,13 @@ export class KageSearchbar implements ControlValueAccessor, OnInit {
   placeholder = input<string>('Search...');
   debounce = input<number>(300);
   autofocus = input<boolean>(false);
-  disabled = model<boolean>(false);
+  disabled = input<boolean>(false);
   showClear = input<boolean>(true);
 
   search = output<string>();
 
   value = '';
+  isDisabled = signal(this.disabled());
   onChange = (value: string) => {};
   onTouched = () => {};
 
@@ -72,6 +74,6 @@ export class KageSearchbar implements ControlValueAccessor, OnInit {
   }
 
   setDisabledState(disabled: boolean): void {
-    this.disabled.set(Boolean(disabled));
+    this.isDisabled.set(Boolean(disabled));
   }
 }

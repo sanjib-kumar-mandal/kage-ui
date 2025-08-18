@@ -36,5 +36,9 @@
             --kage-badge-border-color: var(--color-info);
             --kage-badge-color: var(--color-info);
         }
+        &.medium{
+            --kage-badge-border-color: var(--color-medium);
+            --kage-badge-color: var(--color-medium);
+        }
     }
 }

@@ -7,6 +7,7 @@ import {
   input,
   model,
   QueryList,
+  signal,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { KageRadio } from '../radio/radio.component';
@@ -15,7 +16,7 @@ import { KageRadio } from '../radio/radio.component';
   selector: 'kage-radio-group',
   imports: [],
   template: `
-    <div class="kage-radio-group" [class.disabled]="disabled() === true">
+    <div class="kage-radio-group" [class.disabled]="isDisabled()">
       <ng-content></ng-content>
     </div>
   `,
@@ -30,7 +31,8 @@ import { KageRadio } from '../radio/radio.component';
 })
 export class KageRadioGroup implements ControlValueAccessor, AfterContentInit {
   name = input<string>('');
-  disabled = model<boolean>(false);
+  disabled = input<boolean>(false);
+  isDisabled = signal(this.disabled());
 
   @ContentChildren(KageRadio) radios!: QueryList<KageRadio>;
 
@@ -69,12 +71,12 @@ export class KageRadioGroup implements ControlValueAccessor, AfterContentInit {
   }
 
   setDisabledState(isDisabled: boolean): void {
-    this.disabled.set(Boolean(isDisabled));
+    this.isDisabled.set(Boolean(isDisabled));
     this.updateDisabled();
   }
 
   selectValue(value: any) {
-    if (!this.disabled()) {
+    if (!this.isDisabled()) {
       this._value = value;
       this.updateSelection();
       this.onChange(value);

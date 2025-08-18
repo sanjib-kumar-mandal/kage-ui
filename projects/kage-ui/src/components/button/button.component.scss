@@ -65,9 +65,13 @@
             --kage-button-color: var(--color-info);
             --kage-button-spinner-color: var(--color-info);
         } 
+        &.medium {
+            --kage-button-border-color: var(--color-medium);
+            --kage-button-color: var(--color-medium);
+            --kage-button-spinner-color: var(--color-medium);
+        } 
         &.clear{
             --kage-button-border-color: transparent !important;
-            // border-color: transparent;
         }
     }
 

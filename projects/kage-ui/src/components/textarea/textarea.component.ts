@@ -9,6 +9,7 @@ import {
   model,
   output,
   PLATFORM_ID,
+  signal,
   ViewChild,
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -31,7 +32,7 @@ import { debounceTime, Subject } from 'rxjs';
 export class KageTextarea {
   label = input<string>('');
   placeholder = input<string>('');
-  disabled = model<boolean>(false);
+  disabled = input<boolean>(false);
   readonly = input<boolean>(false);
   maxLength = input<number>();
   autoFocus = input<boolean>(false);
@@ -47,6 +48,7 @@ export class KageTextarea {
   private debouncer = new Subject<string>();
 
   value: string = '';
+  isDisabled = signal(this.disabled());
 
   private platformId = inject(PLATFORM_ID);
 
@@ -79,7 +81,7 @@ export class KageTextarea {
     this.onTouched = fn;
   }
   setDisabledState?(isDisabled: boolean): void {
-    this.disabled.set(Boolean(isDisabled));
+    this.isDisabled.set(Boolean(isDisabled));
   }
 
   handleInput(event: Event) {

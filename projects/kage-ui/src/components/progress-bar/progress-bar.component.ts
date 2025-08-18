@@ -19,5 +19,6 @@ export class KageProgressBar {
     | 'danger'
     | 'success'
     | 'info'
+    | 'medium'
   >('primary');
 }

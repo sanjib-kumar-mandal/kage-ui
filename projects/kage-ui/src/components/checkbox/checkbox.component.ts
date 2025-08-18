@@ -5,6 +5,7 @@ import {
   forwardRef,
   input,
   model,
+  signal,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -32,8 +33,10 @@ export class KageCheckbox implements ControlValueAccessor {
     | 'danger'
     | 'warning'
     | 'info'
+    | 'medium'
   >();
-  disabled = model<boolean>(false);
+  disabled = input<boolean>(false);
+  isDisabled = signal(this.disabled());
   checked = false;
   name = input<string>();
   id = input<string>();
@@ -52,7 +55,7 @@ export class KageCheckbox implements ControlValueAccessor {
     this.onTouched = fn;
   }
   setDisabledState?(isDisabled: boolean): void {
-    this.disabled.set(Boolean(isDisabled));
+    this.isDisabled.set(Boolean(isDisabled));
   }
 
   toggleChecked(): void {
