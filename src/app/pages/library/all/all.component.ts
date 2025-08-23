@@ -113,6 +113,13 @@ export class AllComponent {
           image: 'assets/features/progress-bar.png',
         },
         {
+          name: 'Pagination',
+          description:
+            'This component provides a page navigation system with rules for displaying page numbers intelligently. It avoids clutter when total pages are large by using ellipsis (...) between blocks of pages.',
+          href: '/library/pagination',
+          image: '',
+        },
+        {
           name: 'Radio',
           description:
             'The Radio component lets users select a single option from a group. It supports custom styling, disabled states and integration with Angular forms.',

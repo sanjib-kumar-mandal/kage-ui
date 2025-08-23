@@ -131,6 +131,13 @@ export const routes: Routes = [
           ).then((m) => m.ProgressBarPreviewComponent),
       },
       {
+        path: 'pagination',
+        loadComponent: () =>
+          import(
+            '@page/library/components/pagination-preview/pagination-preview.component'
+          ).then((m) => m.PaginationPreviewComponent),
+      },
+      {
         path: 'radio',
         loadComponent: () =>
           import(

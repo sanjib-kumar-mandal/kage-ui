@@ -1,0 +1,54 @@
+<p class="page-tag"><span class="component">Component</span></p>
+<h1>Pagination</h1>
+<kage-bread-crumbs [iconDepth]="3">
+    <kage-bread-crumb [href]="'/library'" label="Library"></kage-bread-crumb>
+    <kage-bread-crumb [href]="'/library/pagination'" label="Input"></kage-bread-crumb>
+</kage-bread-crumbs>
+<p class="description">The Input component offers a customizable form control for capturing user input. It supports various types, states, and enhancements like labels, icons, error messages, and form integrations.</p>
+<app-code-preview [htmlCode]="htmlCode" [scssCode]="scssCode" [tsCode]="tsCode">
+    <kage-pagination [info]="pagination" color="primary"></kage-pagination>
+    <kage-pagination [info]="pagination" color="secondary"></kage-pagination>
+    <kage-pagination [info]="pagination" color="tertiary"></kage-pagination>
+    <kage-pagination [info]="pagination" color="success"></kage-pagination>
+    <kage-pagination [info]="pagination" color="danger"></kage-pagination>
+    <kage-pagination [info]="pagination" color="warning"></kage-pagination>
+    <kage-pagination [info]="pagination" color="info"></kage-pagination>
+    <kage-pagination [info]="pagination" color="medium"></kage-pagination>
+</app-code-preview>
+<h3 style="margin-top: 10px;">Input Signals</h3>
+<p class="description">List of Input Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>info</p><p> totalPages: `number`; currentPage: `number`;</p></div>
+        <div class="each"><p>color</p><p>`primary` | `secondary` | `tertiary` | `success` | `danger` | `warning` | `info` | `medium`</p></div>
+    </div>
+</div>
+<h3 style="margin-top: 10px;">Output Signals</h3>
+<p class="description">List of Output Parameters.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Default Value | Type</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>onPageChange</p><p>`number`</p></div>
+    </div>
+</div>
+<h3 style="margin-top: 10px;">Custom CSS Variables</h3>
+<p class="description">Recommended CSS Variable List — Defining values using these variables is advised to enhance maintainability and optimize CSS performance.</p>
+<div class="two-col-table">
+    <div class="two-col-table-head">
+        <p>Name</p>
+        <p>Fallback Values</p>
+    </div>
+    <div class="two-col-table-body">
+        <div class="each"><p>--kage-pagination-text-color</p><p></p></div>
+        <div class="each"><p>--kage-pagination-border-width</p><p>1px</p></div>
+        <div class="each"><p>--kage-pagination-border-style</p><p>solid</p></div>
+        <div class="each"><p>--kage-pagination-border-color</p><p>var(--color-primary)</p></div>
+    </div>
+</div>
