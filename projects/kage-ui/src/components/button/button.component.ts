@@ -1,6 +1,5 @@
 import { NgClass } from '@angular/common';
 import {
-  ChangeDetectionStrategy,
   Component,
   forwardRef,
   HostListener,
@@ -16,7 +15,6 @@ import { KageRippleDirective } from '../../directives/directives';
   imports: [NgClass, KageRippleDirective],
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

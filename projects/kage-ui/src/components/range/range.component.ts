@@ -1,13 +1,5 @@
 import { NgClass } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  forwardRef,
-  input,
-  model,
-  output,
-  signal,
-} from '@angular/core';
+import { Component, forwardRef, input, output, signal } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { debounceTime, Subject } from 'rxjs';
 
@@ -16,7 +8,6 @@ import { debounceTime, Subject } from 'rxjs';
   imports: [NgClass],
   templateUrl: './range.component.html',
   styleUrl: './range.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

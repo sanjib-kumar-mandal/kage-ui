@@ -1,12 +1,10 @@
 import { isPlatformBrowser } from '@angular/common';
 import {
-  ChangeDetectionStrategy,
   Component,
   ElementRef,
   forwardRef,
   inject,
   input,
-  model,
   output,
   PLATFORM_ID,
   signal,
@@ -20,7 +18,6 @@ import { debounceTime, Subject } from 'rxjs';
   imports: [],
   templateUrl: './textarea.component.html',
   styleUrl: './textarea.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

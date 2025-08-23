@@ -1,12 +1,5 @@
 import { DatePipe } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  forwardRef,
-  input,
-  model,
-  output,
-} from '@angular/core';
+import { Component, forwardRef, input, model, output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { KageIcon } from '../icon/icon.component';
 
@@ -22,7 +15,6 @@ import { KageIcon } from '../icon/icon.component';
     },
   ],
   imports: [DatePipe, KageIcon],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class KageCalendar implements ControlValueAccessor {
   mode = input<'single' | 'range' | 'multiple'>('single');

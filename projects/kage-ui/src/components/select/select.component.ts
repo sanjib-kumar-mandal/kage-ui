@@ -1,13 +1,11 @@
 import {
   AfterContentInit,
-  ChangeDetectionStrategy,
   Component,
   ContentChildren,
   ElementRef,
   forwardRef,
   HostListener,
   input,
-  model,
   OnDestroy,
   output,
   QueryList,
@@ -24,7 +22,6 @@ import { KageIcon } from '../icon/icon.component';
   imports: [KageIcon],
   templateUrl: './select.component.html',
   styleUrl: './select.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

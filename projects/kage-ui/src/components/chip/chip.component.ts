@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  input,
-  output,
-} from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { KageIcon } from '../icon/icon.component';
 
 @Component({
@@ -11,7 +6,6 @@ import { KageIcon } from '../icon/icon.component';
   imports: [KageIcon],
   templateUrl: './chip.component.html',
   styleUrl: './chip.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class KageChip {
   color = input<

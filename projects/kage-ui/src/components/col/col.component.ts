@@ -1,16 +1,10 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  HostBinding,
-  input,
-} from '@angular/core';
+import { Component, HostBinding, input } from '@angular/core';
 
 @Component({
   selector: 'kage-col',
   imports: [],
   template: '<ng-content></ng-content>',
   styleUrls: ['./col.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class KageCol {
   // Responsive span inputs

@@ -1,9 +1,7 @@
 import {
-  ChangeDetectionStrategy,
   Component,
   forwardRef,
   input,
-  model,
   OnInit,
   output,
   signal,
@@ -17,7 +15,6 @@ import { debounceTime, Subject } from 'rxjs';
   imports: [KageIcon],
   templateUrl: './searchbar.component.html',
   styleUrl: './searchbar.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

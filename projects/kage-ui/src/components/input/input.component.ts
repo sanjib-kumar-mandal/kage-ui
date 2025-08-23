@@ -10,19 +10,14 @@ import {
   inject,
   PLATFORM_ID,
   output,
-  effect,
-  ChangeDetectionStrategy,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { debounceTime, Subject } from 'rxjs';
 
 @Component({
   selector: 'kage-input',
-  standalone: true,
-  imports: [],
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

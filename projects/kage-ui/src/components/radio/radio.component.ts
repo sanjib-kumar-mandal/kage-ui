@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, input, model, signal } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 import { KageRadioGroup } from '../radio-group/radio-group.component';
 
 @Component({

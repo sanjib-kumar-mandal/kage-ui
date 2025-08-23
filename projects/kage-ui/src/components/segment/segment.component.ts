@@ -1,12 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  forwardRef,
-  input,
-  model,
-  output,
-  signal,
-} from '@angular/core';
+import { Component, forwardRef, input, output, signal } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 export interface KageSegmentOption {
@@ -20,7 +12,6 @@ export interface KageSegmentOption {
   imports: [],
   templateUrl: './segment.component.html',
   styleUrl: './segment.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

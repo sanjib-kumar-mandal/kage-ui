@@ -5,7 +5,6 @@ import {
   effect,
   forwardRef,
   input,
-  model,
   QueryList,
   signal,
 } from '@angular/core';

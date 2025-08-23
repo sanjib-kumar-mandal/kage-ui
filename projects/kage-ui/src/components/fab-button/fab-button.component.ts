@@ -1,6 +1,5 @@
 import { NgClass, NgTemplateOutlet } from '@angular/common';
 import {
-  ChangeDetectionStrategy,
   Component,
   ContentChildren,
   input,
@@ -15,7 +14,6 @@ import { RouterLink } from '@angular/router';
   imports: [NgClass, NgTemplateOutlet, RouterLink],
   templateUrl: './fab-button.component.html',
   styleUrl: './fab-button.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class KageFab {
   @ContentChildren(KageFabItem)

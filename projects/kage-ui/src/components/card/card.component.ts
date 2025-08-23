@@ -1,5 +1,5 @@
 import { NgTemplateOutlet } from '@angular/common';
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink, RouterLinkWithHref } from '@angular/router';
 
 @Component({
@@ -7,7 +7,6 @@ import { RouterLink, RouterLinkWithHref } from '@angular/router';
   imports: [RouterLink, RouterLinkWithHref, NgTemplateOutlet],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class KageCard {
   href = input<string>();

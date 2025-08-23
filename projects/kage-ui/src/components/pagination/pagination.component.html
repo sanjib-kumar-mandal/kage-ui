@@ -1,0 +1,23 @@
+@if (info()) {
+    <div class="pagination-wrapper">
+        <div class="prev-btn">
+            <kage-button [color]="color()" (click)="previousPage()">
+                <kage-icon name="chevron-backward" [depth]="3"></kage-icon>
+            </kage-button>
+        </div>
+        <div class="pages" [class]="color()">
+            @for (item of pages(); track i; let i = $index) {
+                @if (item === '...') {
+                    <span>...</span>
+                } @else {
+                    <span role="button" class="btn" [class.active]="item === info().currentPage" (click)="toPage($any(item))">{{item | number: '2.0-0'}}</span>
+                }
+            }
+        </div>
+        <div class="next-btn">
+            <kage-button [color]="color()" (click)="nextPage()">
+                <kage-icon name="chevron-forward" [depth]="3"></kage-icon>
+            </kage-button>
+        </div>
+    </div>
+}

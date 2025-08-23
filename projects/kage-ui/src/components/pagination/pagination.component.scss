@@ -1,0 +1,79 @@
+:host{
+    display: contents;
+    .pagination-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        .pages{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 7px;
+            span{
+                color: var(--kage-pagination-text-color);
+                &.btn{
+                    padding: 5px 10px;
+                    font-size: 13px;
+                    font-family: 'my-font-semi-bold';
+                    cursor: pointer;
+                    border: var(--kage-pagination-border-width, 1px) var(--kage-pagination-border-style, solid) var(--kage-pagination-border-color, var(--color-primary));
+                }
+                &.active{
+                    pointer-events: none;
+                    background: var(--kage-pagination-text-color);
+                    color: var(--color-background);
+                }
+            }
+            &.primary{
+                span{
+                    --kage-pagination-border-color: var(--color-primary);
+                    --kage-pagination-text-color: var(--color-primary);
+                }
+            }
+            &.secondary{
+                span{
+                    --kage-pagination-border-color: var(--color-secondary);
+                    --kage-pagination-text-color: var(--color-secondary);
+                }
+            }
+            &.tertiary{
+                span{
+                    --kage-pagination-border-color: var(--color-tertiary);
+                    --kage-pagination-text-color: var(--color-tertiary);
+                }
+            }
+            &.warning{
+                span{
+                    --kage-pagination-border-color: var(--color-warning);
+                    --kage-pagination-text-color: var(--color-warning);
+                }
+            }
+            &.success{
+                span{
+                    --kage-pagination-border-color: var(--color-success);
+                    --kage-pagination-text-color: var(--color-success);
+                }
+            }
+            &.danger{
+                span{
+                    --kage-pagination-border-color: var(--color-danger);
+                    --kage-pagination-text-color: var(--color-danger);
+                }
+            }
+            &.info{
+                span{
+                    --kage-pagination-border-color: var(--color-info);
+                    --kage-pagination-text-color: var(--color-info);
+                }
+            }
+            &.medium{
+                span{
+                    --kage-pagination-border-color: var(--color-medium);
+                    --kage-pagination-text-color: var(--color-medium);
+                }
+            }
+        }
+    }
+}
