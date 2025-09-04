@@ -8,9 +8,10 @@ import {
   Injector,
   createComponent,
   ApplicationRef,
+  DOCUMENT
 } from '@angular/core';
 import { KageDrawerHost } from './drawer.component';
-import { DOCUMENT } from '@angular/common';
+
 
 @Injectable({
   providedIn: 'root',

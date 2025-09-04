@@ -1,4 +1,4 @@
-import { DOCUMENT } from '@angular/common';
+
 import {
   AfterViewInit,
   Component,
@@ -8,6 +8,7 @@ import {
   output,
   ViewChild,
   ViewContainerRef,
+  DOCUMENT
 } from '@angular/core';
 
 @Component({

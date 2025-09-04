@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import {
   ChangeDetectionStrategy,
   Component,
@@ -17,7 +17,7 @@ import { KageCalendar } from './calendar.component';
 
 @Component({
   selector: 'k-date-picker',
-  imports: [CommonModule, KageIcon, KRippleDirective],
+  imports: [KageIcon, KRippleDirective],
   templateUrl: './date-picker.component.html',
   styleUrl: './date-picker.component.scss',
   providers: [

@@ -6,10 +6,11 @@ import {
   inject,
   Injectable,
   Injector,
+  DOCUMENT
 } from '@angular/core';
 import { KageToastOptions, KageToastPosition } from './toast.model';
 import { KageToastHost } from './toast.component';
-import { DOCUMENT } from '@angular/common';
+
 
 @Injectable({
   providedIn: 'root',

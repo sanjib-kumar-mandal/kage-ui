@@ -1,10 +1,11 @@
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import {
   Component,
   ElementRef,
   inject,
   PLATFORM_ID,
   ViewChild,
+  DOCUMENT
 } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '@component/header/header.component';

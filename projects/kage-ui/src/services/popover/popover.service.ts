@@ -7,9 +7,10 @@ import {
   Injectable,
   TemplateRef,
   Type,
+  DOCUMENT
 } from '@angular/core';
 import { KagePopoverRef } from './popover.ref';
-import { DOCUMENT } from '@angular/common';
+
 
 @Injectable({ providedIn: 'root' })
 export class KagePopoverCtrl {
