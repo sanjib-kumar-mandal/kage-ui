@@ -7,9 +7,10 @@ import {
   Injectable,
   Injector,
   Type,
+  DOCUMENT
 } from '@angular/core';
 import { KageModalHost } from './modal.component';
-import { DOCUMENT } from '@angular/common';
+
 
 @Injectable({
   providedIn: 'root',

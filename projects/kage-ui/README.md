@@ -42,6 +42,20 @@ npm install
 npm run start
 ```
 
+## 🧱 Versions
+
+| Version | Angular Version |
+| ------- | --------------- |
+| 0.X.X   | ^19.2.3         |
+| 1.X.X   | ^20.2.2         |
+
+## 🧠 Stability
+
+| Version | Badge                                                        |
+| ------- | ------------------------------------------------------------ |
+| Stable  | ![npm](https://img.shields.io/npm/v/kage-ui?label=stable)    |
+| Beta    | ![npm](https://img.shields.io/npm/v/kage-ui/beta?label=beta) |
+
 ## 📄 License
 
 MIT License

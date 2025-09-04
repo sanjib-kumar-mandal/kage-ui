@@ -1,4 +1,4 @@
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import {
   Directive,
   ElementRef,
@@ -7,6 +7,7 @@ import {
   input,
   PLATFORM_ID,
   Renderer2,
+  DOCUMENT
 } from '@angular/core';
 
 @Directive({

@@ -1,5 +1,5 @@
-import { DOCUMENT } from '@angular/common';
-import { AfterViewInit, Directive, ElementRef, inject } from '@angular/core';
+
+import { AfterViewInit, Directive, ElementRef, inject, DOCUMENT } from '@angular/core';
 import { KageToastCtrl } from '../../services/toast/toast.service';
 import { KageAvatar } from '../../components/avatar/avatar.component';
 
