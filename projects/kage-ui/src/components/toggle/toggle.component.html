@@ -1,5 +1,5 @@
 <label class="kage-toggle-wrapper" [ngClass]="color() ?? ''" [class.disabled]="isDisabled()">
-    <input type="checkbox" [checked]="checked" [disabled]="isDisabled()" (change)="handleToggle($event)">
+    <input type="checkbox" [checked]="isChecked" [disabled]="isDisabled()" (change)="handleToggle($event)">
     <span class="k-toggle"></span>
     <p><ng-content></ng-content></p>
 </label>

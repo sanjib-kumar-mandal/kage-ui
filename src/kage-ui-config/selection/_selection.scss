@@ -1,6 +1,17 @@
-:root{
-    &::selection{
-        background: var(--color-warning);
-        color: #292826;
+@media (prefers-color-scheme: light) {
+    :root{
+        &::selection{
+            background: var(--color-primary);
+            color: #ffffff;
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root{
+        &::selection{
+            background: var(--color-primary);
+            color: #000000;
+        }
     }
 }
