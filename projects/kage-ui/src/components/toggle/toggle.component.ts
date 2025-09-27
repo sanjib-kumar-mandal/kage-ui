@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, forwardRef, input, signal } from '@angular/core';
+import { Component, effect, forwardRef, input, signal } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -26,15 +26,26 @@ export class KageToggle implements ControlValueAccessor {
     | 'info'
     | 'medium'
   >();
+  // Disabled
   disabled = input<boolean>(false);
   isDisabled = signal(this.disabled());
-  checked = false;
+  // Checked
+  checked = input<boolean>(false);
+  private _checkedSignal = signal(this.checked());
 
   private onChange = (value: boolean) => {};
   private onTouched = () => {};
 
+  constructor() {
+    // Sync external input `checked` with internal state
+    effect(() => {
+      this._checkedSignal.set(this.checked());
+    });
+  }
+
+  // =========== Control value accessor =============== //
   writeValue(value: boolean): void {
-    this.checked = value;
+    this._checkedSignal.set(value);
   }
   registerOnChange(fn: any): void {
     this.onChange = fn;
@@ -45,9 +56,17 @@ export class KageToggle implements ControlValueAccessor {
   setDisabledState?(isDisabled: boolean): void {
     this.isDisabled.set(Boolean(isDisabled));
   }
+
+  // ========= Handle toggle ============= //
   handleToggle(event: any) {
-    this.checked = event.target.checked;
-    this.onChange(this.checked);
+    const newValue = event.target.checked;
+    this._checkedSignal.set(newValue);
+    this.onChange(newValue);
     this.onTouched();
+  }
+
+  // Getter for template binding
+  get isChecked() {
+    return this._checkedSignal();
   }
 }

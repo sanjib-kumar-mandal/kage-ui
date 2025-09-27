@@ -7,7 +7,7 @@
   <div class="kage-select-selection-area">
     <div class="kage-select-selected" (click)="toggleDropdown()">
       <div class="kage-select-icon start"><ng-content select="[slot='icon-start']"></ng-content></div>
-      <div class="kage-select-stage-area">
+      <div class="kage-select-stage-area" [attr.aria-label]="selectedOption?.label || placeholder()">
         {{ selectedOption?.label || placeholder() }}
         <kage-icon [name]="isOpen ? 'chevron-up' : 'chevron-down'" [depth]="3" [size]="20"></kage-icon>
       </div>
