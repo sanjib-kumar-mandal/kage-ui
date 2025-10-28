@@ -21,6 +21,7 @@ import { firstValueFrom } from 'rxjs';
       align-items: center;
       justify-content: center;
       width: max-content;
+      flex-shrink: 0;
     }
   `,
 })

@@ -19,11 +19,11 @@ import { Location } from '@angular/common';
 })
 export class KageBreadCrumbs {
   cssClass = input<string>();
-  iconDepth = input<number>();
-  @ContentChildren(KageBreadCrumb)
-  breadCrumps!: QueryList<KageBreadCrumb>;
-
-  private location = inject(Location);
+  iconDepth = input<number>(3);
+  // Proected content
+  @ContentChildren(KageBreadCrumb) breadCrumps!: QueryList<KageBreadCrumb>;
+  // local variables
+  private readonly location = inject(Location);
 
   backToPreviousPage() {
     this.location.back();

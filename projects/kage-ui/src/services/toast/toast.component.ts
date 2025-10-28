@@ -1,11 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  input,
-  Input,
-  model,
-  Output,
-} from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { KageToastType } from './toast.model';
 import { KageIcon } from '../../components/icon/icon.component';
 import { NgClass } from '@angular/common';
@@ -16,7 +9,7 @@ import { NgClass } from '@angular/common';
     <div class="k-toast-container" [ngClass]="[type()]">
       <p>{{ message() }}</p>
       <div class="icon" (click)="dismiss.emit()">
-        <kage-icon name="remove"></kage-icon>
+        <kage-icon name="remove" [depth]="3"></kage-icon>
       </div>
     </div>
   `,
@@ -26,5 +19,5 @@ import { NgClass } from '@angular/common';
 export class KageToastHost {
   message = input<string>('');
   type = input<KageToastType>('info');
-  @Output() dismiss = new EventEmitter<void>();
+  dismiss = output<void>();
 }

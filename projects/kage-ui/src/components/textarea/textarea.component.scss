@@ -26,9 +26,10 @@
                 textarea{
                     padding: var(--kage-textarea-padding-top, 9px) var(--kage-textarea-padding-right, 10px) var(--kage-textarea-padding-bottom, 9px) var(--kage-textarea-padding-left, 10px);
                     color: var(--kage-textarea-text-color, inherit);
-                    font-family: var(--kage-textarea-font-family, inherit);
+                    font-family: var(--kage-textarea-font-family, var(--kage-input-font-family, inherit));
                     background: transparent;
                     resize: none;
+                    font-size: 16px;
                 }
             }
             .icon{

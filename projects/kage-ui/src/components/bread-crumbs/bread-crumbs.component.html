@@ -1,17 +1,15 @@
-<div class="kage-breadcrumbs-wrapper" [class]="cssClass() ?? ''">
-    <span class="back" kageRipple [rippleColor]="'var(--color-medium)'" (click)="backToPreviousPage()">
-        <kage-icon [depth]="iconDepth()" name="arrow-backward"></kage-icon>
-    </span>    
-    @if (breadCrumps.length) {
-        <div class="links">
-            @for (item of breadCrumps; track $index; let l = $last) {
-                @if (!l) {
-                    <a [routerLink]="item.href()">{{item.label()}}</a>
-                    <kage-icon name="chevron-forward" [depth]="iconDepth()"></kage-icon>
-                } @else {
-                    <p>{{item.label()}}</p>
-                }
+<div class="bread-crumb-wrapper" [class]="cssClass() ?? ''">
+    <div class="back-to-previous" kageRipple [rippleColor]="'var(--color-medium)'" (click)="backToPreviousPage()" role="button" aria-label="Back" tabindex="0">
+        <kage-icon name="arrow-backward" [depth]="iconDepth()"></kage-icon>
+    </div>
+    <div class="links">
+        @for (item of breadCrumps; track $index; let l = $last) {
+            @if (!l) {
+                <a [routerLink]="item.href()">{{item.label()}}</a>
+                <kage-icon name="chevron-forward" [depth]="iconDepth()"></kage-icon>
+            } @else {
+                <p>{{item.label()}}</p>
             }
-        </div>
-    }
+        }
+    </div>
 </div>

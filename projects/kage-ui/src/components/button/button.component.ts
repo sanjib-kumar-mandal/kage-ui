@@ -7,7 +7,7 @@ import {
   model,
   signal,
 } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { KageRippleDirective } from '../../directives/directives';
 
 @Component({
@@ -23,7 +23,7 @@ import { KageRippleDirective } from '../../directives/directives';
     },
   ],
 })
-export class KageButton {
+export class KageButton implements ControlValueAccessor {
   cssClass = input<string>();
   type = input<'button' | 'submit' | 'reset'>('button');
   color = input<
@@ -35,13 +35,15 @@ export class KageButton {
     | 'warning'
     | 'info'
     | 'medium'
-  >();
-  disabled = input<boolean>(false);
+  >('primary');
+  // Disabled state
+  disabled = input<boolean>();
   isDisabled = signal(this.disabled());
+  // Loading
   loading = input<boolean>(false);
   iconRight = input<boolean>(false);
-  ariaLabel = input<string>('Button');
-  fill = input<'clear' | 'outline'>('outline');
+  // Button mode
+  fill = input<'clear' | 'outline' | 'solid'>('outline');
 
   private onChange = (value: any) => {};
   private onTouched = () => {};
@@ -65,7 +67,7 @@ export class KageButton {
     } else if (this.color() === 'medium') {
       return `var(--color-medium)`;
     } else {
-      return `var(--color-primary)`;
+      return `var(--color-medium)`;
     }
   }
 
@@ -82,6 +84,7 @@ export class KageButton {
   }
 
   setDisabledState?(isDisabled: boolean): void {
+    console.log(isDisabled);
     this.isDisabled.set(Boolean(isDisabled));
   }
 

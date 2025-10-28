@@ -1,5 +1,5 @@
 :host{
-  display: contents;
+  display: inline-block;
   .kage-range-wrapper{
     min-height: var(--kage-range-min-height, 48px);
     display: flex;

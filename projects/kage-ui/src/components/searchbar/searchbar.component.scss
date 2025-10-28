@@ -13,10 +13,13 @@
       border: none;
       outline: none;
       width: 100%;
-      font-family: var(--kage-searchbar-font-family, inherit);
+      font-family: var(--kage-searchbar-font-family, var(--kage-input-font-family, inherit));
       background: transparent;
       color: var(--kage-searchbar-text-color, inherit);
       padding: var(--kage-searchbar-padding-top, 9px) var(--kage-searchbar-padding-right, 10px) var(--kage-searchbar-padding-bottom, 9px) var(--kage-searchbar-padding-left, 10px);
+      &:disabled{
+        opacity: .6;
+      }
     }
 
     .search-icon {

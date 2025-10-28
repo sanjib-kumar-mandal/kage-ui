@@ -1,5 +1,6 @@
 :host{
-    display: contents;
+    display: inline-block;
+    user-select: none;
     .kage-button-wrapper {
         display: inline-flex;
         align-items: center;
@@ -8,7 +9,7 @@
         cursor: pointer;
         width: inherit !important;
         background: var(--kage-button-background, transparent);
-        transition: background 0.2s ease, transform 0.1s ease;
+        transition: 0.2s;
         position: relative;
         font-family: var(--kage-button-font-family, inherit);
         border: var(--kage-button-border-width, 1px) solid var(--kage-button-border-color, var(--color-primary, inherit));
@@ -16,11 +17,6 @@
         color: var(--kage-button-color, var(--color-primary, inherit));
         font-size: var(--kage-button-font-size, 15px);
         border-radius: var(--kage-button-radial-value, 0px);
-        &:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            pointer-events: none;
-        }
         /* Spinner */
         .spinner {
             width: var(--kage-button-spinner-size, 17px);
@@ -30,48 +26,88 @@
             border-radius: 50%;
             animation: spin 1s linear infinite;
         } 
+        /* Color */
         &.primary{
-            --kage-button-border-color: var(--color-primary);
-            --kage-button-color: var(--color-primary);
-            --kage-button-spinner-color: var(--color-primary);
+            --kage-button-border-color: var(--color-primary, inherit);
+            --kage-button-color: var(--color-primary, inherit);
+            --kage-button-spinner-color: var(--color-primary, inherit);
         }    
         &.secondary {
-            --kage-button-border-color: var(--color-secondary);
-            --kage-button-color: var(--color-secondary);
-            --kage-button-spinner-color: var(--color-secondary);
+            --kage-button-border-color: var(--color-secondary, inherit);
+            --kage-button-color: var(--color-secondary, inherit);
+            --kage-button-spinner-color: var(--color-secondary, inherit);
         }    
         &.tertiary {
-            --kage-button-border-color: var(--color-tertiary);
-            --kage-button-color: var(--color-tertiary);
-            --kage-button-spinner-color: var(--color-tertiary);
+            --kage-button-border-color: var(--color-tertiary, inherit);
+            --kage-button-color: var(--color-tertiary, inherit);
+            --kage-button-spinner-color: var(--color-tertiary, inherit);
         }
         &.warning{
-            --kage-button-border-color: var(--color-warning);
-            --kage-button-color: var(--color-warning);
-            --kage-button-spinner-color: var(--color-warning);
+            --kage-button-border-color: var(--color-warning, inherit);
+            --kage-button-color: var(--color-warning, inherit);
+            --kage-button-spinner-color: var(--color-warning, inherit);
         }
         &.danger {
-            --kage-button-border-color: var(--color-danger);
-            --kage-button-color: var(--color-danger);
-            --kage-button-spinner-color: var(--color-danger);
+            --kage-button-border-color: var(--color-danger, inherit);
+            --kage-button-color: var(--color-danger, inherit);
+            --kage-button-spinner-color: var(--color-danger, inherit);
         }
         &.success {
-            --kage-button-border-color: var(--color-success);
-            --kage-button-color: var(--color-success);
-            --kage-button-spinner-color: var(--color-success);
+            --kage-button-border-color: var(--color-success, inherit);
+            --kage-button-color: var(--color-success, inherit);
+            --kage-button-spinner-color: var(--color-success, inherit);
         } 
         &.info {
-            --kage-button-border-color: var(--color-info);
-            --kage-button-color: var(--color-info);
-            --kage-button-spinner-color: var(--color-info);
+            --kage-button-border-color: var(--color-info, inherit);
+            --kage-button-color: var(--color-info, inherit);
+            --kage-button-spinner-color: var(--color-info, inherit);
         } 
         &.medium {
-            --kage-button-border-color: var(--color-medium);
-            --kage-button-color: var(--color-medium);
-            --kage-button-spinner-color: var(--color-medium);
+            --kage-button-border-color: var(--color-medium, inherit);
+            --kage-button-color: var(--color-medium, inherit);
+            --kage-button-spinner-color: var(--color-medium, inherit);
         } 
         &.clear{
             --kage-button-border-color: transparent !important;
+        }
+        &.solid{
+            &.primary{
+                --kage-button-background: var(--color-primary, inherit);
+                --kage-button-color: color-mix(in srgb, var(--color-background) 90%, var(--color-primary) 10%);
+            }
+            &.secondary{
+                --kage-button-background: var(--color-secondary, inherit);
+                --kage-button-color: color-mix(in srgb, var(--color-background) 90%, var(--color-secondary) 10%);
+            }
+            &.tertiary{
+                --kage-button-background: var(--color-tertiary, inherit);
+                --kage-button-color: color-mix(in srgb, var(--color-background) 90%, var(--color-tertiary) 10%);
+            }
+            &.warning{
+                --kage-button-background: var(--color-warning, inherit);
+                --kage-button-color: color-mix(in srgb, var(--color-background) 90%, var(--color-warning) 10%);
+            }
+            &.danger{
+                --kage-button-background: var(--color-danger, inherit);
+                --kage-button-color: color-mix(in srgb, var(--color-background) 90%, var(--color-danger) 10%);
+            }
+            &.success{
+                --kage-button-background: var(--color-success, inherit);
+                --kage-button-color: color-mix(in srgb, var(--color-background) 90%, var(--color-success) 10%);
+            }
+            &.info{
+                --kage-button-background: var(--color-info, inherit);
+                --kage-button-color: color-mix(in srgb, var(--color-background) 90%, var(--color-info) 10%);
+            }
+            &.medium{
+                --kage-button-background: var(--color-medium, inherit);
+            }
+        }
+        /* Disabled state */
+        &:disabled {
+            opacity: 0.6 !important;
+            cursor: not-allowed;
+            pointer-events: none !important;
         }
     }
 

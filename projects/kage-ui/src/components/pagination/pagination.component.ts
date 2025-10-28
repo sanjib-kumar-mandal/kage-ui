@@ -29,14 +29,14 @@ export class KagePagination {
     const current = this.info().currentPage;
     const pages: (number | string)[] = [];
 
-    if (total <= 8) {
+    if (total <= 6) {
       for (let i = 1; i <= total; i++) pages.push(i);
     } else {
       // always show first 3
       pages.push(1, 2, 3);
 
       // if current is far from start, add ellipsis
-      if (current > 5) pages.push('...');
+      if (current > 3) pages.push('...');
 
       // middle pages (current-1, current, current+1)
       const start = Math.max(4, current - 1);

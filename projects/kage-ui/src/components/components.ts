@@ -16,6 +16,7 @@ export { KageIcon } from './icon/icon.component';
 export { KageInput } from './input/input.component';
 export { KageOption } from './select/option.component';
 export { KagePagination } from './pagination/pagination.component';
+export * from './pagination/pagination.interface';
 export { KageProgressBar } from './progress-bar/progress-bar.component';
 export { KageRadio } from './radio/radio.component';
 export { KageRadioGroup } from './radio-group/radio-group.component';

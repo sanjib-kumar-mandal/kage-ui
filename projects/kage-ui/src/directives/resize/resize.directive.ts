@@ -1,3 +1,4 @@
+import { isPlatformBrowser } from '@angular/common';
 import {
   Directive,
   ElementRef,
@@ -8,6 +9,7 @@ import {
   OnDestroy,
   OnInit,
   output,
+  PLATFORM_ID,
   Renderer2,
 } from '@angular/core';
 import { debounceTime, Subject, throttleTime } from 'rxjs';
@@ -33,37 +35,40 @@ export class KageResizeDirective implements OnInit, OnDestroy {
   private resizeSubject = new Subject<DOMRectReadOnly>();
   private observer?: ResizeObserver;
 
-  private el = inject(ElementRef);
-  private zone = inject(NgZone);
-  private renderer = inject(Renderer2);
+  private readonly el = inject(ElementRef);
+  private readonly zone = inject(NgZone);
+  private readonly renderer = inject(Renderer2);
+  private readonly platformId = inject(PLATFORM_ID);
 
   ngOnInit(): void {
-    const stream =
-      this.resizeMode() === 'throttle'
-        ? this.resizeSubject.pipe(throttleTime(this.debounceTime()))
-        : this.resizeSubject.pipe(debounceTime(this.debounceTime()));
+    if (isPlatformBrowser(this.platformId)) {
+      const stream =
+        this.resizeMode() === 'throttle'
+          ? this.resizeSubject.pipe(throttleTime(this.debounceTime()))
+          : this.resizeSubject.pipe(debounceTime(this.debounceTime()));
 
-    stream.subscribe((rect) => {
-      this.kageResized.emit(rect);
-      if (this.onResize) this.onResize(rect);
-      this.applyClasses(rect);
-    });
-
-    this.zone.runOutsideAngular(() => {
-      this.observer = new ResizeObserver((entries) => {
-        for (const entry of entries) {
-          const rect = entry.contentRect;
-          if (
-            (this.observeWidth() && rect.width !== 0) ||
-            (this.observeHeight() && rect.height !== 0)
-          ) {
-            this.resizeSubject.next(rect);
-          }
-        }
+      stream.subscribe((rect) => {
+        this.kageResized.emit(rect);
+        if (this.onResize) this.onResize(rect);
+        this.applyClasses(rect);
       });
 
-      this.observer.observe(this.el.nativeElement);
-    });
+      this.zone.runOutsideAngular(() => {
+        this.observer = new ResizeObserver((entries) => {
+          for (const entry of entries) {
+            const rect = entry.contentRect;
+            if (
+              (this.observeWidth() && rect.width !== 0) ||
+              (this.observeHeight() && rect.height !== 0)
+            ) {
+              this.resizeSubject.next(rect);
+            }
+          }
+        });
+
+        this.observer.observe(this.el.nativeElement);
+      });
+    }
   }
 
   private applyClasses(rect: DOMRectReadOnly): void {

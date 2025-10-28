@@ -1,5 +1,10 @@
-
-import { AfterViewInit, Directive, ElementRef, inject, DOCUMENT } from '@angular/core';
+import {
+  AfterViewInit,
+  Directive,
+  ElementRef,
+  inject,
+  DOCUMENT,
+} from '@angular/core';
 import { KageToastCtrl } from '../../services/toast/toast.service';
 import { KageAvatar } from '../../components/avatar/avatar.component';
 
@@ -88,31 +93,33 @@ export class KageImageViewDirective implements AfterViewInit {
   }
 
   private async downloadImage(src: string, fileName?: string) {
-    if (src) {
-      const response = await fetch(src);
-      const blobImage = await response.blob();
+    try {
+      if (src) {
+        const response = await fetch(src);
+        const blobImage = await response.blob();
 
-      const href = URL.createObjectURL(blobImage);
+        const href = URL.createObjectURL(blobImage);
 
-      const anchorElement = this.document.createElement('a');
-      anchorElement.href = href;
-      anchorElement.download = `${cleanText(fileName ?? 'Image')}.${
-        getFileExtensionFromUrl(src) ?? 'png'
-      }`;
-      this.document.body.appendChild(anchorElement);
+        const anchorElement = this.document.createElement('a');
+        anchorElement.href = href;
+        anchorElement.download = `${cleanText(fileName ?? 'Image')}.${
+          getFileExtensionFromUrl(src) ?? 'png'
+        }`;
+        this.document.body.appendChild(anchorElement);
 
-      anchorElement.click();
+        anchorElement.click();
 
-      this.document.body.removeChild(anchorElement);
-      URL.revokeObjectURL(href);
-    } else {
-      this.toastService.show({
-        message: "Couldn't download image.",
-        position: 'top-right',
-        duration: 2500,
-        type: 'danger',
-      });
-    }
+        this.document.body.removeChild(anchorElement);
+        URL.revokeObjectURL(href);
+      } else {
+        this.toastService.show({
+          message: "Couldn't download image.",
+          position: 'top-right',
+          duration: 2500,
+          type: 'danger',
+        });
+      }
+    } catch (e) {}
   }
 }
 export const getFileExtensionFromUrl = (url: string): string | null => {
