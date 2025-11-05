@@ -44,7 +44,7 @@ export class KageRange {
 
   private onChange = (value: number) => {};
   private onTouched = () => {};
-  private valueChange$ = new Subject<number>();
+  private readonly valueChange$ = new Subject<number>();
 
   constructor() {
     this.valueChange$.pipe(debounceTime(100)).subscribe((val) => {

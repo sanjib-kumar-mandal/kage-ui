@@ -17,7 +17,7 @@
         border-radius: var(--kage-card-border-radious, 0px);
         overflow: hidden;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        background: var(--kage-card-background, color-mix(in srgb, var(--color-background) 90%, var(--color-medium) 10%));
+        background: var(--kage-card-background, color-mix(in srgb, var(--color-background) 95%, var(--color-medium) 5%));
         .kage-card-image {
             &::ng-deep{
                 img {

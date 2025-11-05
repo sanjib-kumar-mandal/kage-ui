@@ -43,11 +43,11 @@ export class KageInput implements ControlValueAccessor, AfterViewInit {
   maxLength = input<number>();
 
   @ViewChild('inputField') inputRef!: ElementRef;
-  private debouncer = new Subject<string>();
+  private readonly debouncer = new Subject<string>();
 
   value: string = '';
 
-  private platformId = inject(PLATFORM_ID);
+  private readonly platformId = inject(PLATFORM_ID);
 
   onChange = (_: any) => {};
   onTouched = () => {};

@@ -31,7 +31,7 @@ export class KageToggle implements ControlValueAccessor {
   isDisabled = signal(this.disabled());
   // Checked
   checked = input<boolean>(false);
-  private _checkedSignal = signal(this.checked());
+  private readonly _checkedSignal = signal(this.checked());
 
   private onChange = (value: boolean) => {};
   private onTouched = () => {};

@@ -20,8 +20,7 @@ import { firstValueFrom } from 'rxjs';
       display: flex;
       align-items: center;
       justify-content: center;
-      width: max-content;
-      flex-shrink: 0;
+      max-width: 40px;
     }
   `,
 })
@@ -41,9 +40,9 @@ export class KageIcon implements AfterViewInit {
     | 'medium'
   >();
 
-  private renderer = inject(Renderer2);
-  private elementRef = inject(ElementRef);
-  private http = inject(HttpClient);
+  private readonly renderer = inject(Renderer2);
+  private readonly elementRef = inject(ElementRef);
+  private readonly http = inject(HttpClient);
 
   constructor() {
     effect(() => this.decide());

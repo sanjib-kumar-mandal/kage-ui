@@ -33,7 +33,7 @@ export class KageAccordion implements AfterViewInit {
   >();
   expanded = input<boolean>(false);
 
-  private renderer = inject(Renderer2);
+  private readonly renderer = inject(Renderer2);
 
   ngAfterViewInit(): void {
     fromEvent(this.header.nativeElement, 'click').subscribe({

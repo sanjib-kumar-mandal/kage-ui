@@ -84,7 +84,6 @@ export class KageButton implements ControlValueAccessor {
   }
 
   setDisabledState?(isDisabled: boolean): void {
-    console.log(isDisabled);
     this.isDisabled.set(Boolean(isDisabled));
   }
 
